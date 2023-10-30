@@ -1,0 +1,104 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: BigPicture Sweden
+  favicon: favicon.ico
+  description: >
+    A central repository of digital pathology slides from Swedish biomedical research projects to boost the development of artificial intelligence
+  image: images/bp-sweden-logo.png
+  page-footer:
+    background: light
+    left:
+      - text: Hosted by NBIS and Uppsala University
+    center: 
+      - about/terms-of-use.qmd
+      - about/privacy-notice.qmd
+    right:
+      - href: about/contact-us.qmd
+  cookie-consent:
+    type: express
+
+  page-navigation: true
+  navbar:
+    title: false
+    logo: images/bp-sweden-logo-one-line.png
+    logo-alt: BigPicture Sweden
+    background: light
+    collapse-below: lg
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: submission/index.qmd
+        text: Submission
+      - href: access/index.qmd
+        text: Access
+      - href: about/index.qmd
+        text: About
+  
+  sidebar:
+    - id: submit
+      title: Submission
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - submission/index.qmd
+        - section: Preparation guide
+          contents:
+            - submission/pre-submission-checklist.qmd
+            - submission/is-bp-sweden-the-right-archive.qmd
+            - submission/preparing-data.qmd
+            - section: Preparing metadata
+              contents:
+                - submission/metadata/index.qmd
+                - submission/metadata/sample-metadata.qmd
+                - submission/metadata/experiment-metadata.qmd
+                - submission/metadata/analysis-metadata.qmd
+                - submission/metadata/dac-metadata.qmd
+                - submission/metadata/policy-documentation.qmd
+            - submission/complying-with-gdpr.qmd
+            - submission/ethical-approval.qmd
+            - submission/data-availability-statement.qmd
+
+        - section: Submission guide
+          contents:
+            - submission/submission-request.qmd
+            - submission/submission-quick-guide.qmd
+            - submission/uploading-data.qmd
+            - submission/entering-metadata.qmd
+
+    - id: access
+      title: Access
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - access/index.qmd
+        - access/downloading-data.qmd
+
+    - id: about
+      title: About
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - href: about/index.qmd
+          text: About
+        - about/bp.qmd
+        - about/our-team.qmd
+        - about/news.qmd
+        - about/contact-us.qmd
+        - about/terms-of-use.qmd
+        - about/privacy-notice.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    code-copy: true
+    code-overflow: wrap
+    toc: true

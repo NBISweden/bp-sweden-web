@@ -1,0 +1,8 @@
+---
+title: News
+listing:
+  contents: "articles/*.qmd"
+  sort: "date desc"
+  type: table
+  categories: true
+---

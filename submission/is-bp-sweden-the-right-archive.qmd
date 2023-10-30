@@ -1,0 +1,28 @@
+---
+title: Is BigPicture Sweden the right archive?
+---
+
+Before you start working on a submission, you should ask yourself whether
+BigPicture Sweden is the right place for storing and sharing your data. This guide will help you assess the suitability of BigPicture Sweden to your data. If you need help with the assessment, please write to the [BigPicture Sweden Helpdesk](mailto:{{< var email.helpdesk >}}).
+
+
+## Is my data of the right type?
+
+BigPicture Sweden aims to store digital pathology slides resulting from
+biomedical research projects. You can read more about data types and file 
+formats on the BigPicture dataset website (https://nbisweden.github.io/hugo.bp.datasets.nbis.se/).
+
+
+## Does my data require controlled access?
+
+Sensitive personal data can normally not be shared publicly due to legal and
+ethical constraints. BigPicture Sweden makes it possible to share sensitive personal data under controlled access. This means that access to any submitted file will be determined by a formal application procedure. 
+
+## Is my data from a Swedish research project?
+
+## Am I allowed to share the data via BigPicture Sweden?
+
+If you plan to make personally identifiable data accessible to others, there are
+some special regulations that you have to be aware of. If the research is
+carried out in Sweden, you must for example have an [ethical approval](ethical-approval.qmd).
+You must also make sure that the data processing [comply with GDPR](complying-with-gdpr.qmd).

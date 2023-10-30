@@ -1,0 +1,76 @@
+---
+title: Complying with GDPR
+---
+
+## Introduction
+
+The [General Data Protection
+Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32016R0679),
+or GDPR, is a legislation in the EU that governs the collection and
+processing of personal data. The main reasons for the introduction of
+GDPR was to harmonise privacy and data protection laws across the EU
+member states and to strengthen the rights of individuals within the EU.
+
+## Who is the data controller?
+
+According to GDPR, anyone who processes personal data is either a data
+controller or a data processor. A data controller is any person or
+entity that determines the purposes and means of the processing. If
+there are two or more data controllers that jointly decide why and how
+to process personal data, they are collectively referred to as "joint
+controllers". A data processor, on the other hand, is any person or
+entity that processes personal data on behalf of a data controller.
+
+For data submitted to FEGA Sweden is the data controller typically the
+institution where the principal investigator is employed. Uppsala
+university, which is the host institution of FEGA Sweden, is then a data
+processor who acts on behalf of the principal investigator's
+institution.
+
+Before you submit any data to FEGA Sweden, you need to first make clear
+who the data controller is. This step is critical in order to determine
+which formal agreements are needed.
+
+## Do you have a data processing agreement with us?
+
+To fulfill the requirements of GDPR, you need to make sure that there is
+a data processing agreement between each data controller and Uppsala
+University. For convenience, we have already established general data
+processing agreements with some Swedish universities (see
+@tbl-agreements). If the data controller of your data has not signed a
+general data processing agreement with us, a new agreement will have to
+be established. The data protection officer (DPO) at your institution
+may be able help you with that. If Uppsala University is the only data
+controller, there is no need of a data processing agreement.
+
+| Data controller                             | Agreement                                                                  |
+|---------------------------|---------------------------------------------|
+| Karolinska Institutet                       | [ICM 2019/186](processing-agreements/Diarie-NBIS-ICM-2019_186-KI-PUB.pdf)  |
+| KTH Royal Institute of Technology           | [ICM 2019/189](processing-agreements/Diarie-NBIS-ICM-2019_189-KTH-PUB.pdf) |
+| Linköping University                        | [ICM 2019/192](processing-agreements/Diarie-NBIS-ICM-2019_192-LiU-PUB.pdf) |
+| Lund University                             | [ICM 2019/195](processing-agreements/Diarie-NBIS-ICM-2019_195-LU-PUB.pdf)  |
+| Stockholm University                        | [ICM 2019/204](processing-agreements/Diarie-NBIS-ICM-2019_204-SU-PUB.pdf)  |
+| Swedish University of Agricultural Sciences | [ICM 2019/201](processing-agreements/Diarie-NBIS-ICM-2019_201-SLU-PUB.pdf) |
+| Umeå University                             | [ICM 2019/207](processing-agreements/Diarie-NBIS-ICM-2019_207-UmU-PuB.pdf) |
+| University of Gothenburg                    | [ICM 2019/183](processing-agreements/Diarie-NBIS-ICM-2019_183-GU-PUB.pdf)  |
+
+: General data processing agreements with Uppsala University
+{#tbl-agreements}
+
+## Data processing on behalf of FEGA Sweden
+
+FEGA Sweden uses a service from the Swedish Research Council for storing
+the data. For that we have entered a separate data processing agreement,
+[ICM 2023/76](processing-agreements/Diarie-NBIS-ICM-2023_76-Sunet-PUBA.pdf).
+This agreement should be compliant with the general processing
+agreements listed in @tbl-agreements.
+
+## Learn more about GDPR
+
+-   [Research material with personal
+    data](https://snd.gu.se/en/manage-data/plan/research-material-with-personal-data)
+    -- by the Swedish National Data Service (SND)
+-   [The Swedish Authority for Privacy Protection
+    (IMY)](https://www.imy.se/en/)
+-   [The General Data Protection Regulation
+    (GDPR)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32016R0679)

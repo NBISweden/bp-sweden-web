@@ -1,0 +1,13 @@
+---
+title: Analysis metadata
+---
+
+Files resulting from bioinformatic analyses may be submitted as analysis
+data. If you wish to include this category of data, make sure to
+document your analyses carefully. The purpose of the analysis metadata
+is to describe both how the analyses was done and any files resulting
+from them.
+
+Phenotype descriptions that cannot be shared openly will also have to be
+submitted as analysis data. During the submission, you will be asked to
+provide simple publicly available descriptions of your submitted files.

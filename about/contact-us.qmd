@@ -1,0 +1,16 @@
+---
+title: Contact us
+---
+
+## Email
+
+If you have questions of general character, please write to
+[{{< var email.helpdesk >}}](mailto:{{< var email.helpdesk >}}).
+
+## Postal address
+
+Uppsala University  
+ICM -- Department of Cell and Molecular Biology  
+NBIS  
+Box 596  
+SE-751 24 Uppsala

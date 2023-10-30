@@ -1,0 +1,35 @@
+---
+title: Preparing data
+---
+
+FEGA Sweden aims to support submissions of the same data types as the
+European Genome-phenome Archive (EGA). These include for example:
+
+-   Sequence data
+-   Variants
+-   Array-based data
+-   Phenotypes
+-   GWAS summary statistics
+
+::: callout-note
+We are currently building capacity to meet the needs of the Swedish life
+science community. Our initial focus will be to support submission of
+sequence data and variants.
+:::
+
+You can visit the [EGA website](https://ega-archive.org) to learn more
+about how to prepare files for the different data types. If you have any
+questions regarding file formats, please write to the 
+[FEGA Sweden Helpdesk](mailto:{{< var email.helpdesk >}}).
+
+## One or multiple datasets?
+
+Access to data in FEGA Sweden is given at the dataset level, which means
+that all files in a dataset must share the same release conditions. To
+maximise data reuse, delimit your datasets so that as many researchers
+as possible will find them usable. Try to think of what restrictions
+potential users of your data might have. For example, a cancer
+researcher may be restricted by her ethical permit to only do research
+on certain cancer types. If a dataset she is interested in also contains
+data about other cancer diagnoses, she will not have the right to access
+it.

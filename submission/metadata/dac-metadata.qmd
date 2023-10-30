@@ -1,0 +1,37 @@
+---
+title: DAC metadata
+---
+
+The Data Access Committee (DAC) decides whether access will be granted
+to a requested dataset or not. The DAC consist of one or more named
+individuals who act on behalf of the data controller. A DAC may be
+affiliated with one or multiple datasets. Contact the DAC members and
+ask them to confirm their appointment before you start your submission
+to avoid unnecessary delays later on.
+
+You can read more about DACs on the [EGA
+website](https://ega-archive.org/submission/data_access_committee).
+
+## Metadata fields
+
+During the submission process, you will be asked to provide the contact
+details for each selected DAC member. The table below shows the fields
+that must be filled in for each committee member.
+
+| Field name   | Description                                                          |
+|--------------------------|----------------------------------------------|
+| Name         | Name of the contact                                                  |
+| Email        | Valid email for the contact                                          |
+| Organisation | Name of organisation the contact is affiliated with                  |
+| Telephone    | Telephone number including the international code                    |
+| Main contact | Indication of whether the person is the main contact or not (yes/no) |
+
+## DAC metadata templates
+
+Templates for the DAC metadata are available in the following formats:
+
+| File format                 | Download                                                                                 | Description                                                            |
+|------------------|-------------------------------|-----------------------|
+| Text CSV                    | <a href="templates/dac-metadata.csv" download="dac-metadata.csv">dac-metadata.csv</a>    | Plain text template without validation                                 |
+| ODF Spreadsheet             | <a href="templates/dac-metadata.ods" download="dac-metadata.ods">dac-metadata.ods</a>    | [LibreOffice](https://www.libreoffice.org) spreadsheet with validation |
+| Office Open XML Spreadsheet | <a href="templates/dac-metadata.xlsx" download="dac-metadata.xlsx">dac-metadata.xlsx</a> | Microsoft Excel spreadsheet with validation                            |
