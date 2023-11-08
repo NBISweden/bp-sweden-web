@@ -48,7 +48,7 @@ information that will be given to research participants. For your
 convenience, we have prepared an example paragraph (see below) that you
 can insert into the template (under the heading "Vad händer med mina
 uppgifter?"). The text should make it possible for you to share your
-data via FEGA Sweden.
+data via BigPicture Sweden.
 
 > Personuppgifter kan komma att lämnas vidare till forskare och andra
 > behöriga för efterföljande forskning inom eller utanför landet. Varje
@@ -75,7 +75,7 @@ review application.
 ## Renewing an ethical approval
 
 If you already have an ethical approval but the application was written
-without having data sharing via FEGA Sweden in mind, you may want to
+without having data sharing via BigPicture Sweden in mind, you may want to
 apply for a renewal of the approval. Read more about renewal
 applications on the website of the [Swedish Ethical Review
 Authority](https://etikprovningsmyndigheten.se/).

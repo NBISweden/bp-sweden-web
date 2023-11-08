@@ -19,6 +19,7 @@ six major steps, of which two are only relevant for Bianca users:
 4.  [Encrypt the files](#encrypt-the-files)
 5.  [Move files from Bianca](#move-files-from-bianca) (Bianca only)
 6.  [Submit your files](#submit-your-files)
+7.  [Notify BigPicture Sweden](#notify-bigpicture-sweden)
 
 ## Install the sda-cli tool {#install-the-sda-cli-tool}
 
@@ -112,19 +113,19 @@ the following command:
 ### Linux
 
 ``` bash
-wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
+wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
 ```
 
 ### Mac
 
 ``` bash
-curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
 ```
 
 ### Windows
 
 ``` bash
-curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
 ```
 :::
 
@@ -133,7 +134,7 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
 
 ## Move files to Bianca {#move-files-to-bianca}
 
-1.  Copy `sda-cli` and `crypt4gh_key.pub` to the wharf
+1.  Copy `sda-cli` and `crypt4gh_bp_key.pub` to the wharf
 
     Bianca uses a system called the wharf to transfer files without
     having a direct connection to the internet. You can upload files to
@@ -173,13 +174,13 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
     cp sda-cli ~/<project_name>/
     ```
 
-    Copy the `crypt4gh_key.pub` file to the project drive in the wharf:
+    Copy the `crypt4gh_bp_key.pub` file to the project drive in the wharf:
 
     ``` bash
-    cp crypt4gh_key.pub ~/<project_name>/
+    cp crypt4gh_bp_key.pub ~/<project_name>/
     ```
 
-2.  Copy `sda-cli` and `crypt4gh_key.pub` from the wharf to Bianca
+2.  Copy `sda-cli` and `crypt4gh_bp_key.pub` from the wharf to Bianca
 
     You can now log out from transit and log in to Bianca to transfer
     the files out of the wharf and in to your project.
@@ -199,11 +200,11 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
 
     ``` bash
     cp /proj/[project_name]/nobackup/wharf/[username]/[username]-[project_name]/sda-cli .
-    cp /proj/[project_name]/nobackup/wharf/[username]/[username]-[project_name]/crypt4gh_key.pub .
+    cp /proj/[project_name]/nobackup/wharf/[username]/[username]-[project_name]/crypt4gh_bp_key.pub .
     ```
 
     Running the `ls` command in this folder, you should be able to see
-    the `sda-cli` and `crypt4gh_key.pub` files.
+    the `sda-cli` and `crypt4gh_bp_key.pub` files.
 :::
 
 ## Encrypt the files {#encrypt-the-files}
@@ -218,20 +219,20 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
     ### Linux
 
     ``` bash
-    ./sda-cli encrypt -key crypt4gh_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
 
     ### Mac
 
     ``` bash
-    ./sda-cli encrypt -key crypt4gh_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
 
 
     ### Windows
 
     ``` bash
-    sda-cli encrypt -key crypt4gh_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
     :::
 
@@ -422,3 +423,10 @@ checkLogin();
     sda-cli help
     ```
     :::
+
+## Notify BigPicture Sweden {#notify-bigpicture-sweden}
+
+Once your submission is completed, please don't forget to notify us by sending an email to [BigPicture Sweden Helpdesk](mailto:{{< var email.helpdesk >}}). The email should contain
+
+- Name of the uploader 
+- Name of the dataset 

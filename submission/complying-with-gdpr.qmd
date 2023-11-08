@@ -21,13 +21,13 @@ to process personal data, they are collectively referred to as "joint
 controllers". A data processor, on the other hand, is any person or
 entity that processes personal data on behalf of a data controller.
 
-For data submitted to FEGA Sweden is the data controller typically the
+For data submitted to BigPicture Sweden is the data controller typically the
 institution where the principal investigator is employed. Uppsala
-university, which is the host institution of FEGA Sweden, is then a data
+university, which is the host institution of BigPicture Sweden, is then a data
 processor who acts on behalf of the principal investigator's
 institution.
 
-Before you submit any data to FEGA Sweden, you need to first make clear
+Before you submit any data to BigPicture Sweden, you need to first make clear
 who the data controller is. This step is critical in order to determine
 which formal agreements are needed.
 
@@ -57,9 +57,9 @@ controller, there is no need of a data processing agreement.
 : General data processing agreements with Uppsala University
 {#tbl-agreements}
 
-## Data processing on behalf of FEGA Sweden
+## Data processing on behalf of BigPicture Sweden
 
-FEGA Sweden uses a service from the Swedish Research Council for storing
+BigPicture Sweden uses a service from the Swedish Research Council for storing
 the data. For that we have entered a separate data processing agreement,
 [ICM 2023/76](processing-agreements/Diarie-NBIS-ICM-2023_76-Sunet-PUBA.pdf).
 This agreement should be compliant with the general processing

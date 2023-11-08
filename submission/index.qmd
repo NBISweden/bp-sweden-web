@@ -3,7 +3,7 @@ title: Submission overview
 ---
 
 Welcome to the general guide for BigPicture Sweden submission. Please take a
-look at preparation instructions before you create a submission request.
+look at preparation instructions before you create a submission.
 
 ::: {.grid}
 
@@ -18,11 +18,7 @@ Find out if BigPicture Sweden is suitable for your data and make sure that you h
 ::: {.g-col-6}
 ### Start a new submission
 
-Get started with your submission by filling in our submission request webform.
-It should only take a few minutes to complete the form.
-
-
-[Create submission request »](submission-request.qmd)
+Get started with your submission by following the [submission guide](uploading-data.qmd)  
 :::
 
 :::

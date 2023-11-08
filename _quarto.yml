@@ -33,8 +33,6 @@ website:
         text: Home
       - href: submission/index.qmd
         text: Submission
-      - href: access/index.qmd
-        text: Access
       - href: about/index.qmd
         text: About
   
@@ -51,33 +49,13 @@ website:
             - submission/pre-submission-checklist.qmd
             - submission/is-bp-sweden-the-right-archive.qmd
             - submission/preparing-data.qmd
-            - section: Preparing metadata
-              contents:
-                - submission/metadata/index.qmd
-                - submission/metadata/sample-metadata.qmd
-                - submission/metadata/experiment-metadata.qmd
-                - submission/metadata/analysis-metadata.qmd
-                - submission/metadata/dac-metadata.qmd
-                - submission/metadata/policy-documentation.qmd
             - submission/complying-with-gdpr.qmd
             - submission/ethical-approval.qmd
-            - submission/data-availability-statement.qmd
 
         - section: Submission guide
           contents:
-            - submission/submission-request.qmd
-            - submission/submission-quick-guide.qmd
             - submission/uploading-data.qmd
-            - submission/entering-metadata.qmd
 
-    - id: access
-      title: Access
-      style: floating
-      collapse-level: 2
-      align: left
-      contents:
-        - access/index.qmd
-        - access/downloading-data.qmd
 
     - id: about
       title: About

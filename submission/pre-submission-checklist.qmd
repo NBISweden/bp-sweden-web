@@ -27,28 +27,8 @@ with your submission. If you have any questions, please write to the
     the data to be shared via BigPicture Sweden.
 -   [Prepare your data files](preparing-data.qmd) so that they are ready
     to be submitted.
--   Consider if your files should be submitted as [one or multiple
-    datasets](preparing-data.qmd#one-or-multiple-datasets).
--   Collect and [prepare the metadata](metadata/index.qmd), including
-    the data access policy.
--   Identify and contact the people that you would like to include in
-    the [Data Access Committee (DAC)](metadata/dac-metadata.qmd).
 
 ::: grid
-::: g-col-2
-:::
-
-::: g-col-8
-::: callout-tip
-## Need more guidance?
-
-EMBL-EBI offers excellent training material around ethical, legal and
-societal implications (ELSI) of biomedical data sharing. We advise you
-to take a look at their [online tutorial](https://doi.org/10.6019/TOL.ELSI-c.2015.00001.1)
-before submitting data to us.
-:::
-:::
-
 ::: g-col-2
 :::
 :::
