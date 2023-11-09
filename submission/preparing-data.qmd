@@ -1,7 +1,7 @@
 ---
 title: Preparing data
 ---
-BigPicture Sweden aims to support submissions of digital pathology slides resulting from biomedical research projects. You can read more about data types and file formats on the [BigPicture dataset website](https://nbisweden.github.io/hugo.bp.datasets.nbis.se/). 
+BigPicture Sweden aims to support submissions of digital pathology slides resulting from biomedical research projects. You can read more about data types and file formats on the [BigPicture dataset website](https://nbisweden.github.io/datasets.bp.nbis.se/). 
 
 
 Before you submit your data, please make sure

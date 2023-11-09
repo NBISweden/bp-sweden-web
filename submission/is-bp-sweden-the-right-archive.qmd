@@ -10,7 +10,7 @@ BigPicture Sweden is the right place for storing and sharing your data. This gui
 
 BigPicture Sweden aims to store digital pathology slides resulting from
 biomedical research projects. You can read more about data types and file 
-formats on the [BigPicture dataset website](https://nbisweden.github.io/hugo.bp.datasets.nbis.se/).
+formats on the [BigPicture dataset website](https://nbisweden.github.io/datasets.bp.nbis.se/).
 
 
 ## Does my data require controlled access?
