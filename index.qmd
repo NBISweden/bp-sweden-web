@@ -1,5 +1,5 @@
 ---
-pagetitle: BigPicture Sweden
+pagetitle: BigPicture
 sidebar: false
 toc: false
 listing:
@@ -22,14 +22,14 @@ published on this website in December.
 ::: grid
 ::: g-col-6
 <p>[Secure archiving and sharing of digital pathology slides
-resulting from Swedish biomedical research
+resulting from biomedical research
 projects.]{style="font-size:larger;"}</p>
 
-<p>[Learn more »](about/index.qmd){style="font-size:larger;"}</p>
+<p>[Learn more »](https://bigpicture.eu){style="font-size:larger;"}</p>
 :::
 
 ::: g-col-6
-![](/images/bp-sweden-logo.png)
+![](/images/bp-logo.png)
 :::
 :::
 
@@ -43,7 +43,7 @@ projects.]{style="font-size:larger;"}</p>
 ::: g-col-9
 ### One node in a growing network
 
-Bigpicture is a public-private partnership funded by the EU Innovative Medicines Initiative (IMI) bringing together academic institutions, small- and medium-sized enterprises, public organisations, pharmaceutical companies, and a large network of partners. BigPicture Sweden is one of first national nodes.
+Bigpicture is a public-private partnership funded by the EU Innovative Medicines Initiative (IMI) bringing together academic institutions, small- and medium-sized enterprises, public organisations, pharmaceutical companies, and a large network of partners. 
 
 [Learn more »](about/bp.qmd)
 :::

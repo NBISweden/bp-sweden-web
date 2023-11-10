@@ -9,7 +9,7 @@ at UPPMAX for analysing your data, there are some additional steps.
 These will be clearly marked in the guide.
 :::
 
-This guide contains instructions on how to upload data to BigPicture Sweden.
+This guide contains instructions on how to upload data to BigPicture.
 We will take you through the process step by step. The guide comprises
 six major steps, of which two are only relevant for Bianca users:
 
@@ -19,7 +19,7 @@ six major steps, of which two are only relevant for Bianca users:
 4.  [Encrypt the files](#encrypt-the-files)
 5.  [Move files from Bianca](#move-files-from-bianca) (Bianca only)
 6.  [Submit your files](#submit-your-files)
-7.  [Notify BigPicture Sweden](#notify-bigpicture-sweden)
+7.  [Notify us](#notify-us)
 
 ## Install the sda-cli tool {#install-the-sda-cli-tool}
 
@@ -100,12 +100,12 @@ case of Bianca).
 User documentation for `sda-cli` is available in the [GitHub
 repository](https://github.com/NBISweden/sda-cli). This guide should
 however include the information needed to encrypt and upload data to
-BigPicture Sweden.
+BigPicture.
 :::
 
 ## Download the encryption key {#download-the-encryption-key}
 
-For BigPicture Sweden to be able to read the uploaded files, they need to be
+For BigPicture to be able to read the uploaded files, they need to be
 encrypted with the correct public key. This key can be downloaded with
 the following command:
 
@@ -250,7 +250,7 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
 
 ## Move files from Bianca {#move-files-from-bianca}
 
-1.  Move encrypted files to the wharf for upload to BigPicture Sweden
+1.  Move encrypted files to the wharf for upload to BigPicture
 
     On Bianca, move the encrypted files to your wharf directory:
 
@@ -424,9 +424,9 @@ checkLogin();
     ```
     :::
 
-## Notify BigPicture Sweden {#notify-bigpicture-sweden}
+## Notify us {#notify-us}
 
-Once your submission is completed, please don't forget to notify us by sending an email to [BigPicture Sweden Helpdesk](mailto:{{< var email.helpdesk >}}). The email should contain
+Once your submission is completed, please don't forget to notify us by [sending an email](mailto:{{< var email.helpdesk >}}). The email should contain
 
 - Name of the uploader 
 - Name of the dataset 

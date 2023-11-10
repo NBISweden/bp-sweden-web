@@ -3,11 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: BigPicture Sweden
+  title: BigPicture
   favicon: favicon.ico
   description: >
-    A central repository of digital pathology slides from Swedish biomedical research projects to boost the development of artificial intelligence
-  image: images/bp-sweden-logo.png
+    A central repository of digital pathology slides from biomedical research projects to boost the development of artificial intelligence
+  image: images/bp-logo.png
   page-footer:
     background: light
     left:
@@ -23,8 +23,8 @@ website:
   page-navigation: true
   navbar:
     title: false
-    logo: images/bp-sweden-logo-one-line.png
-    logo-alt: BigPicture Sweden
+    logo: images/bp-logo-one-line.png
+    logo-alt: BigPicture
     background: light
     collapse-below: lg
     pinned: true
@@ -44,7 +44,6 @@ website:
         - submission/index.qmd
         - section: Preparation guide
           contents:
-            - submission/pre-submission-checklist.qmd
             - submission/preparing-data.qmd
 
         - section: Submission guide
