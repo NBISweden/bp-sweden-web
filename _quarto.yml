@@ -47,10 +47,7 @@ website:
         - section: Preparation guide
           contents:
             - submission/pre-submission-checklist.qmd
-            - submission/is-bp-sweden-the-right-archive.qmd
             - submission/preparing-data.qmd
-            - submission/complying-with-gdpr.qmd
-            - submission/ethical-approval.qmd
 
         - section: Submission guide
           contents:
