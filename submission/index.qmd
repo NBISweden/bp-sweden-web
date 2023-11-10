@@ -3,21 +3,4 @@ title: Submission overview
 ---
 
 Welcome to the general guide for BigPicture submission. Please take a
-look at preparation instructions before you create a submission.
-
-::: {.grid}
-
-::: {.g-col-6}
-### Prepare for a submission
-
-Find out if BigPicture is suitable for your data and make sure that you have everything you need to succeed with your submission.
-
-:::
-
-::: {.g-col-6}
-### Start a new submission
-
-Get started with your submission by following the [submission guide](uploading-data.qmd)  
-:::
-
-:::
+look at the [preparation guide](preparation-guide.qmd) before you create a submission.
