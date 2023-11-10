@@ -69,7 +69,6 @@ website:
         - about/our-team.qmd
         - about/news.qmd
         - about/contact-us.qmd
-        - about/terms-of-use.qmd
         - about/privacy-notice.qmd
 
 format:
