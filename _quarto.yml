@@ -33,8 +33,6 @@ website:
         text: Home
       - href: submission/index.qmd
         text: Submission
-      - href: about/index.qmd
-        text: About
   
   sidebar:
     - id: submit
@@ -52,21 +50,6 @@ website:
         - section: Submission guide
           contents:
             - submission/uploading-data.qmd
-
-
-    - id: about
-      title: About
-      style: floating
-      collapse-level: 2
-      align: left
-      contents:
-        - href: about/index.qmd
-          text: About
-        - about/bp.qmd
-        - about/our-team.qmd
-        - about/news.qmd
-        - about/contact-us.qmd
-        - about/privacy-notice.qmd
 
 format:
   html:
