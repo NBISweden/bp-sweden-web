@@ -55,4 +55,4 @@ The next step is to validate the decrypted files. This can be done using calcula
 sha256sum -c checksums_list.sha256
 ```
 
-In the end, you must reply to BigPicture-SE helpback to confirm successful download and decryption.
+In the end, please [email us](mailto:{{< var email.helpdesk >}}) to confirm successful download and decryption.

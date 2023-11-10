@@ -33,6 +33,8 @@ website:
         text: Home
       - href: submission/index.qmd
         text: Submission
+      - href: download/downloading-data.qmd
+        text: Download
   
   sidebar:
     - id: submit
@@ -44,6 +46,14 @@ website:
         - submission/index.qmd
         - submission/preparation-guide.qmd
         - submission/submission-guide.qmd
+    
+    - id: access
+      title: Access
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - download/downloading-data.qmd
 
 format:
   html:
