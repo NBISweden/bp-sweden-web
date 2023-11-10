@@ -1,0 +1,311 @@
+---
+title: Submission guide 
+---
+
+This guide contains instructions on how to upload data to BigPicture.
+We will take you through the process step by step. 
+
+1.  [Install the sda-cli tool](#install-the-sda-cli-tool)
+2.  [Download the encryption key](#download-the-encryption-key)
+3.  [Encrypt the files](#encrypt-the-files)
+4.  [Submit your files](#submit-your-files)
+5.  [Notify us](#notify-us)
+
+## Install the sda-cli tool {#install-the-sda-cli-tool}
+
+::: callout-note
+This guide expects you to perform the following steps on the system
+where you keep the data you intend to encrypt and submit.
+:::
+
+::: {.panel-tabset group="language"}
+### Linux
+
+1.  Download the `sda-cli` executable that matches your system from the
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+
+    To for example download the x86 executable, type the following on
+    the command line:
+
+    ``` bash
+    wget https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
+    ```
+
+2.  Extract the binary by using the `tar` command:
+
+    ``` bash
+    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
+    ```
+
+    The `sda-cli` executable should now be in the same directory as the
+    downloaded file.
+
+### Mac
+
+1.  Download the `sda-cli` executable that matches your system from the
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+
+    To for example download the x86 executable, type the following on
+    the command line:
+
+    ``` bash
+    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Darwin_x86_64.tar.gz
+    ```
+
+2.  Extract the binary by using the `tar` command:
+
+    ``` bash
+    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Darwin_x86_64.tar.gz
+    ```
+
+    The `sda-cli` executable should now be in the same directory as the
+    downloaded file.
+
+### Windows
+
+1.  Download the `sda-cli` executable that matches your system from the
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+
+    To for example download the x86 executable, type the following on
+    the command line (should work using the Windows command promt):
+
+    ``` bash
+    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Windows_x86_64.zip
+    ```
+
+2.  Extract the binary by using the `tar` command:
+
+    ``` bash
+    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Windows_x86_64.zip
+    ```
+
+    The `sda-cli` executable should now be in the same directory as the
+    downloaded file.
+:::
+
+::: callout-note
+User documentation for `sda-cli` is available in the [GitHub
+repository](https://github.com/NBISweden/sda-cli). This guide should
+however include the information needed to encrypt and upload data to
+BigPicture.
+:::
+
+## Download the encryption key {#download-the-encryption-key}
+
+For BigPicture to be able to read the uploaded files, they need to be
+encrypted with the correct public key. This key can be downloaded with
+the following command:
+
+::: {.panel-tabset group="language"}
+### Linux
+
+``` bash
+wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
+```
+
+### Mac
+
+``` bash
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
+```
+
+### Windows
+
+``` bash
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
+```
+:::
+
+## Encrypt the files {#encrypt-the-files}
+
+1.  Encrypt the files
+
+    Now that you have the public key, and the tools you need, you can
+    encrypt the submission files. An encryption key will be created
+    automatically by the tool.
+
+    ::: {.panel-tabset group="language"}
+    ### Linux
+
+    ``` bash
+    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ```
+
+    ### Mac
+
+    ``` bash
+    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ```
+
+
+    ### Windows
+
+    ``` bash
+    sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ```
+    :::
+
+    The tool will automatically create checksum files called:
+
+        checksum_encrypted.md5
+        checksum_encrypted.sha256
+        checksum_unencrypted.md5
+        checksum_unencrypted.sha256
+
+    Make sure to save these files, you will need them during submission.
+
+## Submit your files {#submit-your-files}
+
+Once your files are encrypted, you are ready to start uploading them.
+
+```{=html}
+<!-- This code checks for login parameters and finishes cors login if they are
+     present
+-->
+```
+```{ojs}
+//| echo: false
+//| output: true
+params = new URLSearchParams(document.location.href.split('?')[1])
+
+formatConf = (data) => {
+    let conf = ""
+    for (const key in data) {
+        conf += `${key} = ${data[key]}\n`
+    }
+    return conf
+}
+
+checkLogin = () => {
+    if (params.has("code") && params.has("state")) {
+        fetch(`{{< env LOGIN_URL >}}/cors_login?${params.toString()}`, {credentials: 'include'})
+            .then(data => data.json())
+            .then(r => {
+               let s3conf = formatConf(r["S3Conf"])
+
+               let element = document.createElement('a')
+               element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+                                             encodeURIComponent(s3conf))
+               element.setAttribute('download', 's3cmd.conf')
+               element.innerHTML = "download s3conf"
+               element.click()
+            })
+    }
+}
+checkLogin();
+```
+
+1.  Obtain the configuration file
+
+    The `sda-cli` tool requires a configuration file with the relevant
+    settings. You can get the configuration file by [logging in to our
+    service](%7B%7B%3C%20env%20FULL_LOGIN_URI%20%3E%7D%7D).
+
+    ::: callout-note
+    The `sda-cli` tool builds on the s3 technology for storing data. If
+    you choose to not use the provided configuration file, we recommend 
+    setting the multipart chunk size significantly higher than the
+    default 5 Mbyte. It can be set up to 2 Gbytes but values above
+    100 Mbyte will probably have only little effect on the throughput.
+    The following section requires the usage of `[username]` when
+    uploading files. The username refers to the value of the
+    `secret_key` in the downloaded configuration file. Make sure to get
+    it from the configuration file and use it every time the `sda-cli`
+    command is issued.
+    :::
+
+2.  Upload the files
+
+    Files can be uploaded with or without folders. Files can be uploaded
+    individually using:
+
+    ::: {.panel-tabset group="language"}
+    ### Linux
+
+    ``` bash
+    ./sda-cli upload -config <configuration_file> <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    ```
+
+    ### Mac
+
+    ``` bash
+    ./sda-cli upload -config <configuration_file> <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    ```
+
+
+    ### Windows
+
+    ``` bash
+    sda-cli upload -config <configuration_file> <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    ```
+    :::
+
+    The folder structure of the uploaded files will be preserved in the
+    remote archive.
+
+    Many times it might be easier to upload a directory directly though.
+    This can be done with the `-r` flag:
+
+    ::: {.panel-tabset group="language"}
+
+    ### Linux
+
+    ``` bash
+    ./sda-cli upload -config <configuration_file> -r <folder_to_upload>
+    ```
+
+    ### Mac
+
+    ``` bash
+    ./sda-cli upload -config <configuration_file> -r <folder_to_upload>
+    ```
+
+    ### Windows
+
+    ``` bash
+    sda-cli upload -config <configuration_file> -r <folder_to_upload>
+    ```
+    :::
+
+    <!--
+    NOTE: this is an upcoming feature
+    Once the upload is finished, you can verify that the correct files are
+    uploaded, using the `list` command:
+   
+    ```bash
+    ./sda-cli list -config <configuration_file> <upload_folder>
+    ```
+    You should now be able to see the file and potentially others stored in
+    `<upload_folder>`. 
+    -->
+
+    More information on the capabilites of the `sda-cli` can be found
+    using the tool's built-in help:
+
+    ::: {.panel-tabset group="language"}
+
+    ### Linux
+    
+    ``` bash
+    ./sda-cli help
+    ```
+    
+    ### Mac
+    
+    ``` bash
+    ./sda-cli help
+    ```
+    
+    ### Windows
+    
+    ``` bash
+    sda-cli help
+    ```
+    :::
+
+## Notify us {#notify-us}
+
+Once your submission is completed, please don't forget to notify us by [sending an email](mailto:{{< var email.helpdesk >}}). The email should contain
+
+- Name of the uploader 
+- Name of the dataset 
