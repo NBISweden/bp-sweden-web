@@ -45,13 +45,5 @@ projects.]{style="font-size:larger;"}</p>
 
 Bigpicture is a public-private partnership funded by the EU Innovative Medicines Initiative (IMI) bringing together academic institutions, small- and medium-sized enterprises, public organisations, pharmaceutical companies, and a large network of partners. 
 
-[Learn more »](about/bp.qmd)
 :::
 :::
-
-## News
-
-::: {#latest-news}
-:::
-
-
