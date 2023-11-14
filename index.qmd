@@ -14,11 +14,6 @@ listing:
   max-items: 3
 ---
 
-::: {.callout-important appearance="simple"}
-We are still working to become operational. The next status update will be
-published on this website in December.
-:::
-
 ::: grid
 ::: g-col-6
 <p>[Secure archiving and sharing of digital pathology slides
