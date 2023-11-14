@@ -5,7 +5,7 @@ Before you submit your data, please make sure
 
 1. The root folder of the submission should actually be the dataset folder which includes the images folder and the metadata folder. See the example of structure folder below:
 ```
-    ├── Dataset_whatever
+    ├── Dataset_name
     |   ├── metadata
     |   |   ├── images.xml
     |   |   ├── dataset.xml
