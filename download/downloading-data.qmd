@@ -29,7 +29,7 @@ Send an [email to the admins](mailto:{{< var email.helpdesk >}}) notifying them 
 
 ## Receive email from admins
 
-Upon publicizing encrypted data in a public folder in the S3 outbox bucket, admins will send an email to the requester. This email will contain a URL that leads to a text file named `urls_list.txt`, which includes URLs of all requested datasets.
+Upon publicizing the encrypted data in a public folder, admins will send an email to the requester. This email will contain a URL that leads to a text file named `urls_list.txt`, which includes URLs of all requested datasets.
 
 The number of URLs will be equal to the number of datasets requested for download.
 
