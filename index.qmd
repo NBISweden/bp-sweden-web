@@ -16,9 +16,7 @@ listing:
 
 ::: grid
 ::: g-col-6
-<p>[Secure archiving and sharing of digital pathology slides
-resulting from biomedical research
-projects.]{style="font-size:larger;"}</p>
+<p>[Secure archiving and sharing of digital pathology slides.]{style="font-size:larger;"}</p>
 
 <p>[Learn more »](https://bigpicture.eu){style="font-size:larger;"}</p>
 :::
