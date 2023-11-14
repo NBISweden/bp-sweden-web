@@ -28,7 +28,7 @@ where you keep the data you intend to encrypt and submit.
     the command line:
 
     ``` bash
-    wget https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
+    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
     ```
 
 2.  Extract the binary by using the `tar` command:
@@ -100,7 +100,7 @@ the following command:
 ### Linux
 
 ``` bash
-wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
 ```
 
 ### Mac
