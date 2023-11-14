@@ -28,7 +28,7 @@ Before you submit your data, please make sure
 `images.xml.c4gh`, `image1.dcm.c4gh` etc
 3. The metadata is stored in a folder called `metadata` under the root of the submission folder.
 4. The only files that may exist in the `metadata` folder are the following: `dac.xml`, `dataset.xml`, `images.xml`, `observations.xml`, `observers.xml`, `policy.xml`, `samples.xml` and `study.xml`.
-5. The file `images.xml.c4gh` should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:
+5. The file `images.xml` should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:
 ```
     <FILES>
         <FILE filename="IMG_001/image1.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
