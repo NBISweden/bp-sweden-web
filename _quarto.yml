@@ -10,13 +10,8 @@ website:
   image: images/bp-logo.png
   page-footer:
     background: light
-    left:
+    center:
       - text: Hosted by NBIS and Uppsala University
-    center: 
-      - about/terms-of-use.qmd
-      - about/privacy-notice.qmd
-    right:
-      - href: about/contact-us.qmd
   cookie-consent:
     type: express
 
