@@ -27,18 +27,3 @@ projects.]{style="font-size:larger;"}</p>
 ![](/images/bp-logo.png)
 :::
 :::
-
----
-
-::: grid
-::: g-col-3
-![](/images/network.svg){fig-align="right" width=80%}
-:::
-
-::: g-col-9
-### One node in a growing network
-
-Bigpicture is a public-private partnership funded by the EU Innovative Medicines Initiative (IMI) bringing together academic institutions, small- and medium-sized enterprises, public organisations, pharmaceutical companies, and a large network of partners. 
-
-:::
-:::
