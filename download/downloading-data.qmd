@@ -35,18 +35,11 @@ The number of URLs will be equal to the number of datasets requested for downloa
 
 ## Download dataset
 
-Steps for downloading the data:
-
-* Download the `urls_list.txt` file:
-
-```bash
-curl -OL <url-included-in-the-email>
-```
-
-* Use `sda-cli` to retrieve all dataset files:
+For downloading the data there only two elements needed: `sda-cli` and the URL for the `urls_list.txt` which was provided
+to the requester in the previous step. The requester then can initiate the download of all the files by executing the following command:
 
 ```bash
-./sda-cli download <path-to-urls_list.txt>
+./sda-cli download <url-for-the-urls_list.txt>
 ```
 
 ## Decrypt the files
