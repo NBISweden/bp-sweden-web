@@ -1,0 +1,73 @@
+---
+title: Download guide
+---
+
+This section provides guidelines on the necessary steps to download data from BigPicture.
+
+## Install the sda-cli tool
+Follow the guidelines [here](../submission/submission-guide.qmd#install-the-sda-cli-tool) to install the sda-cli tool.
+
+## Generate the public and secret key
+The initial step involves creating a crypt4gh keypair using the sda-cli:
+
+```bash
+./sda-cli createKey <keypair_name>
+```
+
+where `<keypair_name>` is the base name of the key files. The above command will create two keys files named
+`keypair_name.pub.pem` and `keypair_name.sec.pem`. The public key (`pub`) will be sent to the admins
+(see the next step) and will be used by them for the encryption of the files, while the private one
+(`sec`) will be used by the requester for decrypting the files after downloading.
+
+
+## Notify admins via email
+
+Send an [email to the admins](mailto:{{< var email.helpdesk >}}) notifying them that you want to download files from BigPicture. Include the following information in the email:
+
+* The dataset that the requester wants to download
+* The crypt4gh public key (`keypair_name.pub.pem`) generated in the previous step
+
+## Receive email from admins
+
+Upon publicizing the encrypted data in a public folder, admins will send an email to the requester. This email will contain a URL that leads to a text file named `urls_list.txt`, which includes URLs of all requested datasets.
+
+The number of URLs will be equal to the number of datasets requested for download.
+
+## Download dataset
+
+Steps for downloading the data:
+
+* Download the `urls_list.txt` file:
+
+```bash
+curl -OL <url-included-in-the-email>
+```
+
+* Use `sda-cli` to retrieve all dataset files:
+
+```bash
+./sda-cli download <path-to-urls_list.txt>
+```
+
+## Decrypt the files
+
+The downloaded dataset files can be decrypted by using the `sda-cli`:
+
+```bash
+./sda-cli decrypt -key <keypair_name.sec.pem> <file-path>
+```
+
+Decrypt multiple files by appending file paths:
+
+```bash
+./sda-cli decrypt -key <keypair_name.sec.pem> <file-path-1> <file-path-2> <file-path-3> ...
+```
+
+## Validating decrypted files
+
+During the publicize process, a file named `checksums_list.sha256` is generated, containing `sha256` checksums of all unencrypted files. Use this file to validate the correctness of downloaded files and ensure no issues occurred during the download.
+
+## Notify us
+
+Finally, send an [email to the admins](mailto:{{< var email.helpdesk >}}) to confirm the successful download and decryption or notifying them in case of an error.
+

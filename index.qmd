@@ -1,0 +1,27 @@
+---
+pagetitle: BigPicture
+sidebar: false
+toc: false
+listing:
+  id: latest-news
+  contents: "articles/*.qmd"
+  sort: "date desc"
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  type: default
+  fields: [author, date, title, description]
+  max-items: 3
+---
+
+::: grid
+::: g-col-6
+<p>[Secure archiving and sharing of digital pathology slides.]{style="font-size:larger;"}</p>
+
+<p>[Learn more »](https://bigpicture.eu){style="font-size:larger;"}</p>
+:::
+
+::: g-col-6
+![](/images/bp-logo.png)
+:::
+:::

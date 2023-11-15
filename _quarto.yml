@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: BigPicture
+  favicon: favicon.ico
+  description: >
+    A central repository of digital pathology slides from biomedical research projects to boost the development of artificial intelligence
+  image: images/bp-logo.png
+  page-footer:
+    background: light
+    center:
+      - text: Hosted by NBIS and Uppsala University
+  cookie-consent:
+    type: express
+
+  page-navigation: true
+  navbar:
+    title: false
+    logo: images/bp-logo-one-line.png
+    logo-alt: BigPicture
+    background: light
+    collapse-below: lg
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: submission/index.qmd
+        text: Submission
+      - href: download/downloading-data.qmd
+        text: Download
+  
+  sidebar:
+    - id: submit
+      title: Submission
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - submission/index.qmd
+        - submission/preparation-guide.qmd
+        - submission/submission-guide.qmd
+    
+    - id: access
+      title: Access
+      style: floating
+      collapse-level: 2
+      align: left
+      contents:
+        - download/downloading-data.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    code-copy: true
+    code-overflow: wrap
+    toc: true
