@@ -31,10 +31,43 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: submission/index.qmd
-        text: Submission
-      - href: download/downloading-data.qmd
-        text: Download
+      - text: Datasets
+        menu:
+          - href: https://nbisweden.github.io/datasets.bp.nbis.se/
+            text: Browse
+          - href: datasets/search/index.qmd
+            text: Search
+          - href: datasets/download/downloading-data.qmd
+            text: Download
+          - href: datasets/submission/index.qmd
+            text: Submission
+          
+      - text: Algorithms
+        menu:
+          - href: algorithms/browse/index.qmd
+            text: Browse
+          - href: algorithms/try/index.qmd
+            text: Try
+          - href: algorithms/benchmark/index.qmd
+            text: Benchmark
+          - href: algorithms/submit/index.qmd
+            text: Submit
+
+
+      - text: Compute
+        menu:
+          - href: compute/analysis/index.qmd
+            text: Analysis
+          - href: compute/ai-training/index.qmd
+            text: AI Training
+
+      - text: Software
+        href: https://cytomine.bp.nbis.se/#/
+      
+
+      - text: Metrics
+        href: https://bigpicture.eu/
+
   
   sidebar:
     - id: submit
@@ -43,9 +76,9 @@ website:
       collapse-level: 2
       align: left
       contents:
-        - submission/index.qmd
-        - submission/preparation-guide.qmd
-        - submission/submission-guide.qmd
+        - datasets/submission/index.qmd
+        - datasets/submission/preparation-guide.qmd
+        - datasets/submission/submission-guide.qmd
     
     - id: access
       title: Access

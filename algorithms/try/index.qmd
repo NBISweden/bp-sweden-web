@@ -1,0 +1,4 @@
+---
+title: Service for indirect access to AI algorithm
+---
+
