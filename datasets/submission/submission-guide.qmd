@@ -28,7 +28,7 @@ where you keep the data you intend to encrypt and submit.
     the command line:
 
     ``` bash
-    wget https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
+    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
     ```
 
 2.  Extract the binary by using the `tar` command:
@@ -100,7 +100,7 @@ the following command:
 ### Linux
 
 ``` bash
-wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
+curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
 ```
 
 ### Mac
@@ -158,61 +158,11 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
 
 Once your files are encrypted, you are ready to start uploading them.
 
-```{=html}
-<!-- This code checks for login parameters and finishes cors login if they are
-     present
--->
-```
-```{ojs}
-//| echo: false
-//| output: true
-params = new URLSearchParams(document.location.href.split('?')[1])
-
-formatConf = (data) => {
-    let conf = ""
-    for (const key in data) {
-        conf += `${key} = ${data[key]}\n`
-    }
-    return conf
-}
-
-checkLogin = () => {
-    if (params.has("code") && params.has("state")) {
-        fetch(`{{< env LOGIN_URL >}}/cors_login?${params.toString()}`, {credentials: 'include'})
-            .then(data => data.json())
-            .then(r => {
-               let s3conf = formatConf(r["S3Conf"])
-
-               let element = document.createElement('a')
-               element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
-                                             encodeURIComponent(s3conf))
-               element.setAttribute('download', 's3cmd.conf')
-               element.innerHTML = "download s3conf"
-               element.click()
-            })
-    }
-}
-checkLogin();
-```
-
 1.  Obtain the configuration file
 
     The `sda-cli` tool requires a configuration file with the relevant
     settings. You can get the configuration file by [logging in to our
     service](%7B%7B%3C%20env%20FULL_LOGIN_URI%20%3E%7D%7D).
-
-    ::: callout-note
-    The `sda-cli` tool builds on the s3 technology for storing data. If
-    you choose to not use the provided configuration file, we recommend 
-    setting the multipart chunk size significantly higher than the
-    default 5 Mbyte. It can be set up to 2 Gbytes but values above
-    100 Mbyte will probably have only little effect on the throughput.
-    The following section requires the usage of `[username]` when
-    uploading files. The username refers to the value of the
-    `secret_key` in the downloaded configuration file. Make sure to get
-    it from the configuration file and use it every time the `sda-cli`
-    command is issued.
-    :::
 
 2.  Upload the files
 
