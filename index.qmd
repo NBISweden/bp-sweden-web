@@ -30,8 +30,7 @@ listing:
 
 
 
-
-#### This webpage links relevant entry points of interest for different usage, namely:
+This webpage links relevant entry points of interest for different usage.
 
 ### Datasets
   
@@ -39,9 +38,9 @@ Browse - Landing pages website root
 
 Search - Federated Discovery search service interface
 
-[Download - Data download request service (ready) ](datasets/download/downloading-data.html){style=""}
+[Download - Data download request service ](datasets/download/downloading-data.html){style=""}
 
-[Submit - Data submission instructions and entry points (ready) ](datasets/submission/){style=""}
+[Submit - Data submission instructions and entry points ](datasets/submission/){style=""}
 
 ### Algorithms (upcoming)
 Browse - AI algorithm register / download service
@@ -56,8 +55,10 @@ Submit - Algorithm submission entry points
 
 Analysis - Request Services for on-platform data use such as Cytomine
 
-AI training - Guidance on how to procure on-platform GPU HPC resources (if needed)
+AI training - Guidance on how to procure on-platform GPU HPC resources
 
-### Software  (link to Cytomine)
+### Software  
+[http://cytomine.org](http://cytomine.org)
 
-### Metrics (public usage metrics website, bigpicture.eu for now)
+### Metrics 
+[http://bigpicture.eu](http://bigpicture.eu)
