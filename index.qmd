@@ -19,11 +19,11 @@ listing:
 
 
 ::: grid
-::: g-col-6
-### [A central repository of digital pathology slides to boost the development of artificial intelligence]{style="font-size:larger;"}
+::: g-col-7
+### A central repository of digital pathology slides to boost the development of artificial intelligence
 <p>[Learn more »](https://bigpicture.eu){style="font-size:larger;"}</p>
 :::
-::: g-col-6
+::: g-col-5
 ![](/images/bp-logo.png)
 :::
 :::
@@ -31,23 +31,26 @@ listing:
 
 
 
-## This webpage links relevant entry points of interest for different usage, namely:
+#### This webpage links relevant entry points of interest for different usage, namely:
 
 ### Datasets
   
-#### Browse - Landing pages website root
-  
-#### Search - Federated Discovery search service interface
-  
-#### [Download - Data download request service (ready) ](datasets/download/downloading-data.html){style=""}
-  
-#### [Submit - Data submission instructions and entry points (ready) ](datasets/submission/){style=""}
+Browse - Landing pages website root
+
+Search - Federated Discovery search service interface
+
+[Download - Data download request service (ready) ](datasets/download/downloading-data.html){style=""}
+
+[Submit - Data submission instructions and entry points (ready) ](datasets/submission/){style=""}
 
 ### Algorithms (upcoming)
-#### Browse - AI algorithm register / download service
-####  Try - Service for indirect access to AI algorithm
-####  Benchmark - Service for indirect access to datasets
-####  Submit - Algorithm submission entry points
+Browse - AI algorithm register / download service
+
+Try - Service for indirect access to AI algorithm
+
+Benchmark - Service for indirect access to datasets
+
+Submit - Algorithm submission entry points
 
 ### Compute (upcoming)
 
