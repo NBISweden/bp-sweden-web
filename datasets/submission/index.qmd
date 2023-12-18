@@ -4,3 +4,7 @@ title: Submission overview
 
 Welcome to the general guide for BigPicture submission. Please take a
 look at the [preparation guide](preparation-guide.qmd) before you create a submission.
+
+When you are ready, please follow the [submission guide.](submission-guide.qmd)
+
+For any questions regarding data submission, please [email us](mailto:{{< var email.helpdesk >}}).

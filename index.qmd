@@ -14,14 +14,51 @@ listing:
   max-items: 3
 ---
 
-::: grid
-::: g-col-6
-<p>[Secure archiving and sharing of digital pathology slides.]{style="font-size:larger;"}</p>
 
+
+
+
+::: grid
+::: g-col-7
+### A central repository of digital pathology slides to boost the development of artificial intelligence
 <p>[Learn more »](https://bigpicture.eu){style="font-size:larger;"}</p>
 :::
-
-::: g-col-6
+::: g-col-5
 ![](/images/bp-logo.png)
 :::
 :::
+
+
+
+This webpage links relevant entry points of interest for different usage.
+
+### Datasets
+  
+Browse - Landing pages website root
+
+Search - Federated Discovery search service interface
+
+[Download - Data download request service ](datasets/download/downloading-data.html){style=""}
+
+[Submit - Data submission instructions and entry points ](datasets/submission/){style=""}
+
+### Algorithms (upcoming)
+Browse - AI algorithm register / download service
+
+Try - Service for indirect access to AI algorithm
+
+Benchmark - Service for indirect access to datasets
+
+Submit - Algorithm submission entry points
+
+### Compute (upcoming)
+
+Analysis - Request Services for on-platform data use such as Cytomine
+
+AI training - Guidance on how to procure on-platform GPU HPC resources
+
+### Software  
+[http://cytomine.org](http://cytomine.org)
+
+### Metrics 
+[http://bigpicture.eu](http://bigpicture.eu)
