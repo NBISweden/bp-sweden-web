@@ -48,14 +48,13 @@ Before you submit your data, please make sure
 ```
 
 2. All the files should be encrypted with crypt4gh and the extensions must be `c4gh`, e.g:
-`images.xml.c4gh`, `image1.dcm.c4gh` etc
-3. The metadata is stored in a folder called `metadata` under the root of the submission folder.
-4. The only files that may exist in the `metadata` folder are the following: `dac.xml`, `dataset.xml`, `images.xml`, `observations.xml`, `observers.xml`, `policy.xml`, `samples.xml` and `study.xml`.
-5. The file `images.xml` should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:
+`image.xml.c4gh`, `image1.dcm.c4gh` etc
+3. The metadata should be stored in two different subfolders: `METADATA` and `PRIVATE`.
+4. The only files that may exist in the `METADATA` folder are the following: `dataset.xml`, `image.xml`, `observation.xml`, `observer.xml` (optional), `policy.xml`, `sample.xml`, `annotation.xml` (optional) and `staining.xml`.
+5. The only files that may exist in the `PRIVATE` folder are the following: `dac.xml` and `submission.xml`.
+6. The file `image.xml` should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:
 ```
     <FILES>
-        <FILE filename="IMG_001/image1.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
-        <FILE filename="IMG_001/image2.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
-        <FILE filename="IMG_001/image3.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
+        <FILE filename="IMAGES/IMAGE_{IDENTIFIER}/*.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
     </FILES>
 ```
