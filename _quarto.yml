@@ -10,10 +10,8 @@ website:
   image: images/bp-logo.png
   page-footer:
     background: light
-    center:
-      - text: Hosted by NBIS and Uppsala University
   cookie-consent:
-    type: express
+    type: false
 
   page-navigation: true
   navbar:
