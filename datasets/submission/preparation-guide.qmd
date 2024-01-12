@@ -5,7 +5,7 @@ Before you submit your data, please make sure
 
 1. The root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:
 ```
-    DATASET_{IDENTIFIER}
+    DATASET_{IDENTIFIER}*
     |--- METADATA
     |    |--- dataset.xml (contains: Dataset)
     |    |--- policy.xml (contains: Policy)
@@ -16,9 +16,9 @@ Before you submit your data, please make sure
     |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)
     |    |--- staining.xml (contains: Stainings)
     |--- IMAGES
-    |    |--- IMAGE_{IDENTIFIER}*
+    |    |--- IMAGE_{IDENTIFIER}**
     |    |    |--- *.dcm files of an Image
-    |    |--- IMAGE_{IDENTIFIER}*
+    |    |--- IMAGE_{IDENTIFIER}**
     |    |    |--- *.dcm files of an Image
     |--- ANNOTATIONS+
     |    |--- *.geojson
