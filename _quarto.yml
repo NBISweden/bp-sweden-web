@@ -10,8 +10,6 @@ website:
   image: images/bp-logo.png
   page-footer:
     background: light
-  cookie-consent:
-    type: false
 
   page-navigation: true
   navbar:
