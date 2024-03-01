@@ -53,11 +53,11 @@ website:
             text: AI Training
 
       - text: Software
-        href: https://cytomine.bp.nbis.se/#/
+        href: https://doc.cytomine.com#/
       
 
       - text: Metrics
-        href: https://bigpicture.eu/
+        href: metrics/index.qmd
 
   
   sidebar:
