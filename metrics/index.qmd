@@ -37,17 +37,17 @@ output:
       <td>590</td>
     </tr>
     <tr>
-      <td>Deciphex</td>
+      <td>Non-Clinical</td>
       <td>-</td>
       <td>1532</td>
     </tr>
     <tr>
-      <td>Deciphex</td>
+      <td>Non-Clinical</td>
       <td>-</td>
       <td>971</td>
     </tr>
     <tr>
-      <td>Deciphex</td>
+      <td>Non-Clinical</td>
       <td>-</td>
       <td>616</td>
     </tr>
