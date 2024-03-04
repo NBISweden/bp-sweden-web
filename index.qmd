@@ -44,7 +44,7 @@ Submit - Algorithm submission entry points
 AI training - Guidance on how to procure on-platform GPU HPC resources
 
 ### Software  
-[http://cytomine.org](http://cytomine.org)
+[Cytomine documentation](https://cytomine.org)
 
 ### Metrics 
-[http://bigpicture.eu](http://bigpicture.eu)
+[Numbers from the repository](https://bp.nbis.se/metrics/)
