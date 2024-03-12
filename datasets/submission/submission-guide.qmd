@@ -162,7 +162,7 @@ Once your files are encrypted, you are ready to start uploading them.
 
     The `sda-cli` tool requires a configuration file with the relevant
     settings. You can get the configuration file by [logging in to our
-    service](%7B%7B%3C%20env%20FULL_LOGIN_URI%20%3E%7D%7D).
+    service](https://login.bp.nbis.se/).
 
 2.  Upload the files
 
