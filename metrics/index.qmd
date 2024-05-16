@@ -10,6 +10,48 @@ output:
 ---
 
 ##  Row {height=50%}
+::: {.card title="Progress Bar"}
+```{=html}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+    <table>
+        <tr>
+            <td>Estimated total data to upload</td>
+            <td>4 672 590 GB</td>
+        </tr>
+        <tr>
+            <td>Average slide size</td>
+            <td>1 594 MB</td>
+        </tr>
+        <tr>
+            <td>Number of Slides uploaded / 3M goal</td>
+            <td>3 857 / 3 000 000</td>
+        </tr>
+        <tr>
+            <td>Approximate missing data to the goal</td>
+            <td>4 666 587 GB</td>
+        </tr>
+    </table>
+    <script>
+        const totalSlides = 3000000;
+        const currentSlides = 38570;
+        const progressPercentage = (currentSlides / totalSlides) * 100;
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = progressPercentage + '%';
+        progressBar.textContent = progressPercentage.toFixed(2) + '%';
+    </script>
+</body>
+```
+:::
+
+
+##  Row {height=50%}
 ::: {.card title="Datasets"}
 ```{=html}
 <table>
@@ -156,6 +198,23 @@ output:
 :::
 
 <style>
+  .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 25px;
+            padding: 5px;
+            margin: 20px 0;
+        }
+  .progress-bar {
+      width: 0;
+      height: 30px;
+      background-color: #4caf50;
+      border-radius: 25px;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      transition: width 0.5s;
+  }
   .dashboard {
     display: flex;
     justify-content: space-around;
