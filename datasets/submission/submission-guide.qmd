@@ -22,19 +22,13 @@ where you keep the data you intend to encrypt and submit.
 ### Linux
 
 1.  Download the `sda-cli` executable that matches your system from the
-    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases/latest).
 
-    To for example download the x86 executable, type the following on
-    the command line:
-
-    ``` bash
-    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
-    ```
 
 2.  Extract the binary by using the `tar` command:
 
     ``` bash
-    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Linux_x86_64.tar.gz
+    tar -xvzf sda-cli_.vX_Linux_x86_64.tar.gz
     ```
 
     The `sda-cli` executable should now be in the same directory as the
@@ -43,19 +37,13 @@ where you keep the data you intend to encrypt and submit.
 ### Mac
 
 1.  Download the `sda-cli` executable that matches your system from the
-    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases/latest).
 
-    To for example download the x86 executable, type the following on
-    the command line:
-
-    ``` bash
-    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Darwin_x86_64.tar.gz
-    ```
 
 2.  Extract the binary by using the `tar` command:
 
     ``` bash
-    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Darwin_x86_64.tar.gz
+    tar -xvzf sda-cli_.vX_Darwin_x86_64.tar.gz
     ```
 
     The `sda-cli` executable should now be in the same directory as the
@@ -64,19 +52,13 @@ where you keep the data you intend to encrypt and submit.
 ### Windows
 
 1.  Download the `sda-cli` executable that matches your system from the
-    [GitHub repository](https://github.com/NBISweden/sda-cli/releases).
+    [GitHub repository](https://github.com/NBISweden/sda-cli/releases/latest).
 
-    To for example download the x86 executable, type the following on
-    the command line (should work using the Windows command promt):
-
-    ``` bash
-    curl -OL https://github.com/NBISweden/sda-cli/releases/download/v{{< var sda-cli-version >}}/sda-cli_.{{< var sda-cli-version >}}_Windows_x86_64.zip
-    ```
 
 2.  Extract the binary by using the `tar` command:
 
     ``` bash
-    tar -xvzf sda-cli_.{{< var sda-cli-version >}}_Windows_x86_64.zip
+    tar -xvzf sda-cli_.vX_Windows_x86_64.zip
     ```
 
     The `sda-cli` executable should now be in the same directory as the
