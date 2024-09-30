@@ -21,8 +21,6 @@ New service for accessing datasets in the BigPicture repository. Now it’s not 
 
 The download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.
 
-The visas have to be part of the access token.
-
 ### SDA CLI
 
 It is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).
