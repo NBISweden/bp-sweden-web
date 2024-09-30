@@ -17,9 +17,7 @@ include-in-header:
 :::
 :::
 
-::: alert alert-info
-Upcomming maintenence window on the 30th of September, for information about the updates please see [here](maintenence_window.qmd)
-:::
+::: {.alert .alert-info} Upcoming maintenance window on the 29th of September. For information about the updates, please see [here](maintenence_window.qmd). :::
 
 
 This webpage links relevant entry points of interest for different usage.
