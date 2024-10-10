@@ -8,24 +8,6 @@ include-in-header:
 ---
 
 
-::: {.alert .alert-warning}
-::: { .grid .align-items-center }
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-::: g-col-10
-::: text-center
-### Maintenence Window
-:::
-Upcoming maintenance window on the 30th of September. For information about the updates, please see [here](maintenence_window.qmd).
-:::
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-:::
-
-:::
-
 ::: grid
 ::: g-col-7
 ### A central repository of digital pathology slides to boost the development of artificial intelligence
