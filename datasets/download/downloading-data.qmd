@@ -4,10 +4,21 @@ title: Download guide
 
 This section provides guidelines on the necessary steps to download data from BigPicture.
 
-## Install the sda-cli tool
+## Get access to a dataset
+The first step for downloading data from Big Picture is to get access to the dataset the user is interested in. This can be done by visiting REMS [here](https://bp-rems.sd.csc.fi/),
+log in, choose the datasets of interest and add them to the cart. After that, the user can apply for access, fill in the form and send the application.
+The user needs to wait for approval from the data access committee (DAC) and since it is approved the user can download the datasets.
+
+## Preparation for downloading data
+
+### Download configuration file
+Before downloading the data, the user needs to download the configuration file by logging in [here](https://login.bp.nbis.se/).
+Follow the dialogue to get authenticated and then click on `Download inbox s3cmd credentials` to download the configuration file named s3cmd.conf.
+
+### Install the sda-cli tool
 Follow the guidelines [here](../submission/submission-guide.qmd#install-the-sda-cli-tool) to install the sda-cli tool.
 
-## Generate the public and secret key
+### Generate the public and secret key (**ONLY FOR ENCRYPTED DATA**)
 The initial step involves creating a crypt4gh keypair using the sda-cli:
 
 ```bash
@@ -19,48 +30,19 @@ where `<keypair_name>` is the base name of the key files. The above command will
 (see the next step) and will be used by them for the encryption of the files, while the private one
 (`sec`) will be used by the requester for decrypting the files after downloading.
 
+#TODO: Add the infor for listing the datasets and its files from the sda-cli documantation, the `List datasets and their files` section.
 
-## Notify admins via email
+## Download data
 
-Send an [email to the admins](mailto:{{< var email.helpdesk >}}) notifying them that you want to download files from BigPicture. Include the following information in the email:
+By having access to the datasets, the configuration file and the sda-cli tool, the user can download either decrypted data (in several ways) or encrypted data.:
+- Decrypted files:
+    - using filepaths
+    - using file IDs
+    - recursively downloading all files in a folder
+    - downloading files by providint a text file with the paths of the files to download
+    - download all the files of the dataset
+- Encrypted files:
+    - download specific encrypted files
 
-* The dataset that the requester wants to download
-* The crypt4gh public key (`keypair_name.pub.pem`) generated in the previous step
-
-## Receive email from admins
-
-Upon publicizing the encrypted data in a public folder, admins will send an email to the requester. This email will contain a URL that leads to a text file named `urls_list.txt`, which includes URLs of all requested datasets.
-
-The number of URLs will be equal to the number of datasets requested for download.
-
-## Download dataset
-
-For downloading the data there only two elements needed: `sda-cli` and the URL for the `urls_list.txt` which was provided
-to the requester in the previous step. The requester then can initiate the download of all the files by executing the following command:
-
-```bash
-./sda-cli download <url-for-the-urls_list.txt>
-```
-
-## Decrypt the files
-
-The downloaded dataset files can be decrypted by using the `sda-cli`:
-
-```bash
-./sda-cli decrypt -key <keypair_name.sec.pem> <file-path>
-```
-
-Decrypt multiple files by appending file paths:
-
-```bash
-./sda-cli decrypt -key <keypair_name.sec.pem> <file-path-1> <file-path-2> <file-path-3> ...
-```
-
-## Validating decrypted files
-
-During the publicize process, a file named `checksums_list.sha256` is generated, containing `sha256` checksums of all unencrypted files. Use this file to validate the correctness of downloaded files and ensure no issues occurred during the download.
-
-## Notify us
-
-Finally, send an [email to the admins](mailto:{{< var email.helpdesk >}}) to confirm the successful download and decryption or notifying them in case of an error.
+All the information for downloading files can be found in the sda-cli documentation in the `Download` section [here](https://github.com/NBISweden/sda-cli#download).
 
