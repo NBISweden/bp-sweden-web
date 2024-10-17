@@ -30,7 +30,10 @@ where `<keypair_name>` is the base name of the key files. The above command will
 (see the next step) and will be used by them for the encryption of the files, while the private one
 (`sec`) will be used by the requester for decrypting the files after downloading.
 
-#TODO: Add the infor for listing the datasets and its files from the sda-cli documantation, the `List datasets and their files` section.
+## Check access
+
+After the user has been granted access to the dataset, the user can check the access to the dataset by listing the datasets and their files using the sda-cli.
+This can be done by foolowing the instructions in the sda-cli documentation in the `List datasets and their files` section [here](https://github.com/NBISweden/sda-cli#list-datasets-and-their-files).
 
 ## Download data
 
