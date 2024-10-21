@@ -7,7 +7,7 @@ This section provides guidelines on the necessary steps to download data from Bi
 ## Get access to a dataset
 The first step for downloading data from Big Picture is to get access to the dataset the user is interested in. This can be done by visiting REMS [here](https://bp-rems.sd.csc.fi/),
 log in, choose the datasets of interest and add them to the cart. After that, the user can apply for access, fill in the form and send the application.
-The user needs to wait for approval from the data access committee (DAC) and since it is approved the user can download the datasets.
+The user needs to wait for approval from the data access committee (DAC) and after it is approved the user can download the datasets.
 
 ## Preparation for downloading data
 
@@ -33,7 +33,7 @@ where `<keypair_name>` is the base name of the key files. The above command will
 ## Check access
 
 After the user has been granted access to the dataset, the user can check the access to the dataset by listing the datasets and their files using the sda-cli.
-This can be done by foolowing the instructions in the sda-cli documentation in the `List datasets and their files` section [here](https://github.com/NBISweden/sda-cli#list-datasets-and-their-files).
+This can be done by following the instructions in the sda-cli documentation in the `List datasets and their files` section [here](https://github.com/NBISweden/sda-cli#list-datasets-and-their-files).
 
 ## Download data
 
