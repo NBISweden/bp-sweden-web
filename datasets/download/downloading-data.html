@@ -210,14 +210,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-the-sda-cli-tool" id="toc-install-the-sda-cli-tool" class="nav-link active" data-scroll-target="#install-the-sda-cli-tool">Install the sda-cli tool</a></li>
-  <li><a href="#generate-the-public-and-secret-key" id="toc-generate-the-public-and-secret-key" class="nav-link" data-scroll-target="#generate-the-public-and-secret-key">Generate the public and secret key</a></li>
-  <li><a href="#notify-admins-via-email" id="toc-notify-admins-via-email" class="nav-link" data-scroll-target="#notify-admins-via-email">Notify admins via email</a></li>
-  <li><a href="#receive-email-from-admins" id="toc-receive-email-from-admins" class="nav-link" data-scroll-target="#receive-email-from-admins">Receive email from admins</a></li>
-  <li><a href="#download-dataset" id="toc-download-dataset" class="nav-link" data-scroll-target="#download-dataset">Download dataset</a></li>
-  <li><a href="#decrypt-the-files" id="toc-decrypt-the-files" class="nav-link" data-scroll-target="#decrypt-the-files">Decrypt the files</a></li>
-  <li><a href="#validating-decrypted-files" id="toc-validating-decrypted-files" class="nav-link" data-scroll-target="#validating-decrypted-files">Validating decrypted files</a></li>
-  <li><a href="#notify-us" id="toc-notify-us" class="nav-link" data-scroll-target="#notify-us">Notify us</a></li>
+  <li><a href="#get-access-to-a-dataset" id="toc-get-access-to-a-dataset" class="nav-link active" data-scroll-target="#get-access-to-a-dataset">Get access to a dataset</a></li>
+  <li><a href="#preparation-for-downloading-data" id="toc-preparation-for-downloading-data" class="nav-link" data-scroll-target="#preparation-for-downloading-data">Preparation for downloading data</a>
+  <ul class="collapse">
+  <li><a href="#download-configuration-file" id="toc-download-configuration-file" class="nav-link" data-scroll-target="#download-configuration-file">Download configuration file</a></li>
+  <li><a href="#install-the-sda-cli-tool" id="toc-install-the-sda-cli-tool" class="nav-link" data-scroll-target="#install-the-sda-cli-tool">Install the sda-cli tool</a></li>
+  <li><a href="#generate-the-public-and-secret-key-only-for-encrypted-data" id="toc-generate-the-public-and-secret-key-only-for-encrypted-data" class="nav-link" data-scroll-target="#generate-the-public-and-secret-key-only-for-encrypted-data">Generate the public and secret key (<strong>ONLY FOR ENCRYPTED DATA</strong>)</a></li>
+  </ul></li>
+  <li><a href="#check-access" id="toc-check-access" class="nav-link" data-scroll-target="#check-access">Check access</a></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
   </ul>
 </nav>
     </div>
@@ -244,48 +245,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This section provides guidelines on the necessary steps to download data from BigPicture.</p>
-<section id="install-the-sda-cli-tool" class="level2">
-<h2 class="anchored" data-anchor-id="install-the-sda-cli-tool">Install the sda-cli tool</h2>
+<section id="get-access-to-a-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="get-access-to-a-dataset">Get access to a dataset</h2>
+<p>The first step to download data from Big Picture is to get access to the dataset the user is interested in. This can be done by visiting REMS <a href="https://bp-rems.sd.csc.fi/">here</a>. Log in, choose the datasets of interest and add them to the cart. After that, the user can apply for access, fill in the form and send the application. The user needs to wait for approval from the data access committee (DAC) and after it has been approved the user can download the datasets.</p>
+</section>
+<section id="preparation-for-downloading-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparation-for-downloading-data">Preparation for downloading data</h2>
+<section id="download-configuration-file" class="level3">
+<h3 class="anchored" data-anchor-id="download-configuration-file">Download configuration file</h3>
+<p>Before downloading the data, the user needs to download the configuration file by logging in <a href="https://login.bp.nbis.se/">here</a>. Follow the dialogue to get authenticated and then click on <code>Download inbox s3cmd credentials</code> to download the configuration file named <code>s3cmd.conf</code>.</p>
+</section>
+<section id="install-the-sda-cli-tool" class="level3">
+<h3 class="anchored" data-anchor-id="install-the-sda-cli-tool">Install the sda-cli tool</h3>
 <p>Follow the guidelines <a href="../../datasets/submission/submission-guide.html#install-the-sda-cli-tool">here</a> to install the sda-cli tool.</p>
 </section>
-<section id="generate-the-public-and-secret-key" class="level2">
-<h2 class="anchored" data-anchor-id="generate-the-public-and-secret-key">Generate the public and secret key</h2>
+<section id="generate-the-public-and-secret-key-only-for-encrypted-data" class="level3">
+<h3 class="anchored" data-anchor-id="generate-the-public-and-secret-key-only-for-encrypted-data">Generate the public and secret key (<strong>ONLY FOR ENCRYPTED DATA</strong>)</h3>
 <p>The initial step involves creating a crypt4gh keypair using the sda-cli:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> createKey <span class="op">&lt;</span>keypair_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>where <code>&lt;keypair_name&gt;</code> is the base name of the key files. The above command will create two keys files named <code>keypair_name.pub.pem</code> and <code>keypair_name.sec.pem</code>. The public key (<code>pub</code>) will be sent to the admins (see the next step) and will be used by them for the encryption of the files, while the private one (<code>sec</code>) will be used by the requester for decrypting the files after downloading.</p>
+<p>where <code>&lt;keypair_name&gt;</code> is the base name of the key files. The above command will create two key files named <code>keypair_name.pub.pem</code> and <code>keypair_name.sec.pem</code>. The public key (<code>pub</code>) will be sent to the admins and will be used by the system for encryption of the files before downloading, while the private one (<code>sec</code>) will be used by the requester for decrypting the files after downloading.</p>
 </section>
-<section id="notify-admins-via-email" class="level2">
-<h2 class="anchored" data-anchor-id="notify-admins-via-email">Notify admins via email</h2>
-<p>Send an <a href="mailto:bp-ops@nbis.se">email to the admins</a> notifying them that you want to download files from BigPicture. Include the following information in the email:</p>
+</section>
+<section id="check-access" class="level2">
+<h2 class="anchored" data-anchor-id="check-access">Check access</h2>
+<p>After the user has been granted access to the dataset, the user can check access to the dataset by listing the datasets and their files using the <code>sda-cli</code>. This can be done by following the instructions in the <code>List datasets and their files</code> section of the <code>sda-cli</code> documentation <a href="https://github.com/NBISweden/sda-cli#list-datasets-and-their-files">here</a>.</p>
+</section>
+<section id="download-data" class="level2">
+<h2 class="anchored" data-anchor-id="download-data">Download data</h2>
+<p>After having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download either decrypted data (in several ways) or encrypted data:</p>
 <ul>
-<li>The dataset that the requester wants to download</li>
-<li>The crypt4gh public key (<code>keypair_name.pub.pem</code>) generated in the previous step</li>
+<li>Decrypted files:
+<ul>
+<li>using filepaths</li>
+<li>using file IDs</li>
+<li>recursively downloading all files in a folder</li>
+<li>downloading files by providing a text file with the paths of the files to download</li>
+<li>download all the files of the dataset</li>
+</ul></li>
+<li>Encrypted files:
+<ul>
+<li>download specific encrypted files</li>
+</ul></li>
 </ul>
-</section>
-<section id="receive-email-from-admins" class="level2">
-<h2 class="anchored" data-anchor-id="receive-email-from-admins">Receive email from admins</h2>
-<p>Upon publicizing the encrypted data in a public folder, admins will send an email to the requester. This email will contain a URL that leads to a text file named <code>urls_list.txt</code>, which includes URLs of all requested datasets.</p>
-<p>The number of URLs will be equal to the number of datasets requested for download.</p>
-</section>
-<section id="download-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="download-dataset">Download dataset</h2>
-<p>For downloading the data there only two elements needed: <code>sda-cli</code> and the URL for the <code>urls_list.txt</code> which was provided to the requester in the previous step. The requester then can initiate the download of all the files by executing the following command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> download <span class="op">&lt;</span>url-for-the-urls_list.txt<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="decrypt-the-files" class="level2">
-<h2 class="anchored" data-anchor-id="decrypt-the-files">Decrypt the files</h2>
-<p>The downloaded dataset files can be decrypted by using the <code>sda-cli</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> decrypt <span class="at">-key</span> <span class="op">&lt;</span>keypair_name.sec.pem<span class="op">&gt;</span> <span class="op">&lt;</span>file-path<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Decrypt multiple files by appending file paths:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> decrypt <span class="at">-key</span> <span class="op">&lt;</span>keypair_name.sec.pem<span class="op">&gt;</span> <span class="op">&lt;</span>file-path-1<span class="op">&gt;</span> <span class="op">&lt;</span>file-path-2<span class="op">&gt;</span> <span class="op">&lt;</span>file-path-3<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="validating-decrypted-files" class="level2">
-<h2 class="anchored" data-anchor-id="validating-decrypted-files">Validating decrypted files</h2>
-<p>During the publicize process, a file named <code>checksums_list.sha256</code> is generated, containing <code>sha256</code> checksums of all unencrypted files. Use this file to validate the correctness of downloaded files and ensure no issues occurred during the download.</p>
-</section>
-<section id="notify-us" class="level2">
-<h2 class="anchored" data-anchor-id="notify-us">Notify us</h2>
-<p>Finally, send an <a href="mailto:bp-ops@nbis.se">email to the admins</a> to confirm the successful download and decryption or notifying them in case of an error.</p>
+<p>All the information for downloading files can be found in the sda-cli documentation in the <code>Download</code> section <a href="https://github.com/NBISweden/sda-cli#download">here</a>.</p>
 
 
 </section>
