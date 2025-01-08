@@ -33,13 +33,13 @@ and will be used by the system for encryption of the files before downloading, w
 ## Check access
 
 After the user has been granted access to the dataset, the user can check access to the dataset by listing the datasets and their files using the `sda-cli`.
-For listing the datasets that the user has access to in production environment, the user needs to run:
+For listing the datasets that the user has access to, the user needs to run:
 
 ```bash
 ./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se (--bytes)
 ```
 
-For listing the files of a specific dataset in production environment, the user needs to run:
+For listing the files of a specific dataset, the user needs to run:
 
 ```bash
 ./sda-cli list -config s3cmd.conf -dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
