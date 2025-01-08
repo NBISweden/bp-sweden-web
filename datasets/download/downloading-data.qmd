@@ -59,7 +59,8 @@ To download the data:
 ```
 
 where:
-- `<public-key-file>` is the public key file that was generated earlier (<keypair_name>.pub.pem)
+
+- `<public-key-file>` is the public key file that was generated earlier (`<keypair_name>.pub.pem`)
 - `<DatasetID>` is the ID of the dataset for which the user wants to download the files
 - `</path/to/output/directory>` is the path to the directory where the files will be downloaded
 - `<filepath_*_to_download>` are the file paths of the files which can be found by listing the files of the dataset as described above
