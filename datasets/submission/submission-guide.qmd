@@ -5,11 +5,16 @@ title: Submission guide
 This guide contains instructions on how to upload data to BigPicture.
 We will take you through the process step by step. 
 
-1.  [Install the sda-cli tool](#install-the-sda-cli-tool)
-2.  [Download the encryption key](#download-the-encryption-key)
-3.  [Encrypt the files](#encrypt-the-files)
-4.  [Submit your files](#submit-your-files)
-5.  [Notify us](#notify-us)
+1.  [Sign and send Terms of Use form](#send-terms-of-use-form)
+2.  [Install the sda-cli tool](#install-the-sda-cli-tool)
+3.  [Download the encryption key](#download-the-encryption-key)
+4.  [Encrypt the files](#encrypt-the-files)
+5.  [Submit your files](#submit-your-files)
+6.  [Notify us](#notify-us)
+
+## Sign and send Terms of Use from {#send-terms-of-use-form}
+
+Please sign and send the Terms of Use form and submit it to [submit@bigpicture.org](mailto:submit@bigpicture.org).
 
 ## Install the sda-cli tool {#install-the-sda-cli-tool}
 
