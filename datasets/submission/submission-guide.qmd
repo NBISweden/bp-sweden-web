@@ -12,9 +12,9 @@ We will take you through the process step by step.
 5.  [Submit your files](#submit-your-files)
 6.  [Notify us](#notify-us)
 
-## Sign and send Terms of Use from {#send-terms-of-use-form}
+## Sign and send Terms of Use form {#send-terms-of-use-form}
 
-Please sign and send the Terms of Use form and submit it to [submit@bigpicture.org](mailto:submit@bigpicture.org).
+Please sign and send the [Terms of Use form](https://bigpictureeu.sharepoint.com/:w:/r/sites/wp1/_layouts/15/Doc.aspx?sourcedoc=%7B5914340E-2976-4454-BD7A-1DE64825EDC5%7D&file=BigPicture%20ToU%20v2.6.docx&action=default&mobileredirect=true) (internal) and submit it to [submit@bigpicture.org](mailto:submit@bigpicture.org).
 
 ## Install the sda-cli tool {#install-the-sda-cli-tool}
 
