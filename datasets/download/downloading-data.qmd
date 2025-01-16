@@ -49,6 +49,8 @@ where `<DatasetID>` is the ID of the dataset for which the user wants to list th
 
 ## Download data
 
+### Download file(s)
+
 After having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data.
 The user needs to provide the public key that was generated earlier, as well as the configuration file. 
 
@@ -64,7 +66,22 @@ where:
 - `<DatasetID>` is the ID of the dataset for which the user wants to download the files
 - `</path/to/output/directory>` is the path to the directory where the files will be downloaded
 - `<filepath_*_to_download>` are the file paths of the files which can be found by listing the files of the dataset as described above
- 
+
+### Download dataset
+
+To download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file
+by running the following command:
+
+```bash
+./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
+```
+
+and then download them by using the saved file from the previous step:
+
+```bash
+./sda-cli download -config s3cmd.conf -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory>  --from-file filepaths.txt
+```
+
 ## Decrypt the data
 
 After downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:
