@@ -1,13 +1,15 @@
 ---
-pagetitle: BigPicture Maintenence Window
+pagetitle: BigPicture Maintenance Window
 sidebar: false
 toc: false
+aliases:
+  - maintenence_window.html
 include-in-header:
     - text: |
         <meta name="google-site-verification" content="zCbRdYQIJhqk-MBVfUpr3GXL0AMrCZmCz0jnPcctmwU" />
 ---
 
-# Maintenence Window
+# Maintenance Window
 
 ## 2024-09-30
 

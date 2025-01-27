@@ -27,15 +27,15 @@ output:
         </tr>
         <tr>
             <td>Average slide size</td>
-            <td>1 594 MB</td>
+            <td>1.5 GB</td>
         </tr>
         <tr>
             <td>Number of Slides uploaded / 3M goal</td>
-            <td>3 857 / 3 000 000</td>
+            <td>4 572 / 3 000 000</td>
         </tr>
         <tr>
-            <td>Approximate missing data to the goal</td>
-            <td>4 666 587 GB</td>
+            <td>The approximate amount of data that needs to be uploaded</td>
+            <td>4 666 102 GB</td>
         </tr>
     </table>
     <script>
@@ -79,6 +79,11 @@ output:
       <td>590</td>
     </tr>
     <tr>
+      <td>HUS_LUNG_MOCK_SET</td>
+      <td>-</td>
+      <td>46</td>
+    </tr>
+    <tr>
       <td>Non-Clinical</td>
       <td>-</td>
       <td>1532</td>
@@ -94,9 +99,9 @@ output:
       <td>616</td>
     </tr>
     <tr>
-      <td>HUS_LUNG_MOCK_SET</td>
+      <td>Non-Clinical</td>
       <td>-</td>
-      <td>46</td>
+      <td>354</td>
     </tr>
   </tbody>
 </table>
@@ -108,19 +113,19 @@ output:
 <table>
     <tr>
       <td>Number of Datasets</td>
-      <td>7</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>Number of Slides in Total</td>
-      <td>3857</td>
+      <td>4572</td>
     </tr>
     <tr>
-      <td>Total Data Storage (in MB)</td>
-      <td>6151571.4465</td>
+      <td>Total Data Storage (in GB)</td>
+      <td>6488.44</td>
     </tr>
     <tr>
       <td>Number of AI Tools on the Platform</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
 </table>
 ```
@@ -156,7 +161,7 @@ output:
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Category', 'Number of Slides'],
-      ['Slides from Animal Species', 3119],
+      ['Slides from Animal Species', 3473],
       ['Slides from Humans', 738]
     ]);
 
@@ -178,7 +183,7 @@ output:
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Category', 'Number of Items'],
-      ['Datasets from Animal Species', 3],
+      ['Datasets from Animal Species', 4],
       ['Datasets from Humans', 4]
     ]);
 

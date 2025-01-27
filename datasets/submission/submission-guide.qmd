@@ -5,11 +5,16 @@ title: Submission guide
 This guide contains instructions on how to upload data to BigPicture.
 We will take you through the process step by step. 
 
-1.  [Install the sda-cli tool](#install-the-sda-cli-tool)
-2.  [Download the encryption key](#download-the-encryption-key)
-3.  [Encrypt the files](#encrypt-the-files)
-4.  [Submit your files](#submit-your-files)
-5.  [Notify us](#notify-us)
+1.  [Sign and send Terms of Use form](#send-terms-of-use-form)
+2.  [Install the sda-cli tool](#install-the-sda-cli-tool)
+3.  [Download the encryption key](#download-the-encryption-key)
+4.  [Encrypt the files](#encrypt-the-files)
+5.  [Submit your files](#submit-your-files)
+6.  [Notify us](#notify-us)
+
+## Sign and send Terms of Use form {#send-terms-of-use-form}
+
+Please sign and send the [Terms of Use form](https://bigpictureeu.sharepoint.com/:w:/r/sites/wp1/_layouts/15/Doc.aspx?sourcedoc=%7B5914340E-2976-4454-BD7A-1DE64825EDC5%7D&file=BigPicture%20ToU%20v2.6.docx&action=default&mobileredirect=true) (internal) and submit it to [submit@bigpicture.eu](mailto:submit@bigpicture.eu).
 
 ## Install the sda-cli tool {#install-the-sda-cli-tool}
 
@@ -244,4 +249,4 @@ Once your submission is completed, please don't forget to notify us by [sending 
 While the email should contain:
 
 - Name of the uploader 
-- Name of the dataset 
+- Name of the dataset
