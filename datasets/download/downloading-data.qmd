@@ -67,7 +67,7 @@ where:
 - `</path/to/output/directory>` is the path to the directory where the files will be downloaded
 - `<filepath_*_to_download>` are the file paths of the files which can be found by listing the files of the dataset as described above
 
-### Download dataset (for sda-cli version <= 0.1.3)
+### Download dataset (for sda-cli version = 0.1.3)
 
 To download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file
 by running the following command:
