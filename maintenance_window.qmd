@@ -13,7 +13,7 @@ include-in-header:
 
 ## 2025-03-03
 
-On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.
+On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.
 
 While this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.
 
