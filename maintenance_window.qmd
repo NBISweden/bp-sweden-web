@@ -19,6 +19,8 @@ While this update is mostly for updating our internal services to improve submis
 
  * The repository's public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info
 
+[Detailed Changelog](changelogs/changelog-2025-03-03.html)
+
 ## 2024-09-30
 
 On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.
