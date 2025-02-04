@@ -218,7 +218,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#generate-the-public-and-secret-key" id="toc-generate-the-public-and-secret-key" class="nav-link" data-scroll-target="#generate-the-public-and-secret-key">Generate the public and secret key</a></li>
   </ul></li>
   <li><a href="#check-access" id="toc-check-access" class="nav-link" data-scroll-target="#check-access">Check access</a></li>
-  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a>
+  <ul class="collapse">
+  <li><a href="#download-files" id="toc-download-files" class="nav-link" data-scroll-target="#download-files">Download file(s)</a></li>
+  <li><a href="#download-dataset-for-sda-cli-version-0.1.3" id="toc-download-dataset-for-sda-cli-version-0.1.3" class="nav-link" data-scroll-target="#download-dataset-for-sda-cli-version-0.1.3">Download dataset (for sda-cli version = 0.1.3)</a></li>
+  </ul></li>
   <li><a href="#decrypt-the-data" id="toc-decrypt-the-data" class="nav-link" data-scroll-target="#decrypt-the-data">Decrypt the data</a></li>
   </ul>
 </nav>
@@ -277,6 +281,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="download-data" class="level2">
 <h2 class="anchored" data-anchor-id="download-data">Download data</h2>
+<section id="download-files" class="level3">
+<h3 class="anchored" data-anchor-id="download-files">Download file(s)</h3>
 <p>After having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data. The user needs to provide the public key that was generated earlier, as well as the configuration file.</p>
 <p>To download the data:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> download <span class="at">-config</span> s3cmd.conf <span class="at">-pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> -dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">-outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_1_to_download<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_2_to_download<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -288,10 +294,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>&lt;filepath_*_to_download&gt;</code> are the file paths of the files which can be found by listing the files of the dataset as described above</li>
 </ul>
 </section>
+<section id="download-dataset-for-sda-cli-version-0.1.3" class="level3">
+<h3 class="anchored" data-anchor-id="download-dataset-for-sda-cli-version-0.1.3">Download dataset (for sda-cli version = 0.1.3)</h3>
+<p>To download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file by running the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> list <span class="at">-config</span> s3cmd.conf <span class="at">--datasets</span> <span class="at">--url</span> https://download.bp.nbis.se <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{hold=$4} NR&gt;1{print prev} {prev=hold}'</span> <span class="op">&gt;</span> filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and then download them by using the saved file from the previous step:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> download <span class="at">-config</span> s3cmd.conf <span class="at">-pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> -dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">-outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span>  --from-file filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 <section id="decrypt-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="decrypt-the-data">Decrypt the data</h2>
 <p>After downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> decrypt <span class="at">-key</span> <span class="op">&lt;</span>keypair_name<span class="op">&gt;</span>.sec.pem <span class="op">&lt;</span>/path/to/encrypted/file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> decrypt <span class="at">-key</span> <span class="op">&lt;</span>keypair_name<span class="op">&gt;</span>.sec.pem <span class="op">&lt;</span>/path/to/encrypted/file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>&lt;/path/to/encrypted/file&gt;</code> is the path to the encrypted file that the user wants to decrypt and <code>&lt;keypair_name&gt;.sec.pem</code> is the private key file that was generated earlier.</p>
 
 
