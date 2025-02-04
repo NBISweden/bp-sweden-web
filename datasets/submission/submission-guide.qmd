@@ -242,7 +242,11 @@ Once your files are encrypted, you are ready to start uploading them.
 
 ## Notify us {#notify-us}
 
-Once your submission is completed, please don't forget to notify us by sending an email to [{{<var email.helpdesk>}}](mailto:{{< var email.helpdesk >}}). The email should contain
+Once your submission is completed, please don't forget to notify us by [sending an email](mailto:{{< var email.helpdesk >}}). The subject of the email should be in the format of:
+
+    submission - DATASET_{IDENTIFIER}*
+
+While the email should contain:
 
 - Name of the uploader 
-- Name of the dataset 
+- Name of the dataset
