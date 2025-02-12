@@ -40,9 +40,9 @@ This webpage links relevant entry points of interest for different usage.
 
 ### Datasets
   
-Browse - Landing pages website root
+[Browse - Landing pages website root ](https://datasets.bp.nbis.se/)
 
-Search - Federated Discovery search service interface
+[Search - Federated Discovery search service interface ](https://bp-demo.rahtiapp.fi/)
 
 [Download - Data download request service ](datasets/download/downloading-data.html){style=""}
 
