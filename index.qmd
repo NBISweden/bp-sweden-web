@@ -44,7 +44,7 @@ This webpage links relevant entry points of interest for different usage.
 
 [Search - Federated Discovery search service interface ](https://bp-demo.rahtiapp.fi/)
 
-[Download - Data download request service ](datasets/download/downloading-data.html){style=""}
+[Download - Data download request service](datasets/download/downloading-data.html){style=""}
 
 [Submit - Data submission instructions and entry points ](datasets/submission/){style=""}
 
