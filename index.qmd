@@ -42,7 +42,7 @@ This webpage links relevant entry points of interest for different usage.
   
 [Browse - Landing pages website root](https://datasets.bp.nbis.se/)
 
-[Search - Federated Discovery search service interface (Demo) ](https://bp-demo.rahtiapp.fi/)
+[Demo Search - Federated Discovery search service interface ](https://bp-demo.rahtiapp.fi/)
 
 [Download - Data download request service](datasets/download/downloading-data.html){style=""}
 
