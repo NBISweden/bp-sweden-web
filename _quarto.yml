@@ -24,10 +24,10 @@ website:
         text: Home
       - text: Datasets
         menu:
-          - href: https://nbisweden.github.io/datasets.bp.nbis.se/
+          - href: https://datasets.bp.nbis.se/
             text: Browse
-          - href: datasets/search/index.qmd
-            text: Search
+          - href: https://bp-demo.rahtiapp.fi/
+            text: Demo Search
           - href: datasets/download/downloading-data.qmd
             text: Download
           - href: datasets/submission/index.qmd
