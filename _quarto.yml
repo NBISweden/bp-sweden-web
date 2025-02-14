@@ -27,7 +27,7 @@ website:
           - href: https://datasets.bp.nbis.se/
             text: Browse
           - href: https://bp-demo.rahtiapp.fi/
-            text: Search (Demo)
+            text: Demo Search
           - href: datasets/download/downloading-data.qmd
             text: Download
           - href: datasets/submission/index.qmd
