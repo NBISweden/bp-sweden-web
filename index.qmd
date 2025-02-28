@@ -68,3 +68,5 @@ AI training - Guidance on how to procure on-platform GPU HPC resources
 
 ### Metrics 
 [Numbers from the repository](https://bp.nbis.se/metrics/)
+
+[Archive status](https:/grafana.bp.nbis.se/public-dashboards/c465fe145d7844b59d7eea87be8e199d){target="_blank"}
