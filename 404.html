@@ -156,10 +156,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://doc.cytomine.com#/"> 
 <span class="menu-text">Software</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="/metrics/index.html"> 
-<span class="menu-text">Metrics</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-metrics" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Metrics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-metrics">    
+        <li>
+    <a class="dropdown-item" href="/metrics/index.html">
+ <span class="dropdown-text">Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://grafana.bp.nbis.se/public-dashboards/c465fe145d7844b59d7eea87be8e199d">
+ <span class="dropdown-text">Acrhive Status</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
