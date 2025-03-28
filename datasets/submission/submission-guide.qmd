@@ -172,8 +172,6 @@ Once your files are encrypted, you are ready to start uploading them.
     ```
     :::
 
-    The folder structure of the uploaded files will be preserved in the
-    remote archive.
 
     Many times it might be easier to upload a directory directly though.
     This can be done with the `-r` flag:
