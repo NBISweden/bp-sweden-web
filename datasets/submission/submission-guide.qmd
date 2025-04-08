@@ -17,7 +17,7 @@ We will take you through the process step by step.
 
 We highly recommend that you first do a small submission to our [staging](https://staging-login.bp.nbis.se/) environment, this way we can avoid requiring you to re-upload terabytes of data.
 
-We recommend that you upload two images and generate metadata for them according to the preparation guide, please include all XML files don't forget the `PRIAVET` folder or the `LANDING_PAGE` (in case you want one of those).
+We recommend that you upload two images and generate metadata for them according to the preparation guide, please include all XML files don't forget the `PRIVATE` folder or the `LANDING_PAGE` (in case you want one of those).
 
 Then follow the instructions below but when logging in to our platfrom, please use the [staging](https://staging-login.bp.nbis.se/) login instead.
 
