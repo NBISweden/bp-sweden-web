@@ -257,7 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#send-terms-of-use-form" id="toc-send-terms-of-use-form" class="nav-link active" data-scroll-target="#send-terms-of-use-form">Sign and send Terms of Use form</a></li>
+  <li><a href="#test-submission" id="toc-test-submission" class="nav-link active" data-scroll-target="#test-submission">Test submission</a></li>
+  <li><a href="#send-terms-of-use-form" id="toc-send-terms-of-use-form" class="nav-link" data-scroll-target="#send-terms-of-use-form">Sign and send Terms of Use form</a></li>
   <li><a href="#install-the-sda-cli-tool" id="toc-install-the-sda-cli-tool" class="nav-link" data-scroll-target="#install-the-sda-cli-tool">Install the sda-cli tool</a></li>
   <li><a href="#download-the-encryption-key" id="toc-download-the-encryption-key" class="nav-link" data-scroll-target="#download-the-encryption-key">Download the encryption key</a></li>
   <li><a href="#encrypt-the-files" id="toc-encrypt-the-files" class="nav-link" data-scroll-target="#encrypt-the-files">Encrypt the files</a></li>
@@ -289,7 +290,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This guide contains instructions on how to upload data to BigPicture. We will take you through the process step by step.</p>
-<ol type="1">
+<ol start="0" type="1">
+<li><a href="#test-submission">Test submission</a></li>
 <li><a href="#send-terms-of-use-form">Sign and send Terms of Use form</a></li>
 <li><a href="#install-the-sda-cli-tool">Install the sda-cli tool</a></li>
 <li><a href="#download-the-encryption-key">Download the encryption key</a></li>
@@ -297,6 +299,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#submit-your-files">Submit your files</a></li>
 <li><a href="#notify-us">Notify us</a></li>
 </ol>
+<section id="test-submission" class="level2">
+<h2 class="anchored" data-anchor-id="test-submission">Test submission</h2>
+<p>We highly recommend that you first do a small submission to our <a href="https://staging-login.bp.nbis.se/">staging</a> environment, this way we can avoid requiring you to re-upload terabytes of data.</p>
+<p>We recommend that you upload two images and generate metadata for them according to the preparation guide. Please include all XML files, the <code>PRIVATE</code> folder (always required), and the <code>LANDING_PAGE</code> folder (if you want a landing page).</p>
+<p>Then follow the instructions below but when logging in to our platfrom, please use the <a href="https://staging-login.bp.nbis.se/">staging</a> login instead.</p>
+</section>
 <section id="send-terms-of-use-form" class="level2">
 <h2 class="anchored" data-anchor-id="send-terms-of-use-form">Sign and send Terms of Use form</h2>
 <p>Please sign and send the <a href="https://bigpictureeu.sharepoint.com/:w:/r/sites/wp1/_layouts/15/Doc.aspx?sourcedoc=%7B5914340E-2976-4454-BD7A-1DE64825EDC5%7D&amp;file=BigPicture%20ToU%20v2.6.docx&amp;action=default&amp;mobileredirect=true">Terms of Use form</a> (internal) and submit it to <a href="mailto:submit@bigpicture.eu">submit@bigpicture.eu</a>.</p>
@@ -409,7 +417,7 @@ checksum_unencrypted.sha256</code></pre>
 <p>Once your files are encrypted, you are ready to start uploading them.</p>
 <ol type="1">
 <li><p>Obtain the configuration file</p>
-<p>The <code>sda-cli</code> tool requires a configuration file with the relevant settings. You can get the configuration file by <a href="https://login.bp.nbis.se/">logging in to our service</a>.</p></li>
+<p>The <code>sda-cli</code> tool requires a configuration file with the relevant settings. You can get the configuration file by <a href="https://login.bp.nbis.se/">logging in to our service</a> (In case it’s a test, please use our <a href="https://staging-login.bp.nbis.se/">staging login service</a>).</p></li>
 <li><p>Upload the files</p>
 <p>Files can be uploaded with or without folders. Files can be uploaded individually using:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
