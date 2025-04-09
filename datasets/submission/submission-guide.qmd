@@ -5,12 +5,21 @@ title: Submission guide
 This guide contains instructions on how to upload data to BigPicture.
 We will take you through the process step by step. 
 
+0.  [Test submission](#test-submission)
 1.  [Sign and send Terms of Use form](#send-terms-of-use-form)
 2.  [Install the sda-cli tool](#install-the-sda-cli-tool)
 3.  [Download the encryption key](#download-the-encryption-key)
 4.  [Encrypt the files](#encrypt-the-files)
 5.  [Submit your files](#submit-your-files)
 6.  [Notify us](#notify-us)
+
+## Test submission {#test-submission}
+
+We highly recommend that you first do a small submission to our [staging](https://staging-login.bp.nbis.se/) environment, this way we can avoid requiring you to re-upload terabytes of data.
+
+We recommend that you upload two images and generate metadata for them according to the preparation guide. Please include all XML files, the `PRIVATE` folder (always required), and the `LANDING_PAGE` folder (if you want a landing page).
+
+Then follow the instructions below but when logging in to our platfrom, please use the [staging](https://staging-login.bp.nbis.se/) login instead.
 
 ## Sign and send Terms of Use form {#send-terms-of-use-form}
 
@@ -149,7 +158,8 @@ Once your files are encrypted, you are ready to start uploading them.
 
     The `sda-cli` tool requires a configuration file with the relevant
     settings. You can get the configuration file by [logging in to our
-    service](https://login.bp.nbis.se/).
+    service](https://login.bp.nbis.se/) (In case it's a test, please use
+    our [staging login service](https://staging-login.bp.nbis.se/)).
 
 2.  Upload the files
 
