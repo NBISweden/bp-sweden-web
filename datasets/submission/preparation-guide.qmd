@@ -23,7 +23,7 @@ Before you submit your data, please make sure
     |--- ANNOTATIONS+
     |    |--- *.geojson
     |--- LANDING_PAGE***
-    |    |--- landingpage.xml (contains: Landing Page) 
+    |    |--- landing_page.xml (contains: Landing Page)
     |    |--- THUMBNAILS
     |    |    |--- *.jpg
     |--- PRIVATE**** - not shared with users
