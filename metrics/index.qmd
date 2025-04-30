@@ -83,31 +83,12 @@ output:
       <td>-</td>
       <td>46</td>
     </tr>
-    <tr>
-      <td>Non-Clinical</td>
-      <td>-</td>
-      <td>1532</td>
-    </tr>
-    <tr>
-      <td>Non-Clinical</td>
-      <td>-</td>
-      <td>971</td>
-    </tr>
-    <tr>
-      <td>Non-Clinical</td>
-      <td>-</td>
-      <td>616</td>
-    </tr>
-    <tr>
-      <td>Non-Clinical</td>
-      <td>-</td>
-      <td>354</td>
-    </tr>
   </tbody>
 </table>
 ```
 :::
 
+##  Row {height=50%}
 ::: {.card title="Numbers"}
 ```{=html}
 <table>
@@ -131,94 +112,23 @@ output:
 ```
 :::
 
-##  Column {width=50%}
-::: {.card title="Slides"}
-```{=html}
-<table>
-    <tr>
-      <td>
-        <div id="slidesPieChart" style="width: 600px; height: 400px;"></div>
-      </td>
-    </tr>
-</table>
-```
-:::
-
-::: {.card title="Datasets"}
-```{=html}
-<table>
-    <tr>
-      <td>
-        <div id="datasetPieChart" style="width: 600px; height: 400px;"></div>
-      </td>
-    </tr>
-</table>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Category', 'Number of Slides'],
-      ['Slides from Animal Species', 3473],
-      ['Slides from Humans', 738]
-    ]);
-
-    var options = {
-      title: 'Proportion of Slides by Source',
-      pieHole: 0.4,
-      colors: ['#1f77b4', '#ff7f0e']
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('slidesPieChart'));
-    chart.draw(data, options);
-  }
-</script>
-
-<script type="text/javascript">
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Category', 'Number of Items'],
-      ['Datasets from Animal Species', 4],
-      ['Datasets from Humans', 4]
-    ]);
-
-    var options = {
-      title: 'Proportion of Datasets by Source',
-      pieHole: 0.4,
-      colors: ['#1f77b4', '#ff7f0e']
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('datasetPieChart'));
-    chart.draw(data, options);
-  }
-</script>
-
-```
-
-:::
-
 <style>
   .progress-container {
-            width: 100%;
-            background-color: #f3f3f3;
-            border-radius: 25px;
-            padding: 5px;
-            margin: 20px 0;
-        }
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 20px 0;
+  }
   .progress-bar {
-      width: 0;
-      height: 30px;
-      background-color: #4caf50;
-      border-radius: 25px;
-      text-align: center;
-      line-height: 30px;
-      color: white;
-      transition: width 0.5s;
+    width: 0;
+    height: 30px;
+    background-color: #4caf50;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.5s;
   }
   .dashboard {
     display: flex;
@@ -226,7 +136,6 @@ output:
     flex-wrap: wrap;
   }
   .card {
-    /* width: 45%; */
     height: 600px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -240,9 +149,6 @@ output:
     text-align: center;
     font-weight: bold;
   }
-  /* .card-body {
-    padding: 20px;
-  } */
   ul {
     list-style-type: none;
     padding: 0;
