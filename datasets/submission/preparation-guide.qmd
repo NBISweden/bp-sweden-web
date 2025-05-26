@@ -1,7 +1,16 @@
 ---
 title: Preparation guide
 ---
-Before you submit your data, please make sure
+
+This guide contains instructions on how to prepare your data for being uploaded to BigPicture.
+
+1.  [Check folder structure](#folder-structure)
+2.  [Verify XML file structure](#xmllint)
+
+
+
+## Check folder structure {#folder-structure}
+Before you submit your data, please make sure that the folder structure of your dataset complies with the structure below.
 
 1. The root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:
 ```
@@ -59,3 +68,32 @@ Before you submit your data, please make sure
         <FILE filename="IMAGES/IMAGE_{IDENTIFIER}/*.dcm" checksum_method="SHA256" checksum="<encrypted_checksum>" unencrypted_checksum="<unencrypted_checksum>" filetype="dcm"/>
     </FILES>
 ```
+
+## Verify XML file structure {#xmllint}
+You can check if your metadata files will pass our validation by using the tool [xmllint](https://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html)
+and the [Bigpicture metadata schemas](https://github.com/imi-bigpicture/bigpicture-metaflex).
+This applies for the xml files in the folders `METADATA`, `LANDING_PAGE` and
+`PRIVATE`.
+
+- Download all relevant XSDs.
+     - The files can be downloaded directly from the GitHub repo [(v1)](https://github.com/imi-bigpicture/bigpicture-metaflex/tree/v1.0.0/src/)
+     or [(v2)](https://github.com/imi-bigpicture/bigpicture-metaflex/tree/main/src),
+     - or all together using this script, which will place the files in the folder `xsd-files/`
+  ```sh
+  version=v2  # replace with v1 for metadata version 1
+  mkdir -p xsd-files
+
+  curl -H "Accept: application/vnd.github.v3+json" \
+     https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |
+  while IFS= read -r url; do
+      xsd_name=$(basename "$url")
+      curl -o "xsd-files/${xsd_name%\?*}" -J -L "$url" >/dev/null 2>&1
+  done
+  ```
+
+- For each xml file, run
+`xmllint --noout --schema xsd-files/BP.<filename>.xsd <filename>.xml`.
+For example, to check `dataset.xml`, run:
+  ```sh
+  xmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml
+  ```
