@@ -71,8 +71,7 @@ Before you submit your data, please make sure that the folder structure of your 
 
 ## Verify XML file structure {#xmllint}
 You can check if your metadata files will pass our validation by using the tool [xmllint](https://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html)
-and the [Bigpicture metadata
-schemas](https://github.com/imi-bigpicture/bigpicture-metaflex).
+and the [Bigpicture metadata schemas](https://github.com/imi-bigpicture/bigpicture-metaflex).
 This applies for the xml files in the folders `METADATA`, `LANDING_PAGE` and
 `PRIVATE`.
 
