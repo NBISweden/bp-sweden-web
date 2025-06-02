@@ -27,9 +27,9 @@ This webpage links relevant entry points of interest for different usage.
 
 [Demo Search - Federated Discovery search service interface ](https://bp-demo.rahtiapp.fi/)
 
-[Download - Data download request service](datasets/download/downloading-data.html){style=""}
+[Download - Data download request service](datasets/download/downloading-data.html)
 
-[Submit - Data submission instructions and entry points ](datasets/submission/){style=""}
+[Submit - Data submission instructions and entry points ](datasets/submission/)
 
 ### Algorithms (upcoming)
 Browse - AI algorithm register / download service
@@ -52,4 +52,4 @@ AI training - Guidance on how to procure on-platform GPU HPC resources
 ### Metrics 
 [Numbers from the repository](https://bp.nbis.se/metrics/)
 
-[Archive status](https://grafana.bp.nbis.se/public-dashboards/c465fe145d7844b59d7eea87be8e199d){target="_blank"}
+[Archive status](https://grafana.bp.nbis.se/public-dashboards/c465fe145d7844b59d7eea87be8e199d)
