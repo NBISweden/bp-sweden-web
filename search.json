@@ -1,127 +1,5 @@
 [
   {
-    "objectID": "datasets/submission/submission-guide.html",
-    "href": "datasets/submission/submission-guide.html",
-    "title": "Submission guide",
-    "section": "",
-    "text": "This guide contains instructions on how to upload data to BigPicture. We will take you through the process step by step.",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#test-submission",
-    "href": "datasets/submission/submission-guide.html#test-submission",
-    "title": "Submission guide",
-    "section": "Test submission",
-    "text": "Test submission\nWe highly recommend that you first do a small submission to our staging environment, this way we can avoid requiring you to re-upload terabytes of data.\nWe recommend that you upload two images and generate metadata for them according to the preparation guide. Please include all XML files, the PRIVATE folder (always required), and the LANDING_PAGE folder (if you want a landing page).\nThen follow the instructions below but when logging in to our platfrom, please use the staging login instead.",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#send-terms-of-use-form",
-    "href": "datasets/submission/submission-guide.html#send-terms-of-use-form",
-    "title": "Submission guide",
-    "section": "Sign and send Terms of Use form",
-    "text": "Sign and send Terms of Use form\nPlease sign and send the Terms of Use form (internal) and submit it to submit@bigpicture.eu.",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#install-the-sda-cli-tool",
-    "href": "datasets/submission/submission-guide.html#install-the-sda-cli-tool",
-    "title": "Submission guide",
-    "section": "Install the sda-cli tool",
-    "text": "Install the sda-cli tool\n\n\n\n\n\n\nNote\n\n\n\nThis guide expects you to perform the following steps on the system where you keep the data you intend to encrypt and submit.\n\n\n\nLinuxMacWindows\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Linux_x86_64.tar.gz\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Darwin_x86_64.tar.gz\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Windows_x86_64.zip\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nUser documentation for sda-cli is available in the GitHub repository. This guide should however include the information needed to encrypt and upload data to BigPicture.",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#download-the-encryption-key",
-    "href": "datasets/submission/submission-guide.html#download-the-encryption-key",
-    "title": "Submission guide",
-    "section": "Download the encryption key",
-    "text": "Download the encryption key\nFor BigPicture to be able to read the uploaded files, they need to be encrypted with the correct public key. This key can be downloaded with the following command:\n\nLinuxMacWindows\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#encrypt-the-files",
-    "href": "datasets/submission/submission-guide.html#encrypt-the-files",
-    "title": "Submission guide",
-    "section": "Encrypt the files",
-    "text": "Encrypt the files\n\nEncrypt the files\nNow that you have the public key, and the tools you need, you can encrypt the submission files. An encryption key will be created automatically by the tool.\n\nLinuxMacWindows\n\n\n./sda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\n./sda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\nsda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\n\nThe tool will automatically create checksum files called:\nchecksum_encrypted.md5\nchecksum_encrypted.sha256\nchecksum_unencrypted.md5\nchecksum_unencrypted.sha256\nMake sure to save these files, you will need them during submission.",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#submit-your-files",
-    "href": "datasets/submission/submission-guide.html#submit-your-files",
-    "title": "Submission guide",
-    "section": "Submit your files",
-    "text": "Submit your files\nOnce your files are encrypted, you are ready to start uploading them.\n\nObtain the configuration file\nThe sda-cli tool requires a configuration file with the relevant settings. You can get the configuration file by logging in to our service (In case it’s a test, please use our staging login service).\nUpload the files\nFiles can be uploaded with or without folders. Files can be uploaded individually using:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\nsda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n\nMany times it might be easier to upload a directory directly though. This can be done with the -r flag:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\nsda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n\n\nMore information on the capabilites of the sda-cli can be found using the tool’s built-in help:\n\nLinuxMacWindows\n\n\n./sda-cli help\n\n\n./sda-cli help\n\n\nsda-cli help",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/submission-guide.html#notify-us",
-    "href": "datasets/submission/submission-guide.html#notify-us",
-    "title": "Submission guide",
-    "section": "Notify us",
-    "text": "Notify us\nOnce your submission is completed, please don’t forget to notify us by sending an email. The subject of the email should be in the format of:\nsubmission - DATASET_{IDENTIFIER}*\nWhile the email should contain:\n\nName of the uploader\nName of the dataset",
-    "crumbs": [
-      "Submission guide"
-    ]
-  },
-  {
-    "objectID": "datasets/browse/index.html",
-    "href": "datasets/browse/index.html",
-    "title": "Browse",
-    "section": "",
-    "text": "Landing pages website root"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bigpicture",
-    "section": "",
-    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
-  },
-  {
-    "objectID": "compute/analysis/index.html",
-    "href": "compute/analysis/index.html",
-    "title": "Analysis",
-    "section": "",
-    "text": "Request Services for on-platform data use such as Cytomine"
-  },
-  {
-    "objectID": "maintenance_window.html",
-    "href": "maintenance_window.html",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
-  },
-  {
-    "objectID": "maintenance_window.html#section",
-    "href": "maintenance_window.html#section",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
-  },
-  {
-    "objectID": "maintenance_window.html#section-1",
-    "href": "maintenance_window.html#section-1",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
-  },
-  {
     "objectID": "changelogs/changelog-2025-03-03.html",
     "href": "changelogs/changelog-2025-03-03.html",
     "title": "Detailed Changelog 2025-03-03",
@@ -220,11 +98,11 @@
     "text": "Guidance on how to procure on-platform GPU HPC resources"
   },
   {
-    "objectID": "datasets/index.html",
-    "href": "datasets/index.html",
-    "title": "Data access overview",
+    "objectID": "datasets/browse/index.html",
+    "href": "datasets/browse/index.html",
+    "title": "Browse",
     "section": "",
-    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
+    "text": "Landing pages website root"
   },
   {
     "objectID": "datasets/submission/index.html",
@@ -237,33 +115,83 @@
     ]
   },
   {
-    "objectID": "datasets/submission/preparation-guide.html",
-    "href": "datasets/submission/preparation-guide.html",
-    "title": "Preparation guide",
+    "objectID": "datasets/submission/submission-guide.html",
+    "href": "datasets/submission/submission-guide.html",
+    "title": "Submission guide",
     "section": "",
-    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
+    "text": "This guide contains instructions on how to upload data to BigPicture. We will take you through the process step by step.",
     "crumbs": [
-      "Preparation guide"
+      "Submission guide"
     ]
   },
   {
-    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
-    "href": "datasets/submission/preparation-guide.html#folder-structure",
-    "title": "Preparation guide",
-    "section": "Check folder structure",
-    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
+    "objectID": "datasets/submission/submission-guide.html#test-submission",
+    "href": "datasets/submission/submission-guide.html#test-submission",
+    "title": "Submission guide",
+    "section": "Test submission",
+    "text": "Test submission\nWe highly recommend that you first do a small submission to our staging environment, this way we can avoid requiring you to re-upload terabytes of data.\nWe recommend that you upload two images and generate metadata for them according to the preparation guide. Please include all XML files, the PRIVATE folder (always required), and the LANDING_PAGE folder (if you want a landing page).\nThen follow the instructions below but when logging in to our platfrom, please use the staging login instead.",
     "crumbs": [
-      "Preparation guide"
+      "Submission guide"
     ]
   },
   {
-    "objectID": "datasets/submission/preparation-guide.html#xmllint",
-    "href": "datasets/submission/preparation-guide.html#xmllint",
-    "title": "Preparation guide",
-    "section": "Verify XML file structure",
-    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
+    "objectID": "datasets/submission/submission-guide.html#send-terms-of-use-form",
+    "href": "datasets/submission/submission-guide.html#send-terms-of-use-form",
+    "title": "Submission guide",
+    "section": "Sign and send Terms of Use form",
+    "text": "Sign and send Terms of Use form\nPlease sign and send the Terms of Use form (internal) and submit it to submit@bigpicture.eu.",
     "crumbs": [
-      "Preparation guide"
+      "Submission guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/submission-guide.html#install-the-sda-cli-tool",
+    "href": "datasets/submission/submission-guide.html#install-the-sda-cli-tool",
+    "title": "Submission guide",
+    "section": "Install the sda-cli tool",
+    "text": "Install the sda-cli tool\n\n\n\n\n\n\nNote\n\n\n\nThis guide expects you to perform the following steps on the system where you keep the data you intend to encrypt and submit.\n\n\n\nLinuxMacWindows\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Linux_x86_64.tar.gz\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Darwin_x86_64.tar.gz\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\nDownload the sda-cli executable that matches your system from the GitHub repository.\nExtract the binary by using the tar command:\ntar -xvzf sda-cli_.vX_Windows_x86_64.zip\nThe sda-cli executable should now be in the same directory as the downloaded file.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nUser documentation for sda-cli is available in the GitHub repository. This guide should however include the information needed to encrypt and upload data to BigPicture.",
+    "crumbs": [
+      "Submission guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/submission-guide.html#download-the-encryption-key",
+    "href": "datasets/submission/submission-guide.html#download-the-encryption-key",
+    "title": "Submission guide",
+    "section": "Download the encryption key",
+    "text": "Download the encryption key\nFor BigPicture to be able to read the uploaded files, they need to be encrypted with the correct public key. This key can be downloaded with the following command:\n\nLinuxMacWindows\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub\n\n\ncurl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub",
+    "crumbs": [
+      "Submission guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/submission-guide.html#encrypt-the-files",
+    "href": "datasets/submission/submission-guide.html#encrypt-the-files",
+    "title": "Submission guide",
+    "section": "Encrypt the files",
+    "text": "Encrypt the files\n\nEncrypt the files\nNow that you have the public key, and the tools you need, you can encrypt the submission files. An encryption key will be created automatically by the tool.\n\nLinuxMacWindows\n\n\n./sda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\n./sda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\nsda-cli encrypt -key crypt4gh_bp_key.pub &lt;file_1_to_encrypt&gt; &lt;file_2_to_encrypt&gt; ...\n\n\n\nThe tool will automatically create checksum files called:\nchecksum_encrypted.md5\nchecksum_encrypted.sha256\nchecksum_unencrypted.md5\nchecksum_unencrypted.sha256\nMake sure to save these files, you will need them during submission.",
+    "crumbs": [
+      "Submission guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/submission-guide.html#submit-your-files",
+    "href": "datasets/submission/submission-guide.html#submit-your-files",
+    "title": "Submission guide",
+    "section": "Submit your files",
+    "text": "Submit your files\nOnce your files are encrypted, you are ready to start uploading them.\n\nObtain the configuration file\nThe sda-cli tool requires a configuration file with the relevant settings. You can get the configuration file by logging in to our service (In case it’s a test, please use our staging login service).\nUpload the files\nFiles can be uploaded with or without folders. Files can be uploaded individually using:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\nsda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n\nMany times it might be easier to upload a directory directly though. This can be done with the -r flag:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\nsda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n\n\nMore information on the capabilites of the sda-cli can be found using the tool’s built-in help:\n\nLinuxMacWindows\n\n\n./sda-cli help\n\n\n./sda-cli help\n\n\nsda-cli help",
+    "crumbs": [
+      "Submission guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/submission-guide.html#notify-us",
+    "href": "datasets/submission/submission-guide.html#notify-us",
+    "title": "Submission guide",
+    "section": "Notify us",
+    "text": "Notify us\nOnce your submission is completed, please don’t forget to notify us by sending an email. The subject of the email should be in the format of:\nsubmission - DATASET_{IDENTIFIER}*\nWhile the email should contain:\n\nName of the uploader\nName of the dataset",
+    "crumbs": [
+      "Submission guide"
     ]
   },
   {
@@ -335,5 +263,77 @@
     "title": "Metrics for the central reporitory of digital pathology",
     "section": "Row",
     "text": "Row\n\n\n\n\n\nNumber of Datasets\n8\n\n\nNumber of Slides in Total\n4572\n\n\nTotal Data Storage (in GB)\n6488.44\n\n\nNumber of AI Tools on the Platform\n0"
+  },
+  {
+    "objectID": "maintenance_window.html",
+    "href": "maintenance_window.html",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+  },
+  {
+    "objectID": "maintenance_window.html#section",
+    "href": "maintenance_window.html#section",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
+  },
+  {
+    "objectID": "maintenance_window.html#section-1",
+    "href": "maintenance_window.html#section-1",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+  },
+  {
+    "objectID": "datasets/submission/preparation-guide.html",
+    "href": "datasets/submission/preparation-guide.html",
+    "title": "Preparation guide",
+    "section": "",
+    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
+    "href": "datasets/submission/preparation-guide.html#folder-structure",
+    "title": "Preparation guide",
+    "section": "Check folder structure",
+    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/preparation-guide.html#xmllint",
+    "href": "datasets/submission/preparation-guide.html#xmllint",
+    "title": "Preparation guide",
+    "section": "Verify XML file structure",
+    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/index.html",
+    "href": "datasets/index.html",
+    "title": "Data access overview",
+    "section": "",
+    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
+  },
+  {
+    "objectID": "compute/analysis/index.html",
+    "href": "compute/analysis/index.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "Request Services for on-platform data use such as Cytomine"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bigpicture",
+    "section": "",
+    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
   }
 ]
