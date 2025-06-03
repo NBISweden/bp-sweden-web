@@ -11,6 +11,14 @@ include-in-header:
 
 # Maintenance Window
 
+## 2025-06-09
+
+On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.
+
+This time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.
+
+[Detailed Changelog](changelogs/changelog-2025-06-09.html)
+
 ## 2025-03-03
 
 On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.
