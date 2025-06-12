@@ -1,201 +1,38 @@
 [
   {
-    "objectID": "changelogs/changelog-2025-03-03.html",
-    "href": "changelogs/changelog-2025-03-03.html",
-    "title": "Detailed Changelog 2025-03-03",
+    "objectID": "changelogs/changelog-2025-06-09.html",
+    "href": "changelogs/changelog-2025-06-09.html",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "Update OIDC library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/946\nServer public key as a base64 encoded string by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/947\nMake the TTL of the resigned token configurable by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/944\nEnable configurable TTL for resigned OIDC token by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1109\n\n\n\n\n\nFeat: configurable allow uncrypted download by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/887\nUpdate the metadata from the sda-download API by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/923\nIgnore trailing slashes in ISS and JKU URLs by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/949\nHealth head request for download by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/978\nUpdate readme for the download api by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/967\nAdd grpc healthcheck by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/988\nUpgrade ristretto to v1.0.0 by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1081\n\n\n\n\n\nAdmin API Service by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/955, https://github.com/neicnordic/sensitive-data-archive/pull/956, https://github.com/neicnordic/sensitive-data-archive/pull/983\nAdd some basic sanity checking when creating a dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1111\nExpand key hash actions by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1107\nAdd c4gh hash keys by @kostas-kou in https://github.com/neicnordic/sensitive-data-archive/pull/1084\nAdd a RBAC solution by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1115\nAdd sanity checks when releasing a dataset. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1080\n\n\n\n\n\nSupport http head requests to s3inbox’s healthcheck by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/977\nTls for the health endpoint by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/993\nRun healthchecks in main process by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1025\nDisallow reserved characters by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/965\n\n\n\n\n\nSda-admin cli by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1026\nAdd key hash handling by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1108\nAdd user to create dataset command by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1114\n\n\n\n\n\nAdd timestamp to MQ messages by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/943\nImport LICENSE from previous repository by @viklund in https://github.com/neicnordic/sensitive-data-archive/pull/1039\nUpdate CONTRIBUTING to be on par with the NeIC handbook by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1006\nUpdate api.md by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1016\nUse go 1.23 by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1046\nResolve deprecation in AWS library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/894\nAdd checks for integer overflows by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1001\n\n\n\n\n\nRemove obsolete doc update workflow by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/969\n\n\n\n\n\nAdd key hash to the files table by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/994\nGrant select permission to role “download” on dataset_event_log table by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/989\nRestore lega_in and lega_out password setting by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/916\nAdd missing entry from dbschema_version by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1110\n\n\n\n\n\nChange sftp-inbox path to sda-sftp-inbox by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/1015\n\n\n\n\n\nMerge sda-doa by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/876\n\n\n\n\n\nStore keyhash for ingested files by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1126\nFix: prevent endless logging from finalize by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1082\n\n\n\n\n\nFix sync and sync-api deployments by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/867\nAdd charts install instructions readme by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/971\nFeature/admin api charts by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/972\nAdd nginx-affinity label to ingress templates in the SDA-SVC chart. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/904\nAdd more review suggestions for chart README by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/984"
+    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122\n\n\n\n\n\nSave userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099\n\n\n\n\n\nCheck for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
   },
   {
-    "objectID": "changelogs/changelog-2025-03-03.html#auth",
-    "href": "changelogs/changelog-2025-03-03.html#auth",
-    "title": "Detailed Changelog 2025-03-03",
+    "objectID": "changelogs/changelog-2025-06-09.html#admin-api",
+    "href": "changelogs/changelog-2025-06-09.html#admin-api",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "Update OIDC library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/946\nServer public key as a base64 encoded string by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/947\nMake the TTL of the resigned token configurable by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/944\nEnable configurable TTL for resigned OIDC token by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1109"
+    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122"
   },
   {
-    "objectID": "changelogs/changelog-2025-03-03.html#download",
-    "href": "changelogs/changelog-2025-03-03.html#download",
-    "title": "Detailed Changelog 2025-03-03",
+    "objectID": "changelogs/changelog-2025-06-09.html#auth",
+    "href": "changelogs/changelog-2025-06-09.html#auth",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "Feat: configurable allow uncrypted download by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/887\nUpdate the metadata from the sda-download API by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/923\nIgnore trailing slashes in ISS and JKU URLs by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/949\nHealth head request for download by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/978\nUpdate readme for the download api by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/967\nAdd grpc healthcheck by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/988\nUpgrade ristretto to v1.0.0 by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1081"
+    "text": "Save userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099"
   },
   {
-    "objectID": "changelogs/changelog-2025-03-03.html#admin-api",
-    "href": "changelogs/changelog-2025-03-03.html#admin-api",
-    "title": "Detailed Changelog 2025-03-03",
+    "objectID": "changelogs/changelog-2025-06-09.html#ingest",
+    "href": "changelogs/changelog-2025-06-09.html#ingest",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "Admin API Service by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/955, https://github.com/neicnordic/sensitive-data-archive/pull/956, https://github.com/neicnordic/sensitive-data-archive/pull/983\nAdd some basic sanity checking when creating a dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1111\nExpand key hash actions by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1107\nAdd c4gh hash keys by @kostas-kou in https://github.com/neicnordic/sensitive-data-archive/pull/1084\nAdd a RBAC solution by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1115\nAdd sanity checks when releasing a dataset. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1080"
+    "text": "Check for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
   },
   {
-    "objectID": "changelogs/changelog-2025-03-03.html#s3inbox",
-    "href": "changelogs/changelog-2025-03-03.html#s3inbox",
-    "title": "Detailed Changelog 2025-03-03",
+    "objectID": "compute/ai-training/index.html",
+    "href": "compute/ai-training/index.html",
+    "title": "AI Training",
     "section": "",
-    "text": "Support http head requests to s3inbox’s healthcheck by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/977\nTls for the health endpoint by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/993\nRun healthchecks in main process by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1025\nDisallow reserved characters by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/965"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#sda-admin-cli",
-    "href": "changelogs/changelog-2025-03-03.html#sda-admin-cli",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Sda-admin cli by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1026\nAdd key hash handling by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1108\nAdd user to create dataset command by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1114"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#sda",
-    "href": "changelogs/changelog-2025-03-03.html#sda",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Add timestamp to MQ messages by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/943\nImport LICENSE from previous repository by @viklund in https://github.com/neicnordic/sensitive-data-archive/pull/1039\nUpdate CONTRIBUTING to be on par with the NeIC handbook by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1006\nUpdate api.md by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1016\nUse go 1.23 by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1046\nResolve deprecation in AWS library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/894\nAdd checks for integer overflows by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1001"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#github-actions",
-    "href": "changelogs/changelog-2025-03-03.html#github-actions",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Remove obsolete doc update workflow by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/969"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#database",
-    "href": "changelogs/changelog-2025-03-03.html#database",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Add key hash to the files table by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/994\nGrant select permission to role “download” on dataset_event_log table by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/989\nRestore lega_in and lega_out password setting by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/916\nAdd missing entry from dbschema_version by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1110"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#sftp-inbox",
-    "href": "changelogs/changelog-2025-03-03.html#sftp-inbox",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Change sftp-inbox path to sda-sftp-inbox by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/1015"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#sda-doa",
-    "href": "changelogs/changelog-2025-03-03.html#sda-doa",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Merge sda-doa by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/876"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#ingest",
-    "href": "changelogs/changelog-2025-03-03.html#ingest",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Store keyhash for ingested files by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1126\nFix: prevent endless logging from finalize by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1082"
-  },
-  {
-    "objectID": "changelogs/changelog-2025-03-03.html#charts",
-    "href": "changelogs/changelog-2025-03-03.html#charts",
-    "title": "Detailed Changelog 2025-03-03",
-    "section": "",
-    "text": "Fix sync and sync-api deployments by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/867\nAdd charts install instructions readme by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/971\nFeature/admin api charts by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/972\nAdd nginx-affinity label to ingress templates in the SDA-SVC chart. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/904\nAdd more review suggestions for chart README by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/984"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bigpicture",
-    "section": "",
-    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
-  },
-  {
-    "objectID": "compute/analysis/index.html",
-    "href": "compute/analysis/index.html",
-    "title": "Analysis",
-    "section": "",
-    "text": "Request Services for on-platform data use such as Cytomine"
-  },
-  {
-    "objectID": "datasets/index.html",
-    "href": "datasets/index.html",
-    "title": "Data access overview",
-    "section": "",
-    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
-  },
-  {
-    "objectID": "datasets/submission/preparation-guide.html",
-    "href": "datasets/submission/preparation-guide.html",
-    "title": "Preparation guide",
-    "section": "",
-    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
-    "crumbs": [
-      "Preparation guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
-    "href": "datasets/submission/preparation-guide.html#folder-structure",
-    "title": "Preparation guide",
-    "section": "Check folder structure",
-    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
-    "crumbs": [
-      "Preparation guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/preparation-guide.html#xmllint",
-    "href": "datasets/submission/preparation-guide.html#xmllint",
-    "title": "Preparation guide",
-    "section": "Verify XML file structure",
-    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
-    "crumbs": [
-      "Preparation guide"
-    ]
-  },
-  {
-    "objectID": "maintenance_window.html",
-    "href": "maintenance_window.html",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog\n\n\n\nOn Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
-  },
-  {
-    "objectID": "maintenance_window.html#section",
-    "href": "maintenance_window.html#section",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog"
-  },
-  {
-    "objectID": "maintenance_window.html#section-1",
-    "href": "maintenance_window.html#section-1",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
-  },
-  {
-    "objectID": "maintenance_window.html#section-2",
-    "href": "maintenance_window.html#section-2",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
-  },
-  {
-    "objectID": "metrics/index.html",
-    "href": "metrics/index.html",
-    "title": "Metrics for the central reporitory of digital pathology",
-    "section": "",
-    "text": "0%\n    \n    \n\n\n\nEstimated total data to upload\n4 672 590 GB\n\n\nAverage slide size\n1.5 GB\n\n\nNumber of Slides uploaded / 3M goal\n4 572 / 3 000 000\n\n\nThe approximate amount of data that needs to be uploaded\n4 666 102 GB"
-  },
-  {
-    "objectID": "metrics/index.html#row",
-    "href": "metrics/index.html#row",
-    "title": "Metrics for the central reporitory of digital pathology",
-    "section": "",
-    "text": "0%\n    \n    \n\n\n\nEstimated total data to upload\n4 672 590 GB\n\n\nAverage slide size\n1.5 GB\n\n\nNumber of Slides uploaded / 3M goal\n4 572 / 3 000 000\n\n\nThe approximate amount of data that needs to be uploaded\n4 666 102 GB"
-  },
-  {
-    "objectID": "metrics/index.html#row-1",
-    "href": "metrics/index.html#row-1",
-    "title": "Metrics for the central reporitory of digital pathology",
-    "section": "Row",
-    "text": "Row\n\n\n\n\n\nDataset info\nCatalogue item for resource\nNumber of slides\n\n\n\n\nRegion Ostergotland first clinical study\nhttps://handle.stage.datacite.org/10.80869/uwsu-uqlgdn\n76 (+361)\n\n\nBp renal demo\nhttps://handle.stage.datacite.org/10.80869/cw8i-pzelu4\n26\n\n\nBreast cancer cases\nhttps://handle.stage.datacite.org/10.80869/jkju-ph4znm\n590\n\n\nHUS_LUNG_MOCK_SET\n-\n46"
-  },
-  {
-    "objectID": "metrics/index.html#row-2",
-    "href": "metrics/index.html#row-2",
-    "title": "Metrics for the central reporitory of digital pathology",
-    "section": "Row",
-    "text": "Row\n\n\n\n\n\nNumber of Datasets\n8\n\n\nNumber of Slides in Total\n4572\n\n\nTotal Data Storage (in GB)\n6488.44\n\n\nNumber of AI Tools on the Platform\n0"
+    "text": "Guidance on how to procure on-platform GPU HPC resources"
   },
   {
     "objectID": "datasets/download/downloading-data.html",
@@ -320,6 +157,43 @@
     ]
   },
   {
+    "objectID": "datasets/submission/preparation-guide.html",
+    "href": "datasets/submission/preparation-guide.html",
+    "title": "Preparation guide",
+    "section": "",
+    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
+    "href": "datasets/submission/preparation-guide.html#folder-structure",
+    "title": "Preparation guide",
+    "section": "Check folder structure",
+    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/preparation-guide.html#xmllint",
+    "href": "datasets/submission/preparation-guide.html#xmllint",
+    "title": "Preparation guide",
+    "section": "Verify XML file structure",
+    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bigpicture",
+    "section": "",
+    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
+  },
+  {
     "objectID": "datasets/submission/index.html",
     "href": "datasets/submission/index.html",
     "title": "Submission overview",
@@ -330,6 +204,13 @@
     ]
   },
   {
+    "objectID": "datasets/index.html",
+    "href": "datasets/index.html",
+    "title": "Data access overview",
+    "section": "",
+    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
+  },
+  {
     "objectID": "datasets/browse/index.html",
     "href": "datasets/browse/index.html",
     "title": "Browse",
@@ -337,38 +218,129 @@
     "text": "Landing pages website root"
   },
   {
-    "objectID": "compute/ai-training/index.html",
-    "href": "compute/ai-training/index.html",
-    "title": "AI Training",
+    "objectID": "compute/analysis/index.html",
+    "href": "compute/analysis/index.html",
+    "title": "Analysis",
     "section": "",
-    "text": "Guidance on how to procure on-platform GPU HPC resources"
+    "text": "Request Services for on-platform data use such as Cytomine"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html",
-    "href": "changelogs/changelog-2025-06-09.html",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "changelogs/changelog-2025-03-03.html",
+    "href": "changelogs/changelog-2025-03-03.html",
+    "title": "Detailed Changelog 2025-03-03",
     "section": "",
-    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122\n\n\n\n\n\nSave userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099\n\n\n\n\n\nCheck for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
+    "text": "Update OIDC library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/946\nServer public key as a base64 encoded string by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/947\nMake the TTL of the resigned token configurable by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/944\nEnable configurable TTL for resigned OIDC token by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1109\n\n\n\n\n\nFeat: configurable allow uncrypted download by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/887\nUpdate the metadata from the sda-download API by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/923\nIgnore trailing slashes in ISS and JKU URLs by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/949\nHealth head request for download by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/978\nUpdate readme for the download api by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/967\nAdd grpc healthcheck by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/988\nUpgrade ristretto to v1.0.0 by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1081\n\n\n\n\n\nAdmin API Service by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/955, https://github.com/neicnordic/sensitive-data-archive/pull/956, https://github.com/neicnordic/sensitive-data-archive/pull/983\nAdd some basic sanity checking when creating a dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1111\nExpand key hash actions by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1107\nAdd c4gh hash keys by @kostas-kou in https://github.com/neicnordic/sensitive-data-archive/pull/1084\nAdd a RBAC solution by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1115\nAdd sanity checks when releasing a dataset. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1080\n\n\n\n\n\nSupport http head requests to s3inbox’s healthcheck by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/977\nTls for the health endpoint by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/993\nRun healthchecks in main process by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1025\nDisallow reserved characters by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/965\n\n\n\n\n\nSda-admin cli by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1026\nAdd key hash handling by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1108\nAdd user to create dataset command by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1114\n\n\n\n\n\nAdd timestamp to MQ messages by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/943\nImport LICENSE from previous repository by @viklund in https://github.com/neicnordic/sensitive-data-archive/pull/1039\nUpdate CONTRIBUTING to be on par with the NeIC handbook by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1006\nUpdate api.md by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1016\nUse go 1.23 by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1046\nResolve deprecation in AWS library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/894\nAdd checks for integer overflows by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1001\n\n\n\n\n\nRemove obsolete doc update workflow by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/969\n\n\n\n\n\nAdd key hash to the files table by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/994\nGrant select permission to role “download” on dataset_event_log table by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/989\nRestore lega_in and lega_out password setting by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/916\nAdd missing entry from dbschema_version by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1110\n\n\n\n\n\nChange sftp-inbox path to sda-sftp-inbox by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/1015\n\n\n\n\n\nMerge sda-doa by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/876\n\n\n\n\n\nStore keyhash for ingested files by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1126\nFix: prevent endless logging from finalize by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1082\n\n\n\n\n\nFix sync and sync-api deployments by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/867\nAdd charts install instructions readme by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/971\nFeature/admin api charts by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/972\nAdd nginx-affinity label to ingress templates in the SDA-SVC chart. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/904\nAdd more review suggestions for chart README by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/984"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#admin-api",
-    "href": "changelogs/changelog-2025-06-09.html#admin-api",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "changelogs/changelog-2025-03-03.html#auth",
+    "href": "changelogs/changelog-2025-03-03.html#auth",
+    "title": "Detailed Changelog 2025-03-03",
     "section": "",
-    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122"
+    "text": "Update OIDC library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/946\nServer public key as a base64 encoded string by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/947\nMake the TTL of the resigned token configurable by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/944\nEnable configurable TTL for resigned OIDC token by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1109"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#auth",
-    "href": "changelogs/changelog-2025-06-09.html#auth",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "changelogs/changelog-2025-03-03.html#download",
+    "href": "changelogs/changelog-2025-03-03.html#download",
+    "title": "Detailed Changelog 2025-03-03",
     "section": "",
-    "text": "Save userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099"
+    "text": "Feat: configurable allow uncrypted download by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/887\nUpdate the metadata from the sda-download API by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/923\nIgnore trailing slashes in ISS and JKU URLs by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/949\nHealth head request for download by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/978\nUpdate readme for the download api by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/967\nAdd grpc healthcheck by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/988\nUpgrade ristretto to v1.0.0 by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1081"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#ingest",
-    "href": "changelogs/changelog-2025-06-09.html#ingest",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "changelogs/changelog-2025-03-03.html#admin-api",
+    "href": "changelogs/changelog-2025-03-03.html#admin-api",
+    "title": "Detailed Changelog 2025-03-03",
     "section": "",
-    "text": "Check for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
+    "text": "Admin API Service by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/955, https://github.com/neicnordic/sensitive-data-archive/pull/956, https://github.com/neicnordic/sensitive-data-archive/pull/983\nAdd some basic sanity checking when creating a dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1111\nExpand key hash actions by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1107\nAdd c4gh hash keys by @kostas-kou in https://github.com/neicnordic/sensitive-data-archive/pull/1084\nAdd a RBAC solution by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1115\nAdd sanity checks when releasing a dataset. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1080"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#s3inbox",
+    "href": "changelogs/changelog-2025-03-03.html#s3inbox",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Support http head requests to s3inbox’s healthcheck by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/977\nTls for the health endpoint by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/993\nRun healthchecks in main process by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1025\nDisallow reserved characters by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/965"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#sda-admin-cli",
+    "href": "changelogs/changelog-2025-03-03.html#sda-admin-cli",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Sda-admin cli by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1026\nAdd key hash handling by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1108\nAdd user to create dataset command by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1114"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#sda",
+    "href": "changelogs/changelog-2025-03-03.html#sda",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Add timestamp to MQ messages by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/943\nImport LICENSE from previous repository by @viklund in https://github.com/neicnordic/sensitive-data-archive/pull/1039\nUpdate CONTRIBUTING to be on par with the NeIC handbook by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1006\nUpdate api.md by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1016\nUse go 1.23 by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1046\nResolve deprecation in AWS library by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/894\nAdd checks for integer overflows by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1001"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#github-actions",
+    "href": "changelogs/changelog-2025-03-03.html#github-actions",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Remove obsolete doc update workflow by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/969"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#database",
+    "href": "changelogs/changelog-2025-03-03.html#database",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Add key hash to the files table by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/994\nGrant select permission to role “download” on dataset_event_log table by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/989\nRestore lega_in and lega_out password setting by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/916\nAdd missing entry from dbschema_version by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1110"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#sftp-inbox",
+    "href": "changelogs/changelog-2025-03-03.html#sftp-inbox",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Change sftp-inbox path to sda-sftp-inbox by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/1015"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#sda-doa",
+    "href": "changelogs/changelog-2025-03-03.html#sda-doa",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Merge sda-doa by @Parisa68 in https://github.com/neicnordic/sensitive-data-archive/pull/876"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#ingest",
+    "href": "changelogs/changelog-2025-03-03.html#ingest",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Store keyhash for ingested files by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1126\nFix: prevent endless logging from finalize by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1082"
+  },
+  {
+    "objectID": "changelogs/changelog-2025-03-03.html#charts",
+    "href": "changelogs/changelog-2025-03-03.html#charts",
+    "title": "Detailed Changelog 2025-03-03",
+    "section": "",
+    "text": "Fix sync and sync-api deployments by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/867\nAdd charts install instructions readme by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/971\nFeature/admin api charts by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/972\nAdd nginx-affinity label to ingress templates in the SDA-SVC chart. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/904\nAdd more review suggestions for chart README by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/984"
+  },
+  {
+    "objectID": "maintenance_window.html",
+    "href": "maintenance_window.html",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog\n\n\n\nOn Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+  },
+  {
+    "objectID": "maintenance_window.html#section",
+    "href": "maintenance_window.html#section",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog"
+  },
+  {
+    "objectID": "maintenance_window.html#section-1",
+    "href": "maintenance_window.html#section-1",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
+  },
+  {
+    "objectID": "maintenance_window.html#section-2",
+    "href": "maintenance_window.html#section-2",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
   }
 ]
