@@ -36,13 +36,13 @@ After the user has been granted access to the dataset, the user can check access
 For listing the datasets that the user has access to, the user needs to run:
 
 ```bash
-./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se (--bytes)
+./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se (--bytes)
 ```
 
 For listing the files of a specific dataset, the user needs to run:
 
 ```bash
-./sda-cli list -config s3cmd.conf -dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
+./sda-cli -config s3cmd.conf list -dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
 ```
 
 where `<DatasetID>` is the ID of the dataset for which the user wants to list the files. The dataset ID can be found by running the previous command.
@@ -57,7 +57,7 @@ The user needs to provide the public key that was generated earlier, as well as 
 To download the data:
 
 ```bash
-./sda-cli download -config s3cmd.conf -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
+./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
 ```
 
 where:
@@ -73,13 +73,13 @@ To download the whole dataset, the user can do it in two steps. First, the user 
 by running the following command:
 
 ```bash
-./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
+./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
 ```
 
 and then download them by using the saved file from the previous step:
 
 ```bash
-./sda-cli download -config s3cmd.conf -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory>  --from-file filepaths.txt
+./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory>  --from-file filepaths.txt
 ```
 
 ## Decrypt the data
