@@ -1,80 +1,48 @@
 [
   {
-    "objectID": "changelogs/changelog-2025-06-09.html",
-    "href": "changelogs/changelog-2025-06-09.html",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "metrics/index.html",
+    "href": "metrics/index.html",
+    "title": "Metrics for the central reporitory of digital pathology",
     "section": "",
-    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122\n\n\n\n\n\nSave userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099\n\n\n\n\n\nCheck for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
+    "text": "0%\n    \n    \n\n\n\nEstimated total data to upload\n4 672 590 GB\n\n\nAverage slide size\n1.5 GB\n\n\nNumber of Slides uploaded / 3M goal\n4 572 / 3 000 000\n\n\nThe approximate amount of data that needs to be uploaded\n4 666 102 GB"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#admin-api",
-    "href": "changelogs/changelog-2025-06-09.html#admin-api",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "metrics/index.html#row",
+    "href": "metrics/index.html#row",
+    "title": "Metrics for the central reporitory of digital pathology",
     "section": "",
-    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122"
+    "text": "0%\n    \n    \n\n\n\nEstimated total data to upload\n4 672 590 GB\n\n\nAverage slide size\n1.5 GB\n\n\nNumber of Slides uploaded / 3M goal\n4 572 / 3 000 000\n\n\nThe approximate amount of data that needs to be uploaded\n4 666 102 GB"
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#auth",
-    "href": "changelogs/changelog-2025-06-09.html#auth",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "metrics/index.html#row-1",
+    "href": "metrics/index.html#row-1",
+    "title": "Metrics for the central reporitory of digital pathology",
+    "section": "Row",
+    "text": "Row\n\n\n\n\n\nDataset info\nCatalogue item for resource\nNumber of slides\n\n\n\n\nRegion Ostergotland first clinical study\nhttps://handle.stage.datacite.org/10.80869/uwsu-uqlgdn\n76 (+361)\n\n\nBp renal demo\nhttps://handle.stage.datacite.org/10.80869/cw8i-pzelu4\n26\n\n\nBreast cancer cases\nhttps://handle.stage.datacite.org/10.80869/jkju-ph4znm\n590\n\n\nHUS_LUNG_MOCK_SET\n-\n46"
+  },
+  {
+    "objectID": "metrics/index.html#row-2",
+    "href": "metrics/index.html#row-2",
+    "title": "Metrics for the central reporitory of digital pathology",
+    "section": "Row",
+    "text": "Row\n\n\n\n\n\nNumber of Datasets\n8\n\n\nNumber of Slides in Total\n4572\n\n\nTotal Data Storage (in GB)\n6488.44\n\n\nNumber of AI Tools on the Platform\n0"
+  },
+  {
+    "objectID": "datasets/index.html",
+    "href": "datasets/index.html",
+    "title": "Data access overview",
     "section": "",
-    "text": "Save userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099"
+    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
   },
   {
-    "objectID": "changelogs/changelog-2025-06-09.html#ingest",
-    "href": "changelogs/changelog-2025-06-09.html#ingest",
-    "title": "Detailed Changelog 2025-06-09",
+    "objectID": "datasets/submission/index.html",
+    "href": "datasets/submission/index.html",
+    "title": "Submission overview",
     "section": "",
-    "text": "Check for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
-  },
-  {
-    "objectID": "compute/ai-training/index.html",
-    "href": "compute/ai-training/index.html",
-    "title": "AI Training",
-    "section": "",
-    "text": "Guidance on how to procure on-platform GPU HPC resources"
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html",
-    "href": "datasets/download/downloading-data.html",
-    "title": "Download guide",
-    "section": "",
-    "text": "This section provides guidelines on the necessary steps to download data from BigPicture."
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html#get-access-to-a-dataset",
-    "href": "datasets/download/downloading-data.html#get-access-to-a-dataset",
-    "title": "Download guide",
-    "section": "Get access to a dataset",
-    "text": "Get access to a dataset\nThe first step to download data from Big Picture is to get access to the dataset the user is interested in. This can be done by visiting REMS here. Log in, choose the datasets of interest and add them to the cart. After that, the user can apply for access, fill in the form and send the application. The user needs to wait for approval from the data access committee (DAC) and after it has been approved the user can download the datasets."
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html#preparation-for-downloading-data",
-    "href": "datasets/download/downloading-data.html#preparation-for-downloading-data",
-    "title": "Download guide",
-    "section": "Preparation for downloading data",
-    "text": "Preparation for downloading data\n\nDownload configuration file\nBefore downloading the data, the user needs to download the configuration file by logging in here. Follow the dialogue to get authenticated and then click on Download inbox s3cmd credentials to download the configuration file named s3cmd.conf.\n\n\nInstall the sda-cli tool\nFollow the guidelines here to install the sda-cli tool.\n\n\nGenerate the public and secret key\nThe initial step involves creating a crypt4gh keypair using the sda-cli:\n./sda-cli createKey &lt;keypair_name&gt;\nwhere &lt;keypair_name&gt; is the base name of the key files. The above command will create two key files named keypair_name.pub.pem and keypair_name.sec.pem. The public key (pub) will be used alongside with sda-cli and will be used by the system for encryption of the files before downloading, while the private one (sec) will be used by the requester for decrypting the files after downloading."
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html#check-access",
-    "href": "datasets/download/downloading-data.html#check-access",
-    "title": "Download guide",
-    "section": "Check access",
-    "text": "Check access\nAfter the user has been granted access to the dataset, the user can check access to the dataset by listing the datasets and their files using the sda-cli. For listing the datasets that the user has access to, the user needs to run:\n./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se (--bytes)\nFor listing the files of a specific dataset, the user needs to run:\n./sda-cli list -config s3cmd.conf -dataset &lt;DatasetID&gt; --url https://download.bp.nbis.se (--bytes)\nwhere &lt;DatasetID&gt; is the ID of the dataset for which the user wants to list the files. The dataset ID can be found by running the previous command."
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html#download-data",
-    "href": "datasets/download/downloading-data.html#download-data",
-    "title": "Download guide",
-    "section": "Download data",
-    "text": "Download data\n\nDownload file(s)\nAfter having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data. The user needs to provide the public key that was generated earlier, as well as the configuration file.\nTo download the data:\n./sda-cli download -config s3cmd.conf -pubkey &lt;public-key-file&gt; -dataset-id &lt;DatasetID&gt; --url https://download.bp.nbis.se -outdir &lt;/path/to/output/directory&gt; &lt;filepath_1_to_download&gt; &lt;filepath_2_to_download&gt; ...\nwhere:\n\n&lt;public-key-file&gt; is the public key file that was generated earlier (&lt;keypair_name&gt;.pub.pem)\n&lt;DatasetID&gt; is the ID of the dataset for which the user wants to download the files\n&lt;/path/to/output/directory&gt; is the path to the directory where the files will be downloaded\n&lt;filepath_*_to_download&gt; are the file paths of the files which can be found by listing the files of the dataset as described above\n\n\n\nDownload dataset (for sda-cli version = 0.1.3)\nTo download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file by running the following command:\n./sda-cli list -config s3cmd.conf --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR&gt;1{print prev} {prev=hold}' &gt; filepaths.txt\nand then download them by using the saved file from the previous step:\n./sda-cli download -config s3cmd.conf -pubkey &lt;public-key-file&gt; -dataset-id &lt;DatasetID&gt; --url https://download.bp.nbis.se -outdir &lt;/path/to/output/directory&gt;  --from-file filepaths.txt"
-  },
-  {
-    "objectID": "datasets/download/downloading-data.html#decrypt-the-data",
-    "href": "datasets/download/downloading-data.html#decrypt-the-data",
-    "title": "Download guide",
-    "section": "Decrypt the data",
-    "text": "Decrypt the data\nAfter downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:\n./sda-cli decrypt -key &lt;keypair_name&gt;.sec.pem &lt;/path/to/encrypted/file&gt;\nwhere &lt;/path/to/encrypted/file&gt; is the path to the encrypted file that the user wants to decrypt and &lt;keypair_name&gt;.sec.pem is the private key file that was generated earlier."
+    "text": "Welcome to the general guide for BigPicture submission.\nYou can find everything you need for submission and more in the internal guideline document.(Bigpicture internal, requires password)\nAlternatively, you can find below the practical guide created by NBIS DevOps.\n\nThe preparation guide, before you create a submission.\nThe submission guide, when you are ready.\n\nFor any questions regarding data submission, please email us.",
+    "crumbs": [
+      "Submission overview"
+    ]
   },
   {
     "objectID": "datasets/submission/submission-guide.html",
@@ -141,7 +109,7 @@
     "href": "datasets/submission/submission-guide.html#submit-your-files",
     "title": "Submission guide",
     "section": "Submit your files",
-    "text": "Submit your files\nOnce your files are encrypted, you are ready to start uploading them.\n\nObtain the configuration file\nThe sda-cli tool requires a configuration file with the relevant settings. You can get the configuration file by logging in to our service (In case it’s a test, please use our staging login service).\nUpload the files\nFiles can be uploaded with or without folders. Files can be uploaded individually using:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n./sda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\nsda-cli upload -config &lt;configuration_file&gt; &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n\nMany times it might be easier to upload a directory directly though. This can be done with the -r flag:\n\nLinuxMacWindows\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n./sda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\nsda-cli upload -config &lt;configuration_file&gt; -r &lt;folder_to_upload&gt;\n\n\n\n\nMore information on the capabilites of the sda-cli can be found using the tool’s built-in help:\n\nLinuxMacWindows\n\n\n./sda-cli help\n\n\n./sda-cli help\n\n\nsda-cli help",
+    "text": "Submit your files\nOnce your files are encrypted, you are ready to start uploading them.\n\nObtain the configuration file\nThe sda-cli tool requires a configuration file with the relevant settings. You can get the configuration file by logging in to our service (In case it’s a test, please use our staging login service).\nUpload the files\nFiles can be uploaded with or without folders. Files can be uploaded individually using:\n\nLinuxMacWindows\n\n\n./sda-cli -config &lt;configuration_file&gt; upload &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n./sda-cli -config &lt;configuration_file&gt; upload &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\nsda-cli -config &lt;configuration_file&gt; upload &lt;encrypted_file_1_to_upload&gt; &lt;encrypted_file_2_to_upload&gt; ...\n\n\n\nMany times it might be easier to upload a directory directly though. This can be done with the -r flag:\n\nLinuxMacWindows\n\n\n./sda-cli -config &lt;configuration_file&gt; upload -r &lt;folder_to_upload&gt;\n\n\n./sda-cli -config &lt;configuration_file&gt; upload -r &lt;folder_to_upload&gt;\n\n\nsda-cli -config &lt;configuration_file&gt; upload -r &lt;folder_to_upload&gt;\n\n\n\n\nMore information on the capabilites of the sda-cli can be found using the tool’s built-in help:\n\nLinuxMacWindows\n\n\n./sda-cli help\n\n\n./sda-cli help\n\n\nsda-cli help",
     "crumbs": [
       "Submission guide"
     ]
@@ -157,65 +125,67 @@
     ]
   },
   {
-    "objectID": "datasets/submission/preparation-guide.html",
-    "href": "datasets/submission/preparation-guide.html",
-    "title": "Preparation guide",
+    "objectID": "changelogs/changelog-2025-06-09.html",
+    "href": "changelogs/changelog-2025-06-09.html",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
-    "crumbs": [
-      "Preparation guide"
-    ]
+    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122\n\n\n\n\n\nSave userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099\n\n\n\n\n\nCheck for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
   },
   {
-    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
-    "href": "datasets/submission/preparation-guide.html#folder-structure",
-    "title": "Preparation guide",
-    "section": "Check folder structure",
-    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
-    "crumbs": [
-      "Preparation guide"
-    ]
-  },
-  {
-    "objectID": "datasets/submission/preparation-guide.html#xmllint",
-    "href": "datasets/submission/preparation-guide.html#xmllint",
-    "title": "Preparation guide",
-    "section": "Verify XML file structure",
-    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
-    "crumbs": [
-      "Preparation guide"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bigpicture",
+    "objectID": "changelogs/changelog-2025-06-09.html#admin-api",
+    "href": "changelogs/changelog-2025-06-09.html#admin-api",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
+    "text": "List datasets by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1119\nAdd endpoint to re-verify an entire dataset by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1121\nEnable re-verification of a file by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1120\nDelete file by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/1122"
   },
   {
-    "objectID": "datasets/submission/index.html",
-    "href": "datasets/submission/index.html",
-    "title": "Submission overview",
+    "objectID": "changelogs/changelog-2025-06-09.html#auth",
+    "href": "changelogs/changelog-2025-06-09.html#auth",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "Welcome to the general guide for BigPicture submission.\nYou can find everything you need for submission and more in the internal guideline document.(Bigpicture internal, requires password)\nAlternatively, you can find below the practical guide created by NBIS DevOps.\n\nThe preparation guide, before you create a submission.\nThe submission guide, when you are ready.\n\nFor any questions regarding data submission, please email us.",
-    "crumbs": [
-      "Submission overview"
-    ]
+    "text": "Save userinfo to db by @MalinAhlberg in https://github.com/neicnordic/sensitive-data-archive/pull/1099"
   },
   {
-    "objectID": "datasets/index.html",
-    "href": "datasets/index.html",
-    "title": "Data access overview",
+    "objectID": "changelogs/changelog-2025-06-09.html#ingest",
+    "href": "changelogs/changelog-2025-06-09.html#ingest",
+    "title": "Detailed Changelog 2025-06-09",
     "section": "",
-    "text": "This page describes how you request access to datasets deposited in BigPicture. For any questions regarding data access, please email us."
+    "text": "Check for keyhash on startup by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/1189"
   },
   {
-    "objectID": "datasets/browse/index.html",
-    "href": "datasets/browse/index.html",
-    "title": "Browse",
+    "objectID": "compute/ai-training/index.html",
+    "href": "compute/ai-training/index.html",
+    "title": "AI Training",
     "section": "",
-    "text": "Landing pages website root"
+    "text": "Guidance on how to procure on-platform GPU HPC resources"
+  },
+  {
+    "objectID": "maintenance_window.html",
+    "href": "maintenance_window.html",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog\n\n\n\nOn Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+  },
+  {
+    "objectID": "maintenance_window.html#section",
+    "href": "maintenance_window.html#section",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog"
+  },
+  {
+    "objectID": "maintenance_window.html#section-1",
+    "href": "maintenance_window.html#section-1",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
+  },
+  {
+    "objectID": "maintenance_window.html#section-2",
+    "href": "maintenance_window.html#section-2",
+    "title": "Maintenance Window",
+    "section": "",
+    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
   },
   {
     "objectID": "compute/analysis/index.html",
@@ -316,31 +286,89 @@
     "text": "Fix sync and sync-api deployments by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/867\nAdd charts install instructions readme by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/971\nFeature/admin api charts by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/972\nAdd nginx-affinity label to ingress templates in the SDA-SVC chart. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/904\nAdd more review suggestions for chart README by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/984"
   },
   {
-    "objectID": "maintenance_window.html",
-    "href": "maintenance_window.html",
-    "title": "Maintenance Window",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bigpicture",
     "section": "",
-    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog\n\n\n\nOn Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog\n\n\n\nOn Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+    "text": "A central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
   },
   {
-    "objectID": "maintenance_window.html#section",
-    "href": "maintenance_window.html#section",
-    "title": "Maintenance Window",
+    "objectID": "datasets/submission/preparation-guide.html",
+    "href": "datasets/submission/preparation-guide.html",
+    "title": "Preparation guide",
     "section": "",
-    "text": "On Monday 9th of June, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nThis time there will be no user facing changes, we will add an option for administrators to be able to re-verify uploaded files in the system.\nDetailed Changelog"
+    "text": "This guide contains instructions on how to prepare your data for being uploaded to BigPicture.",
+    "crumbs": [
+      "Preparation guide"
+    ]
   },
   {
-    "objectID": "maintenance_window.html#section-1",
-    "href": "maintenance_window.html#section-1",
-    "title": "Maintenance Window",
-    "section": "",
-    "text": "On Monday 3rd of March, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nWhile this update is mostly for updating our internal services to improve submission automation there is on change to services that are relevant to BigPicture users are listed below.\n\nThe repository’s public key is now available as a base64 encoded string form the login pages info endpoint https://login.bp.nbis.se/info\n\nDetailed Changelog"
+    "objectID": "datasets/submission/preparation-guide.html#folder-structure",
+    "href": "datasets/submission/preparation-guide.html#folder-structure",
+    "title": "Preparation guide",
+    "section": "Check folder structure",
+    "text": "Check folder structure\nBefore you submit your data, please make sure that the folder structure of your dataset complies with the structure below.\n\nThe root folder of the submission should actually be the dataset folder which includes several subfolders. See the example of structure folder below:\n\n    DATASET_{IDENTIFIER}\n    |--- METADATA\n    |    |--- dataset.xml (contains: Dataset)\n    |    |--- policy.xml (contains: Policy)\n    |    |--- image.xml (contains: Images)\n    |    |--- annotation.xml (contains: Annotations) \n    |    |--- observation.xml (contains: Observations)\n    |    |--- observer.xml (contains: Observers)\n    |    |--- sample.xml (contains: Biological Beings, Cases (if present), Specimens, Blocks and Slides)\n    |    |--- staining.xml (contains: Stainings)\n    |---IMAGES\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |    |--- IMAGE_{IDENTIFIER}*\n    |    |    |--- *.dcm files of an Image\n    |--- ANNOTATIONS+\n    |    |--- *.geojson\n    |--- LANDING_PAGE***\n    |    |--- landing_page.xml (contains: Landing Page)\n    |    |--- THUMBNAILS\n    |    |    |--- *.jpg\n    |--- PRIVATE**** - not shared with users\n    |    |--- rems.xml - not shared with users\n    |    |--- organisation.xml - not shared with users\n    |    |--- datacite.xml (contains: DataCite, optional) - not shared with users\n\n    *    The root of the folder must be the written as \"DATASET_{IDENTIFIER}\" with\n         IDENTIFIER being either the accession ID of the Dataset generated by the\n         repository (when data is downloaded), or the ALIAS defined by the\n         submitter at dataset creation and submission.\n    **   Folders containing WSIs files (I.e. *.dcm) must be named\n         \"IMAGE_{IDENTIFIER}\" with IDENTIFIER being either the accession ID of a\n         given Image the files relate to generated by the repository (when data is\n         downloaded), or the ALIAS defined by the submitter at dataset creation or\n         submission.\n    ***  IMPORTANT: Anything in this folder should be expected to be visible to\n         the entire world.\n    +    If the dataset does not contain Annotations the respective .xml files\n         or directory can be omitted.\n    **** This folder contains metadata that will not be shared with users that\n         have gotten access to a dataset\n\nAll the files should be encrypted with crypt4gh and the extensions must be c4gh, e.g: image.xml.c4gh, image1.dcm.c4gh etc\nThe metadata should be stored in two different subfolders: METADATA and PRIVATE.\nThe only files that may exist in the METADATA folder are the following: dataset.xml, image.xml, observation.xml, observer.xml (optional), policy.xml, sample.xml, annotation.xml (optional) and staining.xml.\nThe only files that may exist in the PRIVATE folder are the following: dac.xml and submission.xml.\nThe file image.xml should include the full path of each dicom image and includes also the checksums of both encrypted and unencrypted files, e.g:\n\n    &lt;FILES&gt;\n        &lt;FILE filename=\"IMAGES/IMAGE_{IDENTIFIER}/*.dcm\" checksum_method=\"SHA256\" checksum=\"&lt;encrypted_checksum&gt;\" unencrypted_checksum=\"&lt;unencrypted_checksum&gt;\" filetype=\"dcm\"/&gt;\n    &lt;/FILES&gt;",
+    "crumbs": [
+      "Preparation guide"
+    ]
   },
   {
-    "objectID": "maintenance_window.html#section-2",
-    "href": "maintenance_window.html#section-2",
-    "title": "Maintenance Window",
+    "objectID": "datasets/submission/preparation-guide.html#xmllint",
+    "href": "datasets/submission/preparation-guide.html#xmllint",
+    "title": "Preparation guide",
+    "section": "Verify XML file structure",
+    "text": "Verify XML file structure\nYou can check if your metadata files will pass our validation by using the tool xmllint and the Bigpicture metadata schemas. This applies for the xml files in the folders METADATA, LANDING_PAGE and PRIVATE.\n\nDownload all relevant XSDs.\n\nThe files can be downloaded directly from the GitHub repo (v1) or (v2),\nor all together using this script, which will place the files in the folder xsd-files/\n\nversion=v2  # replace with v1 for metadata version 1\nmkdir -p xsd-files\n\ncurl -H \"Accept: application/vnd.github.v3+json\" \\\n   https://api.github.com/repos/imi-bigpicture/bigpicture-metaflex/contents/src?ref=$version.0.0 | jq -r '.[] | .download_url' |\nwhile IFS= read -r url; do\n    xsd_name=$(basename \"$url\")\n    curl -o \"xsd-files/${xsd_name%\\?*}\" -J -L \"$url\" &gt;/dev/null 2&gt;&1\ndone\nFor each xml file, run xmllint --noout --schema xsd-files/BP.&lt;filename&gt;.xsd &lt;filename&gt;.xml. For example, to check dataset.xml, run:\nxmllint --noout --schema xsd-files/BP.dataset.xsd METADATA/dataset.xml",
+    "crumbs": [
+      "Preparation guide"
+    ]
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html",
+    "href": "datasets/download/downloading-data.html",
+    "title": "Download guide",
     "section": "",
-    "text": "On Monday 30th of September, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished. Maintenance work will mainly consist of updating running services to their latest stable version.\nChanges to services that are relevant to BigPicture users and/or the helpdesk team are listed below.\n\n\nNew service for accessing datasets in the BigPicture repository. Now it’s not necessary to use the work-around with sending emails and public keys but instead once you’ve gotten access to a dataset in REMS you can access it directly via sda-cli (version 0.1.2).\nThe download service currently supports downloading both decrypted files or files encrypted with your public key directly to your environment.\n\n\n\nIt is now possible to provide the the authentication token in the environment instead of having it in the configuration file (version 0.1.3).\n\n\n\nCorrect branding for authentication services in the login portal"
+    "text": "This section provides guidelines on the necessary steps to download data from BigPicture."
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html#get-access-to-a-dataset",
+    "href": "datasets/download/downloading-data.html#get-access-to-a-dataset",
+    "title": "Download guide",
+    "section": "Get access to a dataset",
+    "text": "Get access to a dataset\nThe first step to download data from Big Picture is to get access to the dataset the user is interested in. This can be done by visiting REMS here. Log in, choose the datasets of interest and add them to the cart. After that, the user can apply for access, fill in the form and send the application. The user needs to wait for approval from the data access committee (DAC) and after it has been approved the user can download the datasets."
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html#preparation-for-downloading-data",
+    "href": "datasets/download/downloading-data.html#preparation-for-downloading-data",
+    "title": "Download guide",
+    "section": "Preparation for downloading data",
+    "text": "Preparation for downloading data\n\nDownload configuration file\nBefore downloading the data, the user needs to download the configuration file by logging in here. Follow the dialogue to get authenticated and then click on Download inbox s3cmd credentials to download the configuration file named s3cmd.conf.\n\n\nInstall the sda-cli tool\nFollow the guidelines here to install the sda-cli tool.\n\n\nGenerate the public and secret key\nThe initial step involves creating a crypt4gh keypair using the sda-cli:\n./sda-cli createKey &lt;keypair_name&gt;\nwhere &lt;keypair_name&gt; is the base name of the key files. The above command will create two key files named keypair_name.pub.pem and keypair_name.sec.pem. The public key (pub) will be used alongside with sda-cli and will be used by the system for encryption of the files before downloading, while the private one (sec) will be used by the requester for decrypting the files after downloading."
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html#check-access",
+    "href": "datasets/download/downloading-data.html#check-access",
+    "title": "Download guide",
+    "section": "Check access",
+    "text": "Check access\nAfter the user has been granted access to the dataset, the user can check access to the dataset by listing the datasets and their files using the sda-cli. For listing the datasets that the user has access to, the user needs to run:\n./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se (--bytes)\nFor listing the files of a specific dataset, the user needs to run:\n./sda-cli -config s3cmd.conf list -dataset &lt;DatasetID&gt; --url https://download.bp.nbis.se (--bytes)\nwhere &lt;DatasetID&gt; is the ID of the dataset for which the user wants to list the files. The dataset ID can be found by running the previous command."
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html#download-data",
+    "href": "datasets/download/downloading-data.html#download-data",
+    "title": "Download guide",
+    "section": "Download data",
+    "text": "Download data\n\nDownload file(s)\nAfter having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data. The user needs to provide the public key that was generated earlier, as well as the configuration file.\nTo download the data:\n./sda-cli -config s3cmd.conf download -pubkey &lt;public-key-file&gt; -dataset-id &lt;DatasetID&gt; --url https://download.bp.nbis.se -outdir &lt;/path/to/output/directory&gt; &lt;filepath_1_to_download&gt; &lt;filepath_2_to_download&gt; ...\nwhere:\n\n&lt;public-key-file&gt; is the public key file that was generated earlier (&lt;keypair_name&gt;.pub.pem)\n&lt;DatasetID&gt; is the ID of the dataset for which the user wants to download the files\n&lt;/path/to/output/directory&gt; is the path to the directory where the files will be downloaded\n&lt;filepath_*_to_download&gt; are the file paths of the files which can be found by listing the files of the dataset as described above\n\n\n\nDownload dataset (for sda-cli version = 0.1.3)\nTo download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file by running the following command:\n./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR&gt;1{print prev} {prev=hold}' &gt; filepaths.txt\nand then download them by using the saved file from the previous step:\n./sda-cli -config s3cmd.conf download -pubkey &lt;public-key-file&gt; -dataset-id &lt;DatasetID&gt; --url https://download.bp.nbis.se -outdir &lt;/path/to/output/directory&gt;  --from-file filepaths.txt"
+  },
+  {
+    "objectID": "datasets/download/downloading-data.html#decrypt-the-data",
+    "href": "datasets/download/downloading-data.html#decrypt-the-data",
+    "title": "Download guide",
+    "section": "Decrypt the data",
+    "text": "Decrypt the data\nAfter downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:\n./sda-cli decrypt -key &lt;keypair_name&gt;.sec.pem &lt;/path/to/encrypted/file&gt;\nwhere &lt;/path/to/encrypted/file&gt; is the path to the encrypted file that the user wants to decrypt and &lt;keypair_name&gt;.sec.pem is the private key file that was generated earlier."
+  },
+  {
+    "objectID": "datasets/browse/index.html",
+    "href": "datasets/browse/index.html",
+    "title": "Browse",
+    "section": "",
+    "text": "Landing pages website root"
   }
 ]
