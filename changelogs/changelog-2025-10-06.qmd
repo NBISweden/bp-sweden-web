@@ -12,6 +12,9 @@ toc: false
  * Download re-encrypted file from the inbox by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1627
  * Optimize db queries for /users and /files by @aaperis in https://github.com/neicnordic/sensitive-data-archive/pull/1792
  * Reduce verbose logging from GIN by @zeidlitz in https://github.com/neicnordic/sensitive-data-archive/pull/1799
+ * Explicit audit trail in the logs by @zeidlitz in https://github.com/neicnordic/sensitive-data-archive/issues/1847
+ * Use fileids instead of paths when working with the repository by @kostas-kou in https://github.com/neicnordic/sensitive-data-archive/pull/1934
+ * Specify dataset when listing files by @jbygdell  in https://github.com/neicnordic/sensitive-data-archive/pull/1903
 
 ## Auth
 
@@ -55,3 +58,7 @@ toc: false
  * Remove string concatenations from SQL queries. by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1797
  * Ensure all switches have a default case by @jbygdell in https://github.com/neicnordic/sensitive-data-archive/pull/1818 
  * Include file-id in loginfo  by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1857
+ * Do not leak submitter ids from download by @jbygdell and
+ @MalinAhlberg https://github.com/neicnordic/sensitive-data-archive/pull/1601
+ * Include fileid in log information by @nanjiangshu in https://github.com/neicnordic/sensitive-data-archive/pull/1857
+
