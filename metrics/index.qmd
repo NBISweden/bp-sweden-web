@@ -11,6 +11,114 @@ format:
   <div style="opacity:.75;font-size:.9rem;">This is a placeholder. Next step: we’ll wire it to a JSON file.</div>
 
   <div style="margin-top:1rem;padding:1rem;border:1px dashed #9aa6bf;border-radius:10px;">
-    No data connected yet. We’ll add <code>docs/assets/data/metrics.json</code> and a small JS loader in the next step.
+    No data connected yet.
   </div>
 </div>
+
+<script>
+(function(){
+  const JSON_URL = new URL('/assets/data/metrics.json', window.location.origin).toString();
+  //const JSON_URL = "https://safespring-publicspace-cortex/metrics/validated_metrics.json";
+  //const JSON_URL = "https://raw.githubusercontent.com/xxxxx/bp-metrics-feed/main/validated_metrics.json";
+
+
+  // 1) minimal guardrails (no external schema)
+  const DISPLAY_ORDER = [
+    'number_of_wsis',
+    'number_of_images',
+    'number_of_datasets',
+    'cases_uploaded',
+    'biological_beings',
+    'specimens_uploaded',
+    'blocks_uploaded',
+    'number_of_stainings',
+    'observations_uploaded',
+    'annotation_files',
+    'annotations_uploaded'
+  ];
+  const ALLOWED = new Set(DISPLAY_ORDER);
+
+  const TITLE_MAP = {
+    number_of_wsis: 'Whole-slide images',
+    number_of_images: 'Images',
+    number_of_datasets: 'Datasets',
+    cases_uploaded: 'Cases uploaded',
+    biological_beings: 'Biological beings',
+    specimens_uploaded: 'Specimens uploaded',
+    blocks_uploaded: 'Blocks uploaded',
+    number_of_stainings: 'Stainings',
+    observations_uploaded: 'Observations uploaded',
+    annotation_files: 'Annotation files',
+    annotations_uploaded: 'Annotations uploaded'
+  };
+
+  function el(tag, attrs={}, children=[]) {
+    const n = document.createElement(tag);
+    for (const [k,v] of Object.entries(attrs)) {
+      if (k === 'class') n.className = v;
+      else if (k === 'style') n.style.cssText = v;
+      else n.setAttribute(k, v);
+    }
+    (Array.isArray(children) ? children : [children]).forEach(c => {
+      if (c == null) return;
+      if (typeof c === 'string') n.appendChild(document.createTextNode(c));
+      else n.appendChild(c);
+    });
+    return n;
+  }
+
+  function fmt(n){
+    try { return new Intl.NumberFormat(navigator.language||'en-US').format(n); }
+    catch { return String(n); }
+  }
+
+  function sanitizeMetrics(raw){
+    // Keep only allowed metrics; coerce/verify numbers; preserve display order
+    const byName = new Map();
+    (raw || []).forEach(m => {
+      if (!m || typeof m.name !== 'string' || !ALLOWED.has(m.name)) return;
+      const v = Number(m.value);
+      if (!Number.isFinite(v)) return;
+      byName.set(m.name, { name: m.name, value: v, unit: m.unit === 'count' ? 'count' : '' });
+    });
+    return DISPLAY_ORDER
+      .map(k => byName.get(k))
+      .filter(Boolean);
+  }
+
+  function render(data){
+    const root = document.getElementById('metrics-root');
+    root.innerHTML = '';
+
+    const updated = new Date(data?.generated_at || Date.now());
+    root.appendChild(el('div', {style:'margin:.5rem 0 1rem; opacity:.75; font-size:.9rem;'},
+      `Last updated: ${isNaN(updated) ? '—' : updated.toLocaleString()}`));
+
+    const grid = el('div', {style:'display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));'});
+
+    const metrics = sanitizeMetrics(data?.metrics);
+    metrics.forEach(m => {
+      const card = el('div', {style:'border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04);'});
+      card.appendChild(el('div', {style:'font-weight:700; font-size:1.6rem; line-height:1.1;'}, fmt(m.value)));
+      card.appendChild(el('div', {style:'color:#64748b; margin-top:6px; font-size:.95rem;'}, TITLE_MAP[m.name] || m.name));
+      grid.appendChild(card);
+    });
+
+    root.appendChild(grid);
+  }
+
+  function renderError(msg){
+    const root = document.getElementById('metrics-root');
+    root.innerHTML = '';
+    root.appendChild(el('div', {style:'border:1px solid #fecaca;background:#fef2f2;color:#7f1d1d;padding:12px;border-radius:10px;'},
+      ['Could not load metrics: ', msg]));
+  }
+
+  fetch(JSON_URL, {cache:'no-store'})
+    .then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(render)
+    .catch(err => renderError(err.message));
+})();
+</script>
+
+
