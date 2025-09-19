@@ -6,21 +6,14 @@ format:
     toc: false
 ---
 
+
 <div id="metrics-root" style="max-width:1100px;margin:0 auto;padding:0 1rem 3rem 1rem;">
   <h1 style="margin-bottom:0.5rem;">Repository Metrics</h1>
-  <div style="opacity:.75;font-size:.9rem;">This is a placeholder. Next step: we’ll wire it to a JSON file.</div>
-
-  <div style="margin-top:1rem;padding:1rem;border:1px dashed #9aa6bf;border-radius:10px;">
-    No data connected yet.
-  </div>
 </div>
 
 <script>
 (function(){
-  const JSON_URL = new URL('/assets/data/metrics.json', window.location.origin).toString();
-  //const JSON_URL = "https://safespring-publicspace-cortex/metrics/validated_metrics.json";
-  //const JSON_URL = "https://raw.githubusercontent.com/xxxxx/bp-metrics-feed/main/validated_metrics.json";
-
+  const JSON_URL = "__METRICS_JSON_URL__";
 
   // 1) minimal guardrails (no external schema)
   const DISPLAY_ORDER = [
@@ -90,28 +83,33 @@ format:
     const root = document.getElementById('metrics-root');
     root.innerHTML = '';
 
-    const updated = new Date(data?.generated_at || Date.now());
-    root.appendChild(el('div', {style:'margin:.5rem 0 1rem; opacity:.75; font-size:.9rem;'},
-      `Last updated: ${isNaN(updated) ? '—' : updated.toLocaleString()}`));
+    // Show warning if no metrics data
+    let metrics = sanitizeMetrics(data?.metrics);
+    let noData = !metrics || metrics.length === 0;
+    if (noData) {
+      root.appendChild(el('div', {style:'border:1px solid #fecaca;background:#fef2f2;color:#7f1d1d;padding:12px;border-radius:10px;margin-bottom:1rem;'},
+        'No data connected yet.'));
+      // Fill with placeholders for all metrics
+      metrics = DISPLAY_ORDER.map(name => ({ name, value: '—' }));
+    } else {
+      const updated = new Date(data?.generated_at || Date.now());
+      root.appendChild(el('div', {style:'margin:.5rem 0 1rem; opacity:.75; font-size:.9rem;'},
+        `Last updated: ${isNaN(updated) ? '—' : updated.toLocaleString()}`));
+    }
 
     const grid = el('div', {style:'display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));'});
-
-    const metrics = sanitizeMetrics(data?.metrics);
     metrics.forEach(m => {
       const card = el('div', {style:'border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04);'});
-      card.appendChild(el('div', {style:'font-weight:700; font-size:1.6rem; line-height:1.1;'}, fmt(m.value)));
+      card.appendChild(el('div', {style:'font-weight:700; font-size:1.6rem; line-height:1.1;'}, m.value === '—' ? '—' : fmt(m.value)));
       card.appendChild(el('div', {style:'color:#64748b; margin-top:6px; font-size:.95rem;'}, TITLE_MAP[m.name] || m.name));
       grid.appendChild(card);
     });
-
     root.appendChild(grid);
   }
 
   function renderError(msg){
-    const root = document.getElementById('metrics-root');
-    root.innerHTML = '';
-    root.appendChild(el('div', {style:'border:1px solid #fecaca;background:#fef2f2;color:#7f1d1d;padding:12px;border-radius:10px;'},
-      ['Could not load metrics: ', msg]));
+    // Show warning and placeholder cards if error
+    render({ metrics: null });
   }
 
   fetch(JSON_URL, {cache:'no-store'})
