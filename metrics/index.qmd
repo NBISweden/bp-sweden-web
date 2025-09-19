@@ -1,159 +1,122 @@
 ---
-title: "Metrics for the central reporitory of digital pathology"
-format: 
-  dashboard:
-    scrolling: true
-    nav-buttons: [linkedin, twitter, github]
-output:
-  quarto::quarto_html_document:
-    theme: sketchy
+title: "Repository Metrics"
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-##  Row {height=50%}
-::: {.card title="Progress Bar"}
-```{=html}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div class="progress-container">
-        <div class="progress-bar" id="progress-bar">0%</div>
-    </div>
-    <table>
-        <tr>
-            <td>Estimated total data to upload</td>
-            <td>4 672 590 GB</td>
-        </tr>
-        <tr>
-            <td>Average slide size</td>
-            <td>1.5 GB</td>
-        </tr>
-        <tr>
-            <td>Number of Slides uploaded / 3M goal</td>
-            <td>4 572 / 3 000 000</td>
-        </tr>
-        <tr>
-            <td>The approximate amount of data that needs to be uploaded</td>
-            <td>4 666 102 GB</td>
-        </tr>
-    </table>
-    <script>
-        const totalSlides = 3000000;
-        const currentSlides = 38570;
-        const progressPercentage = (currentSlides / totalSlides) * 100;
-        const progressBar = document.getElementById('progress-bar');
-        progressBar.style.width = progressPercentage + '%';
-        progressBar.textContent = progressPercentage.toFixed(2) + '%';
-    </script>
-</body>
-```
-:::
+
+<div id="metrics-root" style="max-width:1100px;margin:0 auto;padding:0 1rem 3rem 1rem;">
+  <h1 style="margin-bottom:0.5rem;">Repository Metrics</h1>
+</div>
+
+<script>
+(function(){
+  const JSON_URL = "__METRICS_JSON_URL__";
+
+  // 1) minimal guardrails (no external schema)
+  const DISPLAY_ORDER = [
+    'number_of_wsis',
+    'number_of_images',
+    'number_of_datasets',
+    'cases_uploaded',
+    'biological_beings',
+    'specimens_uploaded',
+    'blocks_uploaded',
+    'number_of_stainings',
+    'observations_uploaded',
+    'annotation_files',
+    'annotations_uploaded'
+  ];
+  const ALLOWED = new Set(DISPLAY_ORDER);
+
+  const TITLE_MAP = {
+    number_of_wsis: 'Whole-slide images',
+    number_of_images: 'Images',
+    number_of_datasets: 'Datasets',
+    cases_uploaded: 'Cases uploaded',
+    biological_beings: 'Biological beings',
+    specimens_uploaded: 'Specimens uploaded',
+    blocks_uploaded: 'Blocks uploaded',
+    number_of_stainings: 'Stainings',
+    observations_uploaded: 'Observations uploaded',
+    annotation_files: 'Annotation files',
+    annotations_uploaded: 'Annotations uploaded'
+  };
+
+  function el(tag, attrs={}, children=[]) {
+    const n = document.createElement(tag);
+    for (const [k,v] of Object.entries(attrs)) {
+      if (k === 'class') n.className = v;
+      else if (k === 'style') n.style.cssText = v;
+      else n.setAttribute(k, v);
+    }
+    (Array.isArray(children) ? children : [children]).forEach(c => {
+      if (c == null) return;
+      if (typeof c === 'string') n.appendChild(document.createTextNode(c));
+      else n.appendChild(c);
+    });
+    return n;
+  }
+
+  function fmt(n){
+    try { return new Intl.NumberFormat(navigator.language||'en-US').format(n); }
+    catch { return String(n); }
+  }
+
+  function sanitizeMetrics(raw){
+    // Keep only allowed metrics; coerce/verify numbers; preserve display order
+    const byName = new Map();
+    (raw || []).forEach(m => {
+      if (!m || typeof m.name !== 'string' || !ALLOWED.has(m.name)) return;
+      const v = Number(m.value);
+      if (!Number.isFinite(v)) return;
+      byName.set(m.name, { name: m.name, value: v, unit: m.unit === 'count' ? 'count' : '' });
+    });
+    return DISPLAY_ORDER
+      .map(k => byName.get(k))
+      .filter(Boolean);
+  }
+
+  function render(data){
+    const root = document.getElementById('metrics-root');
+    root.innerHTML = '';
+
+    // Show warning if no metrics data
+    let metrics = sanitizeMetrics(data?.metrics);
+    let noData = !metrics || metrics.length === 0;
+    if (noData) {
+      root.appendChild(el('div', {style:'border:1px solid #fecaca;background:#fef2f2;color:#7f1d1d;padding:12px;border-radius:10px;margin-bottom:1rem;'},
+        'No data connected yet.'));
+      // Fill with placeholders for all metrics
+      metrics = DISPLAY_ORDER.map(name => ({ name, value: '—' }));
+    } else {
+      const updated = new Date(data?.generated_at || Date.now());
+      root.appendChild(el('div', {style:'margin:.5rem 0 1rem; opacity:.75; font-size:.9rem;'},
+        `Last updated: ${isNaN(updated) ? '—' : updated.toLocaleString()}`));
+    }
+
+    const grid = el('div', {style:'display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));'});
+    metrics.forEach(m => {
+      const card = el('div', {style:'border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04);'});
+      card.appendChild(el('div', {style:'font-weight:700; font-size:1.6rem; line-height:1.1;'}, m.value === '—' ? '—' : fmt(m.value)));
+      card.appendChild(el('div', {style:'color:#64748b; margin-top:6px; font-size:.95rem;'}, TITLE_MAP[m.name] || m.name));
+      grid.appendChild(card);
+    });
+    root.appendChild(grid);
+  }
+
+  function renderError(msg){
+    // Show warning and placeholder cards if error
+    render({ metrics: null });
+  }
+
+  fetch(JSON_URL, {cache:'no-store'})
+    .then(r => { if(!r.ok) throw new Error(`Failed to fetch metrics data: HTTP ${r.status}`); return r.json(); })
+    .then(render)
+    .catch(err => renderError(err.message));
+})();
+</script>
 
 
-##  Row {height=50%}
-::: {.card title="Datasets"}
-```{=html}
-<table>
-  <thead>
-    <tr>
-      <th>Dataset info</th>
-      <th>Catalogue item for resource</th>
-      <th>Number of slides</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Region Ostergotland first clinical study</td>
-      <td>https://handle.stage.datacite.org/10.80869/uwsu-uqlgdn</td>
-      <td>76 (+361)</td>
-    </tr>
-    <tr>
-      <td>Bp renal demo</td>
-      <td>https://handle.stage.datacite.org/10.80869/cw8i-pzelu4</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>Breast cancer cases</td>
-      <td>https://handle.stage.datacite.org/10.80869/jkju-ph4znm</td>
-      <td>590</td>
-    </tr>
-    <tr>
-      <td>HUS_LUNG_MOCK_SET</td>
-      <td>-</td>
-      <td>46</td>
-    </tr>
-  </tbody>
-</table>
-```
-:::
-
-##  Row {height=50%}
-::: {.card title="Numbers"}
-```{=html}
-<table>
-    <tr>
-      <td>Number of Datasets</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>Number of Slides in Total</td>
-      <td>4572</td>
-    </tr>
-    <tr>
-      <td>Total Data Storage (in GB)</td>
-      <td>6488.44</td>
-    </tr>
-    <tr>
-      <td>Number of AI Tools on the Platform</td>
-      <td>0</td>
-    </tr>
-</table>
-```
-:::
-
-<style>
-  .progress-container {
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 25px;
-    padding: 5px;
-    margin: 20px 0;
-  }
-  .progress-bar {
-    width: 0;
-    height: 30px;
-    background-color: #4caf50;
-    border-radius: 25px;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    transition: width 0.5s;
-  }
-  .dashboard {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .card {
-    height: 600px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .card-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 10px;
-  }
-</style>
