@@ -113,7 +113,7 @@ format:
   }
 
   fetch(JSON_URL, {cache:'no-store'})
-    .then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(r => { if(!r.ok) throw new Error(`Failed to fetch metrics data: HTTP ${r.status}`); return r.json(); })
     .then(render)
     .catch(err => renderError(err.message));
 })();
