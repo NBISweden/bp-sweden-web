@@ -12,4 +12,15 @@ Alternatively, you can find below the practical guide created by NBIS DevOps.
 - The [preparation guide](preparation-guide.qmd), before you create a submission. 
 - The [submission guide](submission-guide.qmd), when you are ready.
 
+## Required tools and versions
+
+The following tools are required for submission. Please make sure you are using **at least the minimal required versions** listed below. Links point to their official release pages.
+
+- **[sda-cli v0.1.6](https://github.com/NBISweden/sda-cli/releases/tag/v0.1.6)**
+- **[s3cmd v2.2.0](https://github.com/s3tools/s3cmd/releases/tag/v2.2.0)**
+- **[bigpicture-metadata-interface v2.0.2](https://github.com/imi-bigpicture/bigpicture-metadata-interface/releases/tag/v2.0.2)**
+  *(available only in a private Git repository)*
+
+## Support
+
 For any questions regarding data submission, please [email us](mailto:{{< var email.helpdesk >}}).
