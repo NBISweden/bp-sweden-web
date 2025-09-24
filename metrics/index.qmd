@@ -12,111 +12,47 @@ format:
 </div>
 
 <script>
-(function(){
+(async () => {
   const JSON_URL = "__METRICS_JSON_URL__";
+  const root = document.getElementById("metrics-root");
 
-  // 1) minimal guardrails (no external schema)
-  const DISPLAY_ORDER = [
-    'number_of_wsis',
-    'number_of_images',
-    'number_of_datasets',
-    'cases_uploaded',
-    'biological_beings',
-    'specimens_uploaded',
-    'blocks_uploaded',
-    'number_of_stainings',
-    'observations_uploaded',
-    'annotation_files',
-    'annotations_uploaded'
+  const METRICS = [
+    ["number_of_wsis","Whole-slide images"],["number_of_images","Images"],
+    ["number_of_datasets","Datasets"],["cases_uploaded","Cases uploaded"],
+    ["biological_beings","Biological beings"],["specimens_uploaded","Specimens uploaded"],
+    ["blocks_uploaded","Blocks uploaded"],["number_of_stainings","Stainings"],
+    ["observations_uploaded","Observations uploaded"],["annotation_files","Annotation files"],
+    ["annotations_uploaded","Annotations uploaded"]
   ];
-  const ALLOWED = new Set(DISPLAY_ORDER);
+  const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
 
-  const TITLE_MAP = {
-    number_of_wsis: 'Whole-slide images',
-    number_of_images: 'Images',
-    number_of_datasets: 'Datasets',
-    cases_uploaded: 'Cases uploaded',
-    biological_beings: 'Biological beings',
-    specimens_uploaded: 'Specimens uploaded',
-    blocks_uploaded: 'Blocks uploaded',
-    number_of_stainings: 'Stainings',
-    observations_uploaded: 'Observations uploaded',
-    annotation_files: 'Annotation files',
-    annotations_uploaded: 'Annotations uploaded'
+  const header = (genAt, err) => {
+    const t = new Date(genAt || NaN);
+    const msg = err ? `<span style="color:#7f1d1d">${err}</span>`
+                    : `Last updated: ${isNaN(t) ? "—" : t.toLocaleString()}`;
+    return `<div style="opacity:.75;font-size:.9rem;margin:.5rem 0 1rem">${msg}</div>`;
   };
 
-  function el(tag, attrs={}, children=[]) {
-    const n = document.createElement(tag);
-    for (const [k,v] of Object.entries(attrs)) {
-      if (k === 'class') n.className = v;
-      else if (k === 'style') n.style.cssText = v;
-      else n.setAttribute(k, v);
-    }
-    (Array.isArray(children) ? children : [children]).forEach(c => {
-      if (c == null) return;
-      if (typeof c === 'string') n.appendChild(document.createTextNode(c));
-      else n.appendChild(c);
-    });
-    return n;
+  const cards = (metrics) => {
+    const by = new Map((metrics||[]).map(m => [m.name, Number(m.value)]));
+    const items = METRICS.map(([k,label])=>{
+      const v = by.has(k) && Number.isFinite(by.get(k)) ? fmt(by.get(k)) : "—";
+      return `<div style="border:1px solid #e5e7eb;border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
+        <div style="font-weight:700;font-size:1.6rem;line-height:1.1">${v}</div>
+        <div style="color:#64748b;margin-top:6px;font-size:.95rem">${label}</div>
+      </div>`;
+    }).join("");
+    return `<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">${items}</div>`;
+  };
+
+  try {
+    const r = await fetch(JSON_URL, { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const raw = await r.json();
+    const g = raw?.globalMetrics || raw || {};
+    root.innerHTML = header(g.generated_at, null) + cards(g.metrics);
+  } catch (e) {
+    root.innerHTML = header(null, `Unable to load metrics (${e.message||e}).`) + cards(null);
   }
-
-  function fmt(n){
-    try { return new Intl.NumberFormat(navigator.language||'en-US').format(n); }
-    catch { return String(n); }
-  }
-
-  function sanitizeMetrics(raw){
-    // Keep only allowed metrics; coerce/verify numbers; preserve display order
-    const byName = new Map();
-    (raw || []).forEach(m => {
-      if (!m || typeof m.name !== 'string' || !ALLOWED.has(m.name)) return;
-      const v = Number(m.value);
-      if (!Number.isFinite(v)) return;
-      byName.set(m.name, { name: m.name, value: v, unit: m.unit === 'count' ? 'count' : '' });
-    });
-    return DISPLAY_ORDER
-      .map(k => byName.get(k))
-      .filter(Boolean);
-  }
-
-  function render(data){
-    const root = document.getElementById('metrics-root');
-    root.innerHTML = '';
-
-    // Show warning if no metrics data
-    let metrics = sanitizeMetrics(data?.metrics);
-    let noData = !metrics || metrics.length === 0;
-    if (noData) {
-      root.appendChild(el('div', {style:'border:1px solid #fecaca;background:#fef2f2;color:#7f1d1d;padding:12px;border-radius:10px;margin-bottom:1rem;'},
-        'No data connected yet.'));
-      // Fill with placeholders for all metrics
-      metrics = DISPLAY_ORDER.map(name => ({ name, value: '—' }));
-    } else {
-      const updated = new Date(data?.generated_at || Date.now());
-      root.appendChild(el('div', {style:'margin:.5rem 0 1rem; opacity:.75; font-size:.9rem;'},
-        `Last updated: ${isNaN(updated) ? '—' : updated.toLocaleString()}`));
-    }
-
-    const grid = el('div', {style:'display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));'});
-    metrics.forEach(m => {
-      const card = el('div', {style:'border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04);'});
-      card.appendChild(el('div', {style:'font-weight:700; font-size:1.6rem; line-height:1.1;'}, m.value === '—' ? '—' : fmt(m.value)));
-      card.appendChild(el('div', {style:'color:#64748b; margin-top:6px; font-size:.95rem;'}, TITLE_MAP[m.name] || m.name));
-      grid.appendChild(card);
-    });
-    root.appendChild(grid);
-  }
-
-  function renderError(msg){
-    // Show warning and placeholder cards if error
-    render({ metrics: null });
-  }
-
-  fetch(JSON_URL, {cache:'no-store'})
-    .then(r => { if(!r.ok) throw new Error(`Failed to fetch metrics data: HTTP ${r.status}`); return r.json(); })
-    .then(render)
-    .catch(err => renderError(err.message));
 })();
 </script>
-
-
