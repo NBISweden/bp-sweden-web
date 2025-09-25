@@ -27,9 +27,8 @@ format:
   const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
 
   const header = (genAt, err) => {
-    const t = new Date(genAt || NaN);
     const msg = err ? `<span style="color:#7f1d1d">${err}</span>`
-                    : `Last updated: ${isNaN(t) ? "—" : t.toLocaleString()}`;
+                    : `Last updated: ${genAt ? new Date(genAt).toLocaleString() : "—"} `;
     return `<div style="opacity:.75;font-size:.9rem;margin:.5rem 0 1rem">${msg}</div>`;
   };
 
