@@ -6,9 +6,20 @@ format:
     toc: false
 ---
 
+<style>
+.metrics-wrap { max-width:1100px; margin:0 auto; padding:0 1rem 3rem; }
+.metrics-title { margin-bottom:0.5rem; }
+.metrics-meta { opacity:.75; font-size:.9rem; margin:.5rem 0 1rem; }
+.metrics-error { color:#7f1d1d; }
+.metrics-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+.metric-card { border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+.metric-value { font-weight:700; font-size:1.6rem; line-height:1.1; }
+.metric-label { color:#64748b; margin-top:6px; font-size:.95rem; }
+</style>
 
-<div id="metrics-root" style="max-width:1100px;margin:0 auto;padding:0 1rem 3rem 1rem;">
-  <h1 style="margin-bottom:0.5rem;">Repository Metrics</h1>
+
+<div id="metrics-root" class="metrics-wrap">
+  <h1 class="metrics-title">Repository Metrics</h1>
 </div>
 
 <script>
@@ -27,21 +38,23 @@ format:
   const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
 
   const header = (genAt, err) => {
-    const msg = err ? `<span style="color:#7f1d1d">${err}</span>`
-                    : `Last updated: ${genAt ? new Date(genAt).toLocaleString() : "—"} `;
-    return `<div style="opacity:.75;font-size:.9rem;margin:.5rem 0 1rem">${msg}</div>`;
+    const msg = err
+      ? `<span class="metrics-error">${err}</span>`
+      : `Last updated: ${genAt ? new Date(genAt).toLocaleString() : "—"}`;
+    return `<div class="metrics-meta">${msg}</div>`;
   };
 
   const cards = (metrics) => {
     const by = new Map((metrics||[]).map(m => [m.name, Number(m.value)]));
-    const items = METRICS.map(([k,label])=>{
+    const items = METRICS.map(([k,label]) => {
       const v = by.has(k) && Number.isFinite(by.get(k)) ? fmt(by.get(k)) : "—";
-      return `<div style="border:1px solid #e5e7eb;border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(0,0,0,.04)">
-        <div style="font-weight:700;font-size:1.6rem;line-height:1.1">${v}</div>
-        <div style="color:#64748b;margin-top:6px;font-size:.95rem">${label}</div>
-      </div>`;
+      return `
+        <div class="metric-card">
+          <div class="metric-value">${v}</div>
+          <div class="metric-label">${label}</div>
+        </div>`;
     }).join("");
-    return `<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">${items}</div>`;
+    return `<div class="metrics-grid">${items}</div>`;
   };
 
   try {
