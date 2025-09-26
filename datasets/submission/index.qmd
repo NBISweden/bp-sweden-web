@@ -16,7 +16,7 @@ Alternatively, you can find below the practical guide created by NBIS DevOps.
 
 The following tools are required for submission. Please make sure you are using **at least the minimal required versions** listed below. Links point to their official release pages.
 
-- **[sda-cli v0.1.6](https://github.com/NBISweden/sda-cli/releases/tag/v0.1.6)**
+- **[sda-cli v0.2.1](https://github.com/NBISweden/sda-cli/releases/tag/v0.2.1)**
 - **[s3cmd v2.2.0](https://github.com/s3tools/s3cmd/releases/tag/v2.2.0)**
 - **[bigpicture-metadata-interface v2.0.2](https://github.com/imi-bigpicture/bigpicture-metadata-interface/releases/tag/v2.0.2)**
   *(available only in a private Git repository)*
