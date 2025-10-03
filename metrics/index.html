@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bigpicture - Metrics for the central reporitory of digital pathology</title>
+<title>Bigpicture - Repository Metrics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -179,31 +179,21 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#row" id="toc-row" class="nav-link active" data-scroll-target="#row">Row</a></li>
-  <li><a href="#row-1" id="toc-row-1" class="nav-link" data-scroll-target="#row-1">Row</a></li>
-  <li><a href="#row-2" id="toc-row-2" class="nav-link" data-scroll-target="#row-2">Row</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Metrics for the central reporitory of digital pathology</h1>
+<h1 class="title">Repository Metrics</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -215,164 +205,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="row" class="level2" height="50%">
-<h2 height="50%" class="anchored" data-anchor-id="row">Row</h2>
-<div class="card" title="Progress Bar">
-<div>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <div class="progress-container">
-        <div class="progress-bar" id="progress-bar">0%</div>
-    </div>
-    
-<table data-quarto-postprocess="true" class="table">
-<tbody>
-<tr class="odd">
-<td>Estimated total data to upload</td>
-<td>4 672 590 GB</td>
-</tr>
-<tr class="even">
-<td>Average slide size</td>
-<td>1.5 GB</td>
-</tr>
-<tr class="odd">
-<td>Number of Slides uploaded / 3M goal</td>
-<td>4 572 / 3 000 000</td>
-</tr>
-<tr class="even">
-<td>The approximate amount of data that needs to be uploaded</td>
-<td>4 666 102 GB</td>
-</tr>
-</tbody>
-</table>
-
-    <script>
-        const totalSlides = 3000000;
-        const currentSlides = 38570;
-        const progressPercentage = (currentSlides / totalSlides) * 100;
-        const progressBar = document.getElementById('progress-bar');
-        progressBar.style.width = progressPercentage + '%';
-        progressBar.textContent = progressPercentage.toFixed(2) + '%';
-    </script>
-
-</div>
-</div>
-</section>
-<section id="row-1" class="level2" height="50%">
-<h2 height="50%" class="anchored" data-anchor-id="row-1">Row</h2>
-<div class="card" title="Datasets">
-<div>
-<table data-quarto-postprocess="true" class="table">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Dataset info</th>
-<th data-quarto-table-cell-role="th">Catalogue item for resource</th>
-<th data-quarto-table-cell-role="th">Number of slides</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Region Ostergotland first clinical study</td>
-<td>https://handle.stage.datacite.org/10.80869/uwsu-uqlgdn</td>
-<td>76 (+361)</td>
-</tr>
-<tr class="even">
-<td>Bp renal demo</td>
-<td>https://handle.stage.datacite.org/10.80869/cw8i-pzelu4</td>
-<td>26</td>
-</tr>
-<tr class="odd">
-<td>Breast cancer cases</td>
-<td>https://handle.stage.datacite.org/10.80869/jkju-ph4znm</td>
-<td>590</td>
-</tr>
-<tr class="even">
-<td>HUS_LUNG_MOCK_SET</td>
-<td>-</td>
-<td>46</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="row-2" class="level2" height="50%">
-<h2 height="50%" class="anchored" data-anchor-id="row-2">Row</h2>
-<div class="card" title="Numbers">
-<div>
-<table data-quarto-postprocess="true" class="table">
-<tbody>
-<tr class="odd">
-<td>Number of Datasets</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td>Number of Slides in Total</td>
-<td>4572</td>
-</tr>
-<tr class="odd">
-<td>Total Data Storage (in GB)</td>
-<td>6488.44</td>
-</tr>
-<tr class="even">
-<td>Number of AI Tools on the Platform</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <style>
-  .progress-container {
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 25px;
-    padding: 5px;
-    margin: 20px 0;
-  }
-  .progress-bar {
-    width: 0;
-    height: 30px;
-    background-color: #4caf50;
-    border-radius: 25px;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    transition: width 0.5s;
-  }
-  .dashboard {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .card {
-    height: 600px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .card-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 10px;
-  }
+.metrics-wrap { max-width:1100px; margin:0 auto; padding:0 1rem 3rem; }
+.metrics-title { margin-bottom:0.5rem; }
+.metrics-meta { opacity:.75; font-size:.9rem; margin:.5rem 0 1rem; }
+.metrics-error { color:#7f1d1d; }
+.metrics-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+.metric-card { border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+.metric-value { font-weight:700; font-size:1.6rem; line-height:1.1; }
+.metric-label { color:#64748b; margin-top:6px; font-size:.95rem; }
 </style>
+<div id="metrics-root" class="metrics-wrap">
+<h1 class="metrics-title">
+Repository Metrics
+</h1>
+</div>
+<script>
+(async () => {
+  const JSON_URL = "__METRICS_JSON_URL__";
+  const root = document.getElementById("metrics-root");
+
+  const METRICS = [
+    ["number_of_wsis","Whole-slide images"],["number_of_images","Images"],
+    ["number_of_datasets","Datasets"],["cases_uploaded","Cases uploaded"],
+    ["biological_beings","Biological beings"],["specimens_uploaded","Specimens uploaded"],
+    ["blocks_uploaded","Blocks uploaded"],["number_of_stainings","Stainings"],
+    ["observations_uploaded","Observations uploaded"],["annotation_files","Annotation files"],
+    ["annotations_uploaded","Annotations uploaded"]
+  ];
+  const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
+
+  const header = (genAt, err) => {
+    const msg = err
+      ? `<span class="metrics-error">${err}</span>`
+      : `Last updated: ${genAt ? new Date(genAt).toLocaleString() : "—"}`;
+    return `<div class="metrics-meta">${msg}</div>`;
+  };
+
+  const cards = (metrics) => {
+    const by = new Map((metrics||[]).map(m => [m.name, Number(m.value)]));
+    const items = METRICS.map(([k,label]) => {
+      const v = by.has(k) && Number.isFinite(by.get(k)) ? fmt(by.get(k)) : "—";
+      return `
+        <div class="metric-card">
+          <div class="metric-value">${v}</div>
+          <div class="metric-label">${label}</div>
+        </div>`;
+    }).join("");
+    return `<div class="metrics-grid">${items}</div>`;
+  };
+
+  try {
+    const r = await fetch(JSON_URL);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const raw = await r.json();
+    const g = raw?.globalMetrics || raw || {};
+    root.innerHTML = header(g.generated_at, null) + cards(g.metrics);
+  } catch (e) {
+    root.innerHTML = header(null, `Unable to load metrics (${e.message||e}).`) + cards(null);
+  }
+})();
+</script>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
