@@ -53,7 +53,27 @@
     "href": "datasets/submission/index.html",
     "title": "Submission overview",
     "section": "",
-    "text": "Welcome to the general guide for BigPicture submission.\nYou can find everything you need for submission and more in the internal guideline document.(Bigpicture internal, requires password)\nAlternatively, you can find below the practical guide created by NBIS DevOps.\n\nThe preparation guide, before you create a submission.\nThe submission guide, when you are ready.\n\nFor any questions regarding data submission, please email us.",
+    "text": "Welcome to the general guide for BigPicture submission.\nYou can find everything you need for submission and more in the internal guideline document.(Bigpicture internal, requires password)\nAlternatively, you can find below the practical guide created by NBIS DevOps.",
+    "crumbs": [
+      "Submission overview"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/index.html#required-tools-and-versions",
+    "href": "datasets/submission/index.html#required-tools-and-versions",
+    "title": "Submission overview",
+    "section": "Required tools and versions",
+    "text": "Required tools and versions\nThe following tools are required for submission. Please make sure you are using at least the minimal required versions listed below. Links point to their official release pages.\n\nsda-cli v0.2.1\ns3cmd v2.2.0\nbigpicture-metadata-interface v2.0.2 (available only in a private Git repository)",
+    "crumbs": [
+      "Submission overview"
+    ]
+  },
+  {
+    "objectID": "datasets/submission/index.html#support",
+    "href": "datasets/submission/index.html#support",
+    "title": "Submission overview",
+    "section": "Support",
+    "text": "Support\nFor any questions regarding data submission, please email us.",
     "crumbs": [
       "Submission overview"
     ]
@@ -64,13 +84,6 @@
     "title": "Bigpicture",
     "section": "",
     "text": "Maintenence Window\n\nUpcoming maintenance window on the 6th of October. For information about the updates, please see here.\n\n\n\n\n\n\n\n\nA central repository of digital pathology slides to boost the development of artificial intelligence\n\nLearn more »\n\n\n\n\n\n\nThis webpage links relevant entry points of interest for different usage.\n\nDatasets\nBrowse - Landing pages website root\nDemo Search - Federated Discovery search service interface\nDownload - Data download request service\nSubmit - Data submission instructions and entry points\n\n\nAlgorithms (upcoming)\nBrowse - AI algorithm register / download service\nTry - Service for indirect access to AI algorithm\nBenchmark - Service for indirect access to datasets\nSubmit - Algorithm submission entry points\n\n\nCompute (upcoming)\nAnalysis - Request Services for on-platform data use such as Cytomine\nAI training - Guidance on how to procure on-platform GPU HPC resources\n\n\nSoftware\nCytomine documentation\n\n\nMetrics\nNumbers from the repository\nArchive status"
-  },
-  {
-    "objectID": "metrics/index.html",
-    "href": "metrics/index.html",
-    "title": "Repository Metrics",
-    "section": "",
-    "text": "Repository Metrics"
   },
   {
     "objectID": "datasets/submission/preparation-guide.html",
