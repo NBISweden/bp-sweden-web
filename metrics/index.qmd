@@ -1,159 +1,69 @@
 ---
-title: "Metrics for the central reporitory of digital pathology"
-format: 
-  dashboard:
-    scrolling: true
-    nav-buttons: [linkedin, twitter, github]
-output:
-  quarto::quarto_html_document:
-    theme: sketchy
+title: "Repository Metrics"
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-##  Row {height=50%}
-::: {.card title="Progress Bar"}
-```{=html}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div class="progress-container">
-        <div class="progress-bar" id="progress-bar">0%</div>
-    </div>
-    <table>
-        <tr>
-            <td>Estimated total data to upload</td>
-            <td>4 672 590 GB</td>
-        </tr>
-        <tr>
-            <td>Average slide size</td>
-            <td>1.5 GB</td>
-        </tr>
-        <tr>
-            <td>Number of Slides uploaded / 3M goal</td>
-            <td>4 572 / 3 000 000</td>
-        </tr>
-        <tr>
-            <td>The approximate amount of data that needs to be uploaded</td>
-            <td>4 666 102 GB</td>
-        </tr>
-    </table>
-    <script>
-        const totalSlides = 3000000;
-        const currentSlides = 38570;
-        const progressPercentage = (currentSlides / totalSlides) * 100;
-        const progressBar = document.getElementById('progress-bar');
-        progressBar.style.width = progressPercentage + '%';
-        progressBar.textContent = progressPercentage.toFixed(2) + '%';
-    </script>
-</body>
-```
-:::
-
-
-##  Row {height=50%}
-::: {.card title="Datasets"}
-```{=html}
-<table>
-  <thead>
-    <tr>
-      <th>Dataset info</th>
-      <th>Catalogue item for resource</th>
-      <th>Number of slides</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Region Ostergotland first clinical study</td>
-      <td>https://handle.stage.datacite.org/10.80869/uwsu-uqlgdn</td>
-      <td>76 (+361)</td>
-    </tr>
-    <tr>
-      <td>Bp renal demo</td>
-      <td>https://handle.stage.datacite.org/10.80869/cw8i-pzelu4</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>Breast cancer cases</td>
-      <td>https://handle.stage.datacite.org/10.80869/jkju-ph4znm</td>
-      <td>590</td>
-    </tr>
-    <tr>
-      <td>HUS_LUNG_MOCK_SET</td>
-      <td>-</td>
-      <td>46</td>
-    </tr>
-  </tbody>
-</table>
-```
-:::
-
-##  Row {height=50%}
-::: {.card title="Numbers"}
-```{=html}
-<table>
-    <tr>
-      <td>Number of Datasets</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>Number of Slides in Total</td>
-      <td>4572</td>
-    </tr>
-    <tr>
-      <td>Total Data Storage (in GB)</td>
-      <td>6488.44</td>
-    </tr>
-    <tr>
-      <td>Number of AI Tools on the Platform</td>
-      <td>0</td>
-    </tr>
-</table>
-```
-:::
-
 <style>
-  .progress-container {
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 25px;
-    padding: 5px;
-    margin: 20px 0;
-  }
-  .progress-bar {
-    width: 0;
-    height: 30px;
-    background-color: #4caf50;
-    border-radius: 25px;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    transition: width 0.5s;
-  }
-  .dashboard {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .card {
-    height: 600px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .card-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 10px;
-  }
+.metrics-wrap { max-width:1100px; margin:0 auto; padding:0 1rem 3rem; }
+.metrics-title { margin-bottom:0.5rem; }
+.metrics-meta { opacity:.75; font-size:.9rem; margin:.5rem 0 1rem; }
+.metrics-error { color:#7f1d1d; }
+.metrics-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+.metric-card { border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+.metric-value { font-weight:700; font-size:1.6rem; line-height:1.1; }
+.metric-label { color:#64748b; margin-top:6px; font-size:.95rem; }
 </style>
+
+
+<div id="metrics-root" class="metrics-wrap">
+  <h1 class="metrics-title">Repository Metrics</h1>
+</div>
+
+<script>
+(async () => {
+  const JSON_URL = "https://data.metrics.bp.nbis.se/metrics.json";
+  const root = document.getElementById("metrics-root");
+
+  const METRICS = [
+    ["number_of_wsis","Whole-slide images"],["number_of_images","Images"],
+    ["number_of_datasets","Datasets"],["cases_uploaded","Cases uploaded"],
+    ["biological_beings","Biological beings"],["specimens_uploaded","Specimens uploaded"],
+    ["blocks_uploaded","Blocks uploaded"],["observations_uploaded","Observations uploaded"],
+    ["number_of_stainings","Stainings"],["annotations_uploaded","Annotations uploaded"]
+  ];
+  const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
+
+  const header = (genAt, err) => {
+    const msg = err
+      ? `<span class="metrics-error">${err}</span>`
+      : `Last updated: ${genAt ? new Date(genAt).toLocaleString() : "—"}`;
+    return `<div class="metrics-meta">${msg}</div>`;
+  };
+
+  const cards = (metrics) => {
+    const by = new Map((metrics||[]).map(m => [m.name, Number(m.value)]));
+    const items = METRICS.map(([k,label]) => {
+      const v = by.has(k) && Number.isFinite(by.get(k)) ? fmt(by.get(k)) : "—";
+      return `
+        <div class="metric-card">
+          <div class="metric-value">${v}</div>
+          <div class="metric-label">${label}</div>
+        </div>`;
+    }).join("");
+    return `<div class="metrics-grid">${items}</div>`;
+  };
+
+  try {
+    const r = await fetch(JSON_URL);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const raw = await r.json();
+    const g = raw?.globalMetrics || raw || {};
+    root.innerHTML = header(g.generated_at, null) + cards(g.metrics);
+  } catch (e) {
+    root.innerHTML = header(null, `Unable to load metrics (${e.message||e}).`) + cards(null);
+  }
+})();
+</script>
