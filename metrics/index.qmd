@@ -24,16 +24,15 @@ format:
 
 <script>
 (async () => {
-  const JSON_URL = "__METRICS_JSON_URL__";
+  const JSON_URL = "https://data.metrics.bp.nbis.se/metrics.json";
   const root = document.getElementById("metrics-root");
 
   const METRICS = [
     ["number_of_wsis","Whole-slide images"],["number_of_images","Images"],
     ["number_of_datasets","Datasets"],["cases_uploaded","Cases uploaded"],
     ["biological_beings","Biological beings"],["specimens_uploaded","Specimens uploaded"],
-    ["blocks_uploaded","Blocks uploaded"],["number_of_stainings","Stainings"],
-    ["observations_uploaded","Observations uploaded"],["annotation_files","Annotation files"],
-    ["annotations_uploaded","Annotations uploaded"]
+    ["blocks_uploaded","Blocks uploaded"],["observations_uploaded","Observations uploaded"],
+    ["number_of_stainings","Stainings"],["annotations_uploaded","Annotations uploaded"]
   ];
   const fmt = n => new Intl.NumberFormat(navigator.language||"en-US").format(n);
 
