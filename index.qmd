@@ -42,7 +42,7 @@ Submit - Algorithm submission entry points
 
 ### Compute (upcoming)
 
-[Analysis - Request Services for on-platform data use such as Cytomine](https://cytomine.bp.nbis.se/)
+Analysis - Request Services for on-platform data use such as Cytomine
 
 AI training - Guidance on how to procure on-platform GPU HPC resources
 
