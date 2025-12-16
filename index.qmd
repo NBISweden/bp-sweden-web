@@ -19,28 +19,6 @@ include-in-header:
 :::
 
 
-
-
-::: {.alert .alert-warning}
-::: { .grid .align-items-center }
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-::: g-col-10
-::: text-center
-### Maintenence Window
-:::
-Upcoming maintenance window on the 16th of December For information about the updates, please see [here](maintenence_window.html).
-:::
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-:::
-:::
-
-
-
-
 This webpage links relevant entry points of interest for different usage.
 
 ### Datasets
