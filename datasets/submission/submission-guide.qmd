@@ -170,20 +170,20 @@ Once your files are encrypted, you are ready to start uploading them.
     ### Linux
 
     ``` bash
-    ./sda-cli -config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    ./sda-cli --config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
     ```
 
     ### Mac
 
     ``` bash
-    ./sda-cli -config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    ./sda-cli --config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
     ```
 
 
     ### Windows
 
     ``` bash
-    sda-cli -config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
+    sda-cli --config <configuration_file> upload <encrypted_file_1_to_upload> <encrypted_file_2_to_upload> ...
     ```
     :::
 
@@ -196,19 +196,19 @@ Once your files are encrypted, you are ready to start uploading them.
     ### Linux
 
     ``` bash
-    ./sda-cli -config <configuration_file> upload -r <folder_to_upload>
+    ./sda-cli --config <configuration_file> upload -r <folder_to_upload>
     ```
 
     ### Mac
 
     ``` bash
-    ./sda-cli -config <configuration_file> upload -r <folder_to_upload>
+    ./sda-cli --config <configuration_file> upload -r <folder_to_upload>
     ```
 
     ### Windows
 
     ``` bash
-    sda-cli -config <configuration_file> upload -r <folder_to_upload>
+    sda-cli --config <configuration_file> upload -r <folder_to_upload>
     ```
     :::
 
@@ -218,14 +218,13 @@ Once your files are encrypted, you are ready to start uploading them.
     uploaded, using the `list` command:
    
     ```bash
-    ./sda-cli -config <configuration_file> list <upload_folder>
+    ./sda-cli --config <configuration_file> list <upload_folder>
     ```
     You should now be able to see the file and potentially others stored in
     `<upload_folder>`. 
     -->
 
-    More information on the capabilites of the `sda-cli` can be found
-    using the tool's built-in help:
+    For more detailed information on the capabilities of `sda-cli`, please refer to the tool's built-in help. This is the most reliable resource, as command-line syntax may evolve between versions.
 
     ::: {.panel-tabset group="language"}
 
