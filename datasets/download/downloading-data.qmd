@@ -16,7 +16,8 @@ Before downloading the data, the user needs to download the configuration file b
 Follow the dialogue to get authenticated and then click on `Download inbox s3cmd credentials` to download the configuration file named `s3cmd.conf`.
 
 ### Install the sda-cli tool
-Follow the guidelines [here](../submission/submission-guide.qmd#install-the-sda-cli-tool) to install the sda-cli tool.
+Follow the guidelines [here](../submission/submission-guide.qmd#install-the-sda-cli-tool) to install the latest version of sda-cli tool.
+The following examples are tested in **`SDA-CLI v0.3.1`**.
 
 ### Generate the public and secret key 
 The initial step involves creating a crypt4gh keypair using the sda-cli:
@@ -33,19 +34,27 @@ and will be used by the system for encryption of the files before downloading, w
 ## Check access
 
 After the user has been granted access to the dataset, the user can check access to the dataset by listing the datasets and their files using the `sda-cli`.
+
+**Note:** There are currently two URLs for the download service:
+
+- https://download.bp.nbis.se: Points to the old storage bucket.
+- https://download2.bp.nbis.se: Points to the new storage bucket.
+
+We are developing a unified solution that will eventually require only a single URL, regardless of where the data is stored. Until then, please ensure you use the correct URL based on the location of your data files.
+
 For listing the datasets that the user has access to, the user needs to run:
 
 ```bash
-./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se (--bytes)
+./sda-cli --config s3cmd.conf list --datasets --url https://download.bp.nbis.se (--bytes)
 ```
 
 For listing the files of a specific dataset, the user needs to run:
 
 ```bash
-./sda-cli -config s3cmd.conf list -dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
+./sda-cli --config s3cmd.conf list --dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
 ```
 
-where `<DatasetID>` is the ID of the dataset for which the user wants to list the files. The dataset ID can be found by running the previous command.
+where `<DatasetID>` is the ID of the dataset for which the user wants to list the files. The `--bytes` flag is optional; when enabled, the file sizes will be shown in bytes instead of a human-readable format. The dataset ID can be found by running the previous command.
 
 ## Download data
 
@@ -57,7 +66,7 @@ The user needs to provide the public key that was generated earlier, as well as 
 To download the data:
 
 ```bash
-./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
+./sda-cli --config s3cmd.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
 ```
 
 where:
@@ -67,29 +76,50 @@ where:
 - `</path/to/output/directory>` is the path to the directory where the files will be downloaded
 - `<filepath_*_to_download>` are the file paths of the files which can be found by listing the files of the dataset as described above
 
-### Download dataset (for sda-cli version = 0.1.3)
+### Download multiple files from a list
 
-To download the whole dataset, the user can do it in two steps. First, the user needs to list the files of the dataset and save the file paths to a file
-by running the following command:
+For bulk downloads, you can provide a list of file paths in a text file (e.g., filepaths.txt) instead of listing them individually.
 
 ```bash
-./sda-cli -config s3cmd.conf list --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
+./sda-cli --config s3cmd.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --from-file filepaths.txt
 ```
 
-and then download them by using the saved file from the previous step:
+**Note:** The `filepaths.txt` should contain one relative file path per line.
+
+### Download all files for a dataset
+
+To download an entire dataset, follow this two-step process. First, list all files in the dataset and save their paths to a file by running the following command:
+
+```bash
+./sda-cli --config s3cmd.conf list --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
+```
+
+then download them by using the saved file from the previous step:
 
 ```bash
 ./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory>  --from-file filepaths.txt
 ```
+
+## Download all files of a subfolder recursively
+
+To download all files in a subfolder recursively, run the following command:
+
+```bash
+./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory> <subfolder_path> --recursive
+```
+
+**Note:** The <subfolder_path> must be the full relative path from the dataset root. For example, if a file is located at `data/dir1/dir2/file.c4gh` and you wish to download everything in dir2, the path must be provided as `data/dir1/dir2.`
 
 ## Decrypt the data
 
 After downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:
 
 ```bash
-./sda-cli decrypt -key <keypair_name>.sec.pem </path/to/encrypted/file>
+./sda-cli decrypt --key <keypair_name>.sec.pem </path/to/encrypted/file>
 ```
 
 where `</path/to/encrypted/file>` is the path to the encrypted file that the user wants to decrypt and `<keypair_name>.sec.pem` is the private key file that was generated earlier.
 
+## Known problems
 
+1.  The `--dataset` flag for downloading an entire dataset is currently not working. As a workaround, please use the previous two-step process to download all files within a dataset.
