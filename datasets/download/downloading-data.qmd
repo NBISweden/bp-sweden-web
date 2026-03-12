@@ -1,5 +1,7 @@
 ---
 title: Download guide
+toc: true
+toc-depth: 2
 ---
 
 This section provides guidelines on the necessary steps to download data from BigPicture.
@@ -124,3 +126,7 @@ where `</path/to/encrypted/file>` is the path to the encrypted file that the use
 1. The `--dataset` flag for downloading an entire dataset is currently not working. As a workaround, please use the previous two-step process to download all files within a dataset.
 
 2. The `--recursive` flag for downloading a given folder recursively is currently not functioning as intended. We are actively developing a fix, which will be included in an upcoming release.
+
+## Report new problems
+
+If you identify any issues with the downloaded dataset, please contact the Honest Broker Taskforce at [submit@bigpicture.nl](mailto:submit@bigpicture.nl).
