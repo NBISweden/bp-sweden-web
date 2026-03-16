@@ -24,3 +24,8 @@ The following tools are required for submission. Please make sure you are using 
 ## Support
 
 For any questions regarding data submission, please [email us](mailto:{{< var email.helpdesk >}}).
+
+
+## Instructions for clinical uploads (WIP)
+
+Some extra instructions for clinical partners can be found [here](https://imi-bigpicture.github.io/bigpicture-upload/).
