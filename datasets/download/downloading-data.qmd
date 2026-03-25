@@ -15,14 +15,14 @@ The user needs to wait for approval from the data access committee (DAC) and aft
 
 ### Download configuration file
 Before downloading the data, the user needs to download the configuration file by logging in [here](https://login.bp.nbis.se/).
-Follow the dialogue to get authenticated and then click on `Download inbox s3cmd credentials` to download the configuration file named `s3cmd.conf`.
+Follow the dialogue to get authenticated and then click on `Download credentials to access the Archive` to download the configuration file named `s3cmd-download.conf`.
 
 ### Install the sda-cli tool
 Follow the guidelines [here](../submission/submission-guide.qmd#install-the-sda-cli-tool) to install the latest version of sda-cli tool.
-The following examples are tested in **`SDA-CLI v0.3.1`**.
+The following examples are tested in **`SDA-CLI v0.3.3`**.
 
 ### Generate the public and secret key 
-The initial step involves creating a crypt4gh keypair using the sda-cli:
+The initial step involves creating a Crypt4GH key pair using the `sda-cli` tool:
 
 ```bash
 ./sda-cli createKey <keypair_name>
@@ -56,13 +56,13 @@ If you encounter this error, switch to the alternative URL and retry the downloa
 For listing the datasets that the user has access to, the user needs to run:
 
 ```bash
-./sda-cli --config s3cmd.conf list --datasets --url https://download.bp.nbis.se (--bytes)
+./sda-cli --config s3cmd-download.conf list --datasets --url https://download.bp.nbis.se (--bytes)
 ```
 
 For listing the files of a specific dataset, the user needs to run:
 
 ```bash
-./sda-cli --config s3cmd.conf list --dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
+./sda-cli --config s3cmd-download.conf list --dataset <DatasetID> --url https://download.bp.nbis.se (--bytes)
 ```
 
 where `<DatasetID>` is the ID of the dataset for which the user wants to list the files. The `--bytes` flag is optional; when enabled, the file sizes will be shown in bytes instead of a human-readable format. The dataset ID can be found by running the previous command.
@@ -71,13 +71,13 @@ where `<DatasetID>` is the ID of the dataset for which the user wants to list th
 
 ### Download file(s)
 
-After having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data.
+After having acquired access to the datasets, the configuration file and the `sda-cli` tool, the user can download the encrypted data.
 The user needs to provide the public key that was generated earlier, as well as the configuration file. 
 
 To download the data:
 
 ```bash
-./sda-cli --config s3cmd.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
+./sda-cli --config s3cmd-download.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> <filepath_1_to_download> <filepath_2_to_download> ...
 ```
 
 where:
@@ -92,24 +92,35 @@ where:
 For bulk downloads, you can provide a list of file paths in a text file (e.g., filepaths.txt) instead of listing them individually.
 
 ```bash
-./sda-cli --config s3cmd.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --from-file filepaths.txt
+./sda-cli --config s3cmd-download.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --from-file filepaths.txt
 ```
 
 **Note:** The `filepaths.txt` should contain one relative file path per line.
 
-### Download all files for a dataset
+### Download all files of a dataset
 
-To download an entire dataset, follow this two-step process. First, list all files in the dataset and save their paths to a file by running the following command:
-
-```bash
-./sda-cli --config s3cmd.conf list --datasets --url https://download.bp.nbis.se | awk '{hold=$4} NR>1{print prev} {prev=hold}' > filepaths.txt
-```
-
-then download them by using the saved file from the previous step:
+To download all files associated with a specific dataset, use the `--dataset` flag.
 
 ```bash
-./sda-cli -config s3cmd.conf download -pubkey <public-key-file> -dataset-id <DatasetID> --url https://download.bp.nbis.se -outdir </path/to/output/directory>  --from-file filepaths.txt
+./sda-cli --config s3cmd-download.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --dataset
 ```
+
+### Skip existing files
+
+Use the `--continue` flag to skip files already present in the output directory. This is ideal for resuming interrupted downloads or updating large datasets.
+
+**Note:** This flag skips completed files only; partially downloaded files will be overwritten from the beginning rather than resumed from the break point.
+
+
+
+```bash
+# Example 1: Resuming from a list of specific file paths
+./sda-cli --config s3cmd-download.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --from-file filepaths.txt --continue
+
+# Example 2: Resuming an entire dataset download
+./sda-cli --config s3cmd-download.conf download --pubkey <public-key-file> --dataset-id <DatasetID> --url https://download.bp.nbis.se --outdir </path/to/output/directory> --dataset --continue
+```
+
 
 ## Decrypt the data
 
@@ -120,12 +131,6 @@ After downloading the encrypted data, the user can decrypt the files using the p
 ```
 
 where `</path/to/encrypted/file>` is the path to the encrypted file that the user wants to decrypt and `<keypair_name>.sec.pem` is the private key file that was generated earlier.
-
-## Known problems
-
-1. The `--dataset` flag for downloading an entire dataset is currently not working. As a workaround, please use the previous two-step process to download all files within a dataset.
-
-2. The `--recursive` flag for downloading a given folder recursively is currently not functioning as intended. We are actively developing a fix, which will be included in an upcoming release.
 
 ## Report new problems
 
