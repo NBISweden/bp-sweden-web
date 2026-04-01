@@ -124,20 +124,20 @@ curl -OL https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt
     ### Linux
 
     ``` bash
-    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ./sda-cli encrypt --key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
 
     ### Mac
 
     ``` bash
-    ./sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    ./sda-cli encrypt --key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
 
 
     ### Windows
 
     ``` bash
-    sda-cli encrypt -key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
+    sda-cli encrypt --key crypt4gh_bp_key.pub <file_1_to_encrypt> <file_2_to_encrypt> ...
     ```
     :::
 
@@ -156,15 +156,15 @@ Once your files are encrypted, you are ready to start uploading them.
 
 1.  Obtain the configuration file
 
-    The `sda-cli` tool requires a configuration file with the relevant
-    settings. You can get the configuration file by [logging in to our
-    service](https://login.bp.nbis.se/) (In case it's a test, please use
-    our [staging login service](https://staging-login.bp.nbis.se/)).
+    Before uploading, you'll need to download your configuration file. Just log in [here](https://login.bp.nbis.se/) and follow the prompts to authenticate. Once logged in, click **Download credentials to upload to the Inbox** to get your `s3cmd-inbox.conf` file.  (Note: If you are performing a test upload, please use our [staging service](https://staging-login.bp.nbis.se/) instead.)
 
 2.  Upload the files
 
-    Files can be uploaded with or without folders. Files can be uploaded
-    individually using:
+    Files can be uploaded individually or in groups. By default, the local folder structure is not preserved on the remote storage; all files will be placed in the root of your inbox.
+
+    To upload files into a specific remote folder, use the `--target-directory <path>` flag.
+
+    To upload files individually:
 
     ::: {.panel-tabset group="language"}
     ### Linux
@@ -187,9 +187,7 @@ Once your files are encrypted, you are ready to start uploading them.
     ```
     :::
 
-
-    Many times it might be easier to upload a directory directly though.
-    This can be done with the `-r` flag:
+    In many cases, it is more efficient to upload an entire directory. By using the recursive  `-r` flag, the local folder structure will be preserved on the remote server.
 
     ::: {.panel-tabset group="language"}
 
