@@ -226,7 +226,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#check-access" id="toc-check-access" class="nav-link" data-scroll-target="#check-access">Check access</a></li>
   <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
   <li><a href="#decrypt-the-data" id="toc-decrypt-the-data" class="nav-link" data-scroll-target="#decrypt-the-data">Decrypt the data</a></li>
-  <li><a href="#known-problems" id="toc-known-problems" class="nav-link" data-scroll-target="#known-problems">Known problems</a></li>
   <li><a href="#report-new-problems" id="toc-report-new-problems" class="nav-link" data-scroll-target="#report-new-problems">Report new problems</a></li>
   </ul>
 </nav>
@@ -262,15 +261,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="preparation-for-downloading-data">Preparation for downloading data</h2>
 <section id="download-configuration-file" class="level3">
 <h3 class="anchored" data-anchor-id="download-configuration-file">Download configuration file</h3>
-<p>Before downloading the data, the user needs to download the configuration file by logging in <a href="https://login.bp.nbis.se/">here</a>. Follow the dialogue to get authenticated and then click on <code>Download inbox s3cmd credentials</code> to download the configuration file named <code>s3cmd.conf</code>.</p>
+<p>Before downloading the data, the user needs to download the configuration file by logging in <a href="https://login.bp.nbis.se/">here</a>. Follow the dialogue to get authenticated and then click on <code>Download credentials to access the Archive</code> to download the configuration file named <code>s3cmd-download.conf</code>.</p>
 </section>
 <section id="install-the-sda-cli-tool" class="level3">
 <h3 class="anchored" data-anchor-id="install-the-sda-cli-tool">Install the sda-cli tool</h3>
-<p>Follow the guidelines <a href="../../datasets/submission/submission-guide.html#install-the-sda-cli-tool">here</a> to install the latest version of sda-cli tool. The following examples are tested in <strong><code>SDA-CLI v0.3.1</code></strong>.</p>
+<p>Follow the guidelines <a href="../../datasets/submission/submission-guide.html#install-the-sda-cli-tool">here</a> to install the latest version of sda-cli tool. The following examples are tested in <strong><code>SDA-CLI v0.3.3</code></strong>.</p>
 </section>
 <section id="generate-the-public-and-secret-key" class="level3">
 <h3 class="anchored" data-anchor-id="generate-the-public-and-secret-key">Generate the public and secret key</h3>
-<p>The initial step involves creating a crypt4gh keypair using the sda-cli:</p>
+<p>The initial step involves creating a Crypt4GH key pair using the <code>sda-cli</code> tool:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> createKey <span class="op">&lt;</span>keypair_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>&lt;keypair_name&gt;</code> is the base name of the key files. The above command will create two key files named <code>keypair_name.pub.pem</code> and <code>keypair_name.sec.pem</code>. The public key (<code>pub</code>) will be used alongside with <code>sda-cli</code> and will be used by the system for encryption of the files before downloading, while the private one (<code>sec</code>) will be used by the requester for decrypting the files after downloading.</p>
 </section>
@@ -290,9 +289,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="list-datasets-and-files" class="level3">
 <h3 class="anchored" data-anchor-id="list-datasets-and-files">List datasets and files</h3>
 <p>For listing the datasets that the user has access to, the user needs to run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd.conf list <span class="at">--datasets</span> <span class="at">--url</span> https://download.bp.nbis.se <span class="er">(</span><span class="ex">--bytes</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf list <span class="at">--datasets</span> <span class="at">--url</span> https://download.bp.nbis.se <span class="er">(</span><span class="ex">--bytes</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For listing the files of a specific dataset, the user needs to run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd.conf list <span class="at">--dataset</span> <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="er">(</span><span class="ex">--bytes</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf list <span class="at">--dataset</span> <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="er">(</span><span class="ex">--bytes</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>&lt;DatasetID&gt;</code> is the ID of the dataset for which the user wants to list the files. The <code>--bytes</code> flag is optional; when enabled, the file sizes will be shown in bytes instead of a human-readable format. The dataset ID can be found by running the previous command.</p>
 </section>
 </section>
@@ -300,9 +299,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="download-data">Download data</h2>
 <section id="download-files" class="level3">
 <h3 class="anchored" data-anchor-id="download-files">Download file(s)</h3>
-<p>After having acquired access to the datasets, the configuration file and the sda-cli tool, the user can download the encrypted data. The user needs to provide the public key that was generated earlier, as well as the configuration file.</p>
+<p>After having acquired access to the datasets, the configuration file and the <code>sda-cli</code> tool, the user can download the encrypted data. The user needs to provide the public key that was generated earlier, as well as the configuration file.</p>
 <p>To download the data:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_1_to_download<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_2_to_download<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_1_to_download<span class="op">&gt;</span> <span class="op">&lt;</span>filepath_2_to_download<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where:</p>
 <ul>
 <li><code>&lt;public-key-file&gt;</code> is the public key file that was generated earlier (<code>&lt;keypair_name&gt;.pub.pem</code>)</li>
@@ -314,15 +313,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="download-multiple-files-from-a-list" class="level3">
 <h3 class="anchored" data-anchor-id="download-multiple-files-from-a-list">Download multiple files from a list</h3>
 <p>For bulk downloads, you can provide a list of file paths in a text file (e.g., filepaths.txt) instead of listing them individually.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> --from-file filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> --from-file filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Note:</strong> The <code>filepaths.txt</code> should contain one relative file path per line.</p>
 </section>
-<section id="download-all-files-for-a-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="download-all-files-for-a-dataset">Download all files for a dataset</h3>
-<p>To download an entire dataset, follow this two-step process. First, list all files in the dataset and save their paths to a file by running the following command:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd.conf list <span class="at">--datasets</span> <span class="at">--url</span> https://download.bp.nbis.se <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{hold=$4} NR&gt;1{print prev} {prev=hold}'</span> <span class="op">&gt;</span> filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>then download them by using the saved file from the previous step:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">-config</span> s3cmd.conf download <span class="at">-pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> -dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">-outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span>  --from-file filepaths.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="download-all-files-of-a-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="download-all-files-of-a-dataset">Download all files of a dataset</h3>
+<p>To download all files associated with a specific dataset, use the <code>--dataset</code> flag.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> --dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="skip-existing-files" class="level3">
+<h3 class="anchored" data-anchor-id="skip-existing-files">Skip existing files</h3>
+<p>Use the <code>--continue</code> flag to skip files already present in the output directory. This is ideal for resuming interrupted downloads or updating large datasets.</p>
+<p><strong>Note:</strong> This flag skips completed files only; partially downloaded files will be overwritten from the beginning rather than resumed from the break point.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: Resuming from a list of specific file paths</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> --from-file filepaths.txt <span class="at">--continue</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Resuming an entire dataset download</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> <span class="at">--config</span> s3cmd-download.conf download <span class="at">--pubkey</span> <span class="op">&lt;</span>public-key-file<span class="op">&gt;</span> --dataset-id <span class="op">&lt;</span>DatasetID<span class="op">&gt;</span> --url https://download.bp.nbis.se <span class="at">--outdir</span> <span class="op">&lt;</span>/path/to/output/directory<span class="op">&gt;</span> --dataset <span class="at">--continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="decrypt-the-data" class="level2">
@@ -330,13 +337,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>After downloading the encrypted data, the user can decrypt the files using the private key that was generated earlier by running:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> decrypt <span class="at">--key</span> <span class="op">&lt;</span>keypair_name<span class="op">&gt;</span>.sec.pem <span class="op">&lt;</span>/path/to/encrypted/file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>&lt;/path/to/encrypted/file&gt;</code> is the path to the encrypted file that the user wants to decrypt and <code>&lt;keypair_name&gt;.sec.pem</code> is the private key file that was generated earlier.</p>
-</section>
-<section id="known-problems" class="level2">
-<h2 class="anchored" data-anchor-id="known-problems">Known problems</h2>
-<ol type="1">
-<li><p>The <code>--dataset</code> flag for downloading an entire dataset is currently not working. As a workaround, please use the previous two-step process to download all files within a dataset.</p></li>
-<li><p>The <code>--recursive</code> flag for downloading a given folder recursively is currently not functioning as intended. We are actively developing a fix, which will be included in an upcoming release.</p></li>
-</ol>
 </section>
 <section id="report-new-problems" class="level2">
 <h2 class="anchored" data-anchor-id="report-new-problems">Report new problems</h2>

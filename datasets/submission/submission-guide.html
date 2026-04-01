@@ -394,13 +394,13 @@ Note
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> encrypt <span class="at">-key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> encrypt <span class="at">--key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> encrypt <span class="at">-key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./sda-cli</span> encrypt <span class="at">--key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sda-cli</span> encrypt <span class="at">-key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sda-cli</span> encrypt <span class="at">--key</span> crypt4gh_bp_key.pub <span class="op">&lt;</span>file_1_to_encrypt<span class="op">&gt;</span> <span class="op">&lt;</span>file_2_to_encrypt<span class="op">&gt;</span> ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -417,9 +417,11 @@ checksum_unencrypted.sha256</code></pre>
 <p>Once your files are encrypted, you are ready to start uploading them.</p>
 <ol type="1">
 <li><p>Obtain the configuration file</p>
-<p>The <code>sda-cli</code> tool requires a configuration file with the relevant settings. You can get the configuration file by <a href="https://login.bp.nbis.se/">logging in to our service</a> (In case it’s a test, please use our <a href="https://staging-login.bp.nbis.se/">staging login service</a>).</p></li>
+<p>Before uploading, you’ll need to download your configuration file. Just log in <a href="https://login.bp.nbis.se/">here</a> and follow the prompts to authenticate. Once logged in, click <strong>Download credentials to upload to the Inbox</strong> to get your <code>s3cmd-inbox.conf</code> file. (Note: If you are performing a test upload, please use our <a href="https://staging-login.bp.nbis.se/">staging service</a> instead.)</p></li>
 <li><p>Upload the files</p>
-<p>Files can be uploaded with or without folders. Files can be uploaded individually using:</p>
+<p>Files can be uploaded individually or in groups. By default, the local folder structure is not preserved on the remote storage; all files will be placed in the root of your inbox.</p>
+<p>To upload files into a specific remote folder, use the <code>--target-directory &lt;path&gt;</code> flag.</p>
+<p>To upload files individually:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content" data-group="language">
@@ -434,7 +436,7 @@ checksum_unencrypted.sha256</code></pre>
 </div>
 </div>
 </div>
-<p>Many times it might be easier to upload a directory directly though. This can be done with the <code>-r</code> flag:</p>
+<p>In many cases, it is more efficient to upload an entire directory. By using the recursive <code>-r</code> flag, the local folder structure will be preserved on the remote server.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content" data-group="language">
