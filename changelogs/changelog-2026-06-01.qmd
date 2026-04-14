@@ -67,4 +67,4 @@ toc: false
 * New multiple storage backends library. By @KarlG-nbis in https://github.com/neicnordic/sensitive-data-archive/pull/2162
   * Fix bug in library to support TLS. By @KarlG-nbis in https://github.com/neicnordic/sensitive-data-archive/pull/2217
 * Fix linter issues across multiple services. By @KarlG-nbis in https://github.com/neicnordic/sensitive-data-archive/pull/2257
-
+* Add RotateKey service documentation to the sda documentation. By @jBygdell in https://github.com/neicnordic/sensitive-data-archive/pull/2288
