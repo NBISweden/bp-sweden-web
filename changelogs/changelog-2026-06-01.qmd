@@ -22,6 +22,7 @@ toc: false
 * Fix code lint issues. By @jBygdell in https://github.com/neicnordic/sensitive-data-archive/pull/2179
 * Enable Htsget-rs functionalities
     * Support Htsget-Context-Public-Key header. By @KarlG-nbis in https://github.com/neicnordic/sensitive-data-archive/pull/2226
+* Fix possible issue with downloading bigger files(>1gb). By @KarlG-nbis in https://github.com/neicnordic/sensitive-data-archive/pull/2402
 
 ## Download v2
 
