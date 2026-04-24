@@ -14,7 +14,10 @@ include-in-header:
 
 ## 2026-06-01
 
-This maintenence window focuses on enabling multiple storage backends for all services (so we can grow indefinietely) and ability for key expiry and rotation in the archive.
+This update focuses on backend scalability (enabling multiple storage backends) and enhanced security (key rotation and expiry). There
+are no major functional changes for end-users, though some API error handling and download stability improvements are included.
+
+We're also planning to start demo a new download service, but the current download will continue to be the primary method for download of datasets.
 
 [Detailed Changelog](changelogs/changelog-2026-06-01.html)
 
