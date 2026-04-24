@@ -11,6 +11,13 @@ include-in-header:
 
 # Maintenance Window
 
+
+## 2026-06-01
+
+This maintenence window focuses on enabling multiple storage backends for all services (so we can grow indefinietely) and ability for key expiry and rotation in the archive.
+
+[Detailed Changelog](changelogs/changelog-2026-06-01.html)
+
 ## 2025-12-16
 
 Extraordinary maintenence window on the 16th to improve database performance. This will speed up submission handling a lot. Detailed changelog will come.
