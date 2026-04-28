@@ -8,9 +8,9 @@ format:
 
 <style>
 .metrics-wrap { max-width:1100px; margin:0 auto; padding:0 1rem 3rem; }
-.metrics-title { margin-bottom:0.5rem; }
 .metrics-meta { opacity:.75; font-size:.9rem; margin:.5rem 0 1rem; }
 .metrics-error { color:#7f1d1d; }
+.metrics-note { font-size:.9rem; color:#475569; margin:.25rem 0 1rem; }
 .metrics-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
 .metric-card { border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
 .metric-value { font-weight:700; font-size:1.6rem; line-height:1.1; }
@@ -18,8 +18,9 @@ format:
 </style>
 
 
-<div id="metrics-root" class="metrics-wrap">
-  <h1 class="metrics-title">Repository Metrics</h1>
+<div class="metrics-wrap">
+  <p class="metrics-note">Metrics displayed for datasets that are clinical and anonymized. Datasets that are non-clinical or contain personal data currently not included.</p>
+  <div id="metrics-root"></div>
 </div>
 
 <script>
