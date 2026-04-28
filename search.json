@@ -398,7 +398,7 @@
     "href": "metrics/index.html",
     "title": "Repository Metrics",
     "section": "",
-    "text": "Repository Metrics"
+    "text": "Metrics displayed for datasets that are clinical and anonymized. Datasets that are non-clinical or contain personal data currently not included."
   },
   {
     "objectID": "datasets/download/downloading-data.html",
