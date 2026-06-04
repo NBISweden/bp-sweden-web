@@ -19,27 +19,6 @@ include-in-header:
 :::
 
 
-::: {.alert .alert-warning}
-::: { .grid .align-items-center }
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-::: g-col-10
-::: text-center
-### Maintenence Window
-:::
-Upcoming maintenance window on the 1st of June For information about the updates, please see [here](maintenence_window.html).
-
-Also note that we are temporarily pausing ingestion and dataset creation on the plattform until after the maintenence window. Please continue to upload and ask us to validate the datasets, that way we can more quickly do the ingestion and dataset creation during June.
-:::
-::: g-col-1
-![](/images/underconstruction.gif)
-:::
-:::
-:::
-
-
-
 This webpage links relevant entry points of interest for different usage.
 
 ### Datasets
