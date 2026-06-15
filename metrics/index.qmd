@@ -25,7 +25,7 @@ format:
 
 <script>
 (async () => {
-  const JSON_URL = "https://data.metrics.bp.nbis.se/metrics.json";
+  const JSON_URL = "https://metrics.bp.nbis.se/metrics.json";
   const root = document.getElementById("metrics-root");
 
   const METRICS = [
