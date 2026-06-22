@@ -1,18 +1,23 @@
 ---
-title: Technical support
+title: Support
 ---
 
-Need help?
+If you get stuck while following the manual, here is where to turn.
 
-Contact: [email support](mailto:{{< var email.helpdesk >}})
+## Get help
 
-Scope:
-- Installation issues
-- Configuration help
-- Submission problems
+- **Data submission questions:** [bp-ops](mailto:{{< var email.helpdesk >}}) — email support for the submission pipeline.
+- **Account, access, or service problems:** [servicedesk](mailto:{{< var email.servicedesk >}}).
 
-Outside scope:
-- Custom data transformations
-- Infrastructure setup
+## When you ask, include
 
-See [FAQ](faq/index.qmd) + [community](community/index.qmd) first.
+To get a useful answer quickly, tell us:
+
+- Which **step** (A–J) you were on and the exact command you ran.
+- The **output you got** versus what the *Verify* box said to expect.
+- Your **operating system** (Windows / macOS / Linux).
+
+## Out of scope
+
+Support covers the submission pipeline itself. Custom data transformations and
+your own infrastructure setup are outside what the helpdesk can troubleshoot.

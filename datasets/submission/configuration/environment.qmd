@@ -1,9 +1,0 @@
----
-title: Environment variables (.env)
----
-
-Set env vars for paths + server ports.
-
-Example: `LOCAL_DATA_PATH`, `SLIDETAP_PORT`.
-
-See config files docs.

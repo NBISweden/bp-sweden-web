@@ -1,7 +1,0 @@
----
-title: Preprocessing
----
-
-Transform extracted metadata to the expected input format for the processing step.
-
-Includes reformatting, validation prep.

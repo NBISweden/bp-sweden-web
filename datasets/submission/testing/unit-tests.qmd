@@ -1,7 +1,0 @@
----
-title: Unit tests
----
-
-Component-level tests w/ pytest.
-
-Run when needed.
