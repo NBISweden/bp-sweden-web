@@ -6,14 +6,14 @@ If you get stuck while following the manual, here is where to turn.
 
 ## Get help
 
-- **Data submission questions:** [bp-ops](mailto:{{< var email.helpdesk >}}) — email support for the submission pipeline.
-- **Account, access, or service problems:** [servicedesk](mailto:{{< var email.servicedesk >}}).
+- **Submission pipeline, server, or data-archive issues:** [bp-ops](mailto:{{< var email.helpdesk >}}) — the WP2 team that operates the servers hosting the BigPicture datasets you submit to.
+- **General and technical support:** [servicedesk](mailto:{{< var email.servicedesk >}}).
 
 ## When you ask, include
 
 To get a useful answer quickly, tell us:
 
-- Which **step** (A–J) you were on and the exact command you ran.
+- Which **manual step** you were on — the letter and name, e.g. *F. TLS + credentials* — and the exact command you ran.
 - The **output you got** versus what the *Verify* box said to expect.
 - Your **operating system** (Windows / macOS / Linux).
 

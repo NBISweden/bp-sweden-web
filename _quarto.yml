@@ -79,7 +79,7 @@ website:
               file: datasets/submission/index.qmd
             - text: Key concepts
               file: datasets/submission/key-concepts.qmd
-        - section: "The A–J journey"
+        - section: "Implementation"
           contents:
             - text: A. Prerequisites
               file: datasets/submission/prerequisites.qmd

@@ -4,14 +4,15 @@ subtitle: An operator's manual — from a bare machine to a validated upload
 ---
 
 This is a **step-by-step manual** for submitting a dataset to BigPicture. It is
-written for a *tech-savvy non-programmer*: someone comfortable installing
-software and pasting commands into a terminal, but who is **not** expected to
-know Python, Docker internals, or the command line in depth.
+written for a **technically proficient user who is not a software developer**:
+someone comfortable installing software and running commands in a terminal, but
+who is **not** expected to know Python, Docker internals, or the command line in
+depth.
 
 Follow it **top to bottom**. Every step tells you exactly what to paste and what
 you should see back, and the **« Prev / Next »** buttons at the bottom of each
-page walk you through the journey in order. You never have to guess what to do
-next.
+page walk you through the ten submission steps (A–J), in order, from a bare
+machine to a validated upload. You never have to guess what to do next.
 
 ::: {.callout-important}
 ## Before you start: you need access
@@ -21,8 +22,7 @@ BigPicture repositories and container images used by the submission pipeline. If
 you have not, the very first steps will fail when you try to download the code.
 
 Request access **before** you begin — see [Prerequisites](prerequisites.qmd) and
-[GitHub access](github-access.qmd). *(Rationale: ADR-0005 — the operator manual
-documents the access-gated `bp-submission-pipeline` as the canonical path.)*
+[GitHub access](github-access.qmd).
 :::
 
 ## The journey at a glance
