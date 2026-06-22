@@ -68,53 +68,47 @@ website:
   
   sidebar:
     - id: submit
-      title: Submission
+      title: Submission manual
       style: floating
-      collapse-level: 2
+      collapse-level: 1
       align: left
       contents:
-        - datasets/submission/index.qmd
-        - text: Installation
-          file: datasets/submission/installation/index.qmd
+        - section: Start here
           contents:
-            - datasets/submission/installation/dependencies.qmd
-            - datasets/submission/installation/faq.qmd
-        - text: Pipeline
-          file: datasets/submission/pipeline/index.qmd
+            - text: Overview
+              file: datasets/submission/index.qmd
+            - text: Key concepts
+              file: datasets/submission/key-concepts.qmd
+        - section: "The A–J journey"
           contents:
-            - datasets/submission/pipeline/data-extraction.qmd
-            - datasets/submission/pipeline/preprocessing.qmd
-            - datasets/submission/pipeline/processing.qmd
-            - datasets/submission/pipeline/uploading.qmd
-        - text: Configuration
-          file: datasets/submission/configuration/index.qmd
+            - text: A. Prerequisites
+              file: datasets/submission/prerequisites.qmd
+            - text: B. GitHub access
+              file: datasets/submission/github-access.qmd
+            - text: C. Get the code
+              file: datasets/submission/get-the-code.qmd
+            - text: D. Configure
+              file: datasets/submission/configure.qmd
+            - text: E. Reference data
+              file: datasets/submission/reference-data.qmd
+            - text: F. TLS + credentials
+              file: datasets/submission/tls-credentials.qmd
+            - text: G. Preflight + boot
+              file: datasets/submission/boot.qmd
+            - text: H. Run a submission
+              file: datasets/submission/run-submission.qmd
+            - text: I. Validate the bundle
+              file: datasets/submission/validate.qmd
+            - text: J. Upload to BigPicture
+              file: datasets/submission/upload.qmd
+        - section: Help
           contents:
-            - datasets/submission/configuration/bp-config.qmd
-            - datasets/submission/configuration/environment.qmd
-            - datasets/submission/configuration/slidetap-config.qmd
-            - datasets/submission/configuration/ssl.qmd
-        - text: Validation
-          file: datasets/submission/validation/index.qmd
-        - text: Testing
-          file: datasets/submission/testing/index.qmd
+            - text: Support
+              file: datasets/submission/support.qmd
+        - section: For contributors
           contents:
-            - datasets/submission/testing/unit-tests.qmd
-            - datasets/submission/testing/e2e-tests.qmd
-            - datasets/submission/testing/staging.qmd
-        - text: Best Practices
-          file: datasets/submission/best-practices/index.qmd
-          contents:
-            - datasets/submission/best-practices/large-datasets.qmd
-            - datasets/submission/best-practices/network-shares.qmd
-            - datasets/submission/best-practices/examples.qmd
-        - text: FAQ
-          file: datasets/submission/faq/index.qmd
-          contents:
-            - datasets/submission/faq/installation.qmd
-            - datasets/submission/faq/usage.qmd
-        - text: Community
-          file: datasets/submission/community/index.qmd
-        - datasets/submission/support.qmd
+            - text: Page template & conventions
+              file: datasets/submission/contributing/page-template.qmd
     
     - id: access
       title: Access
