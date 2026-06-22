@@ -1,0 +1,12 @@
+---
+title: D. Configure
+---
+
+Set up your `.env`, mount your data directory with `make mount`, and set the
+`config.yaml` salt.
+
+::: {.callout-note}
+## Coming soon
+This page is part of the manual's skeleton. Its content is being written in
+[issue #8](https://github.com/JeroenUMC/bp-sweden-web/issues/8).
+:::

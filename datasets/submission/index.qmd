@@ -1,33 +1,58 @@
 ---
-title: Data submission tools and instructions
+title: Submit data to BigPicture
+subtitle: An operator's manual — from a bare machine to a validated upload
 ---
 
-Submit your datasets to BigPicture. Follow the workflow below, or jump to a specific resource.
+This is a **step-by-step manual** for submitting a dataset to BigPicture. It is
+written for a **technically proficient user who is not a software developer**:
+someone comfortable installing software and running commands in a terminal, but
+who is **not** expected to know Python, Docker internals, or the command line in
+depth.
 
-## Quick start
+Follow it **top to bottom**. Every step tells you exactly what to paste and what
+you should see back, and the **« Prev / Next »** buttons at the bottom of each
+page walk you through the ten submission steps (A–J), in order, from a bare
+machine to a validated upload. You never have to guess what to do next.
 
-**New to submission?**
-Start with [installation](installation/index.qmd), then follow the [pipeline](pipeline/index.qmd).
+::: {.callout-important}
+## Before you start: you need access
 
-**Need help?** See [FAQ](faq/index.qmd), [community resources](community/index.qmd), or [technical support](support.qmd).
+This manual assumes you have **already been granted access** to the private
+BigPicture repositories and container images used by the submission pipeline. If
+you have not, the very first steps will fail when you try to download the code.
 
-## Main entry points
+Request access **before** you begin — see [Prerequisites](prerequisites.qmd) and
+[GitHub access](github-access.qmd).
+:::
 
-- [Installation guide](installation/index.qmd) — install required tools
-- [Configuration setup](configuration/index.qmd) — config files needed
-- [Pipeline steps](pipeline/index.qmd) — data extraction through upload
-- [Validation rules](validation/index.qmd) — pre-submission checks
+## The journey at a glance
 
-## Additional resources
+You will move through ten steps, **A** to **J**. Each builds on the one before,
+so do them in order the first time.
 
-- [Testing guide](testing/index.qmd)
-- [Best practices](best-practices/index.qmd)
-- [FAQ](faq/index.qmd)
-- [Community](community/index.qmd)
+| | Step | What you'll do |
+|---|---|---|
+| | [**Key concepts**](key-concepts.qmd) | The handful of words you need: *model*, *mappers*, *metadata*, *bundle*. |
+| **A** | [Prerequisites](prerequisites.qmd) | Install the tools (Docker, Git, `gh`, `make`, OpenSSL, Python) and verify each. |
+| **B** | [GitHub access](github-access.qmd) | Sign in with `gh` so you can reach the private repos and images. |
+| **C** | [Get the code](get-the-code.qmd) | Clone the pipeline (with submodules) and pull the images. |
+| **D** | [Configure](configure.qmd) | Set up `.env`, mount your data, and set the config salt. |
+| **E** | [Reference data](reference-data.qmd) | Provide the `model.json` and `mappers.xlsx` for your site. |
+| **F** | [TLS + credentials](tls-credentials.qmd) | Generate certificates and login credentials. |
+| **G** | [Preflight + boot](boot.qmd) | Run the doctor check, start the stack, open the UI. |
+| **H** | [Run a submission](run-submission.qmd) | Log in, create a project/batch, upload your workbook, curate, export. |
+| **I** | [Validate the bundle](validate.qmd) | Check the export and learn how to read the errors. |
+| **J** | [Upload to BigPicture](upload.qmd) | Push the validated bundle with `bp-submitter`. |
 
-## Legacy
+## How to read this manual
 
-**Internal guidelines** [(archived reference)](https://bigpictureeu.sharepoint.com/:w:/r/sites/wp3/Public%20documents/Data%20Submission%20Guidance%20documents/Data%20Contribution/Guideline%20Data%20Contribution%20of%20anonymous,%20clinical%20data%20for%20implementation%20of%20the%20action%20by%20Bigpicture%20beneficiaries_v1.3.docx?d=w54e831a5940d47328eacb27d8d9793e8&csf=1&web=1&e=2H6ixs) — being phased out. Use this site for current instructions.
+- **Three operating systems, one manual.** Where a command differs, you'll see
+  **Windows / macOS / Linux** tabs — pick your tab and ignore the rest. See the
+  [page template](contributing/page-template.qmd) for the conventions.
+- **Verify as you go.** Most steps end with a *Verify* box: paste the command,
+  compare against the expected output, and only move on once it matches.
+- **Linux is the reference path.** Every command-bearing step is validated on a
+  clean Linux machine; Windows and macOS tabs follow the same shape.
 
 ## Need help?
 

@@ -1,7 +1,0 @@
----
-title: Example datasets
----
-
-Simple 1-image datasets by type.
-
-Test your data type before production. Use for [staging test](../testing/staging.qmd).

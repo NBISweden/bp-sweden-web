@@ -1,0 +1,73 @@
+---
+title: A. Prerequisites
+---
+
+Before you can run the submission pipeline, your machine needs a small set of
+tools: **Docker**, **Git**, the **GitHub CLI (`gh`)**, **make**, **OpenSSL**, and
+**Python**. This page shows the pattern with **Docker**; the full per-tool
+walkthrough is being written in
+[issue #5](https://github.com/JeroenUMC/bp-sweden-web/issues/5).
+
+::: {.callout-important}
+You also need to have been **granted access** to the private BigPicture repos and
+images first — see the [overview](index.qmd) and [GitHub access](github-access.qmd).
+:::
+
+## Install Docker
+
+::: {.panel-tabset}
+## Windows
+Install **Docker Desktop** with the package manager:
+
+```powershell
+winget install --id Docker.DockerDesktop -e
+```
+
+Then launch Docker Desktop once so the engine starts.
+
+## macOS
+Install **Docker Desktop** with Homebrew:
+
+```bash
+brew install --cask docker
+```
+
+Then launch Docker Desktop once so the engine starts.
+
+## Linux
+Install **Docker Engine** from the official convenience script:
+
+```bash
+curl -fsSL https://get.docker.com | sh
+```
+:::
+
+::: {.callout-tip}
+## Verify
+
+Paste this:
+
+```bash
+docker --version
+```
+
+Expected output (your version may differ):
+
+```
+Docker version 27.3.1, build ce12230
+```
+:::
+
+## The rest of the toolbelt
+
+You will also need the tools below. Detailed, verified per-OS steps for each are
+tracked in [issue #5](https://github.com/JeroenUMC/bp-sweden-web/issues/5); they
+all follow the same *install → verify* pattern shown above.
+
+- **Git** — clone the pipeline repository.
+- **GitHub CLI (`gh`)** — authenticate to the private repos and images ([step B](github-access.qmd)).
+- **make** — run the pipeline's `make` targets.
+- **OpenSSL** — generate TLS certificates ([step F](tls-credentials.qmd)).
+- **Python** — required by some pipeline tooling.
+
+Once every tool reports a version, continue to [B. GitHub access](github-access.qmd).

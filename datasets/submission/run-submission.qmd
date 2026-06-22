@@ -1,0 +1,12 @@
+---
+title: H. Run a submission
+---
+
+Work through a submission in the UI (text-first): log in, create a project and
+batch, upload your workbook, curate the records, and export.
+
+::: {.callout-note}
+## Coming soon
+This page is part of the manual's skeleton. Its content is being written in
+[issue #13](https://github.com/JeroenUMC/bp-sweden-web/issues/13).
+:::
