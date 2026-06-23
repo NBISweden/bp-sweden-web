@@ -64,9 +64,6 @@ Log out and back in for the group change to take effect.
 
 ::: {.callout-tip}
 ## Verify
-
-Paste these:
-
 ```bash
 docker --version
 docker compose version
