@@ -1,7 +1,7 @@
 ---
 title: A. Prerequisites
 ---
-
+test edit daddafdsfsdafagjhkfhjgkhjkjjkh
 Before you can run the submission pipeline your machine needs six tools:
 **Docker + Compose v2**, **Git**, the **GitHub CLI (`gh`)**, **make**,
 **OpenSSL**, and **Python 3.12+**. Each section below gives the install command
@@ -10,6 +10,13 @@ for your OS and a verify step to confirm it worked.
 ::: {.callout-important}
 You also need to have been **granted access** to the private BigPicture repos and
 images first — see the [overview](index.qmd) and [GitHub access](github-access.qmd).
+:::
+
+::: {.callout-note}
+## Linux: Ubuntu/Debian assumed
+All Linux commands on this page use `apt`. On other distributions substitute
+your package manager — `dnf` (Fedora/RHEL), `pacman` (Arch), `apk` (Alpine),
+or `zypper` (openSUSE) — and adjust package names as needed.
 :::
 
 ## Docker + Compose v2
@@ -37,18 +44,19 @@ Then launch **Docker Desktop** once so the engine starts.
 
 ## Linux
 
-Install **Docker Engine** from the official convenience script, then add the
-Compose v2 plugin:
+Install **Docker Engine** and the **Compose v2 plugin** using these commands:
 
 ```bash
+apt update
+apt install -y curl
 curl -fsSL https://get.docker.com | sh
-sudo apt-get install -y docker-compose-plugin
+apt install -y docker-compose-plugin
 ```
 
 Add your user to the `docker` group so you can run Docker without `sudo`:
 
 ```bash
-sudo usermod -aG docker $USER
+usermod -aG docker $USER
 ```
 
 Log out and back in for the group change to take effect.
@@ -64,12 +72,6 @@ docker --version
 docker compose version
 ```
 
-Expected output (your versions may differ):
-
-```
-Docker version 27.3.1, build ce12230
-Docker Compose version v2.29.2
-```
 :::
 
 ## Git
@@ -92,7 +94,7 @@ brew install git
 ## Linux
 
 ```bash
-sudo apt-get install -y git
+apt install -y git
 ```
 :::
 
@@ -103,11 +105,6 @@ sudo apt-get install -y git
 git --version
 ```
 
-Expected output (your version may differ):
-
-```
-git version 2.47.0
-```
 :::
 
 ## GitHub CLI (`gh`)
@@ -128,14 +125,8 @@ brew install gh
 ## Linux
 
 ```bash
-sudo snap install gh
+apt install gh
 ```
-
-::: {.callout-note}
-If `snap` is not available on your distribution, see the
-[official install docs](https://cli.github.com/manual/installation) for
-alternative methods.
-:::
 :::
 
 ::: {.callout-tip}
@@ -143,12 +134,6 @@ alternative methods.
 
 ```bash
 gh --version
-```
-
-Expected output (your version may differ):
-
-```
-gh version 2.60.1 (2024-10-03)
 ```
 :::
 
@@ -194,7 +179,7 @@ If you use Bash instead of Zsh, replace `~/.zshrc` with `~/.bash_profile`.
 ## Linux
 
 ```bash
-sudo apt-get install -y make
+apt install -y make
 ```
 :::
 
@@ -205,11 +190,6 @@ sudo apt-get install -y make
 make --version
 ```
 
-Expected output (your version may differ):
-
-```
-GNU Make 4.4.1
-```
 :::
 
 ## OpenSSL
@@ -242,7 +222,7 @@ If you use Bash instead of Zsh, replace `~/.zshrc` with `~/.bash_profile`.
 ## Linux
 
 ```bash
-sudo apt-get install -y openssl
+apt install -y openssl
 ```
 :::
 
@@ -253,11 +233,6 @@ sudo apt-get install -y openssl
 openssl version
 ```
 
-Expected output (your version may differ):
-
-```
-OpenSSL 3.3.2 3 Sep 2024
-```
 :::
 
 ## Python
@@ -284,15 +259,15 @@ brew install python@3.12
 On **Ubuntu 24.04 and later**, Python 3.12 is in the default repositories:
 
 ```bash
-sudo apt-get install -y python3.12
+apt install -y python3.12
 ```
 
 On **Ubuntu 22.04**, install it via the deadsnakes PPA:
 
 ```bash
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get install -y python3.12
+add-apt-repository ppa:deadsnakes/ppa
+apt update
+apt install -y python3.12
 ```
 :::
 
@@ -305,11 +280,6 @@ python3.12 --version
 
 On Windows, use `python --version` instead.
 
-Expected output (your patch version may differ):
-
-```
-Python 3.12.7
-```
 :::
 
 Once every tool reports a version, continue to [B. GitHub access](github-access.qmd).
