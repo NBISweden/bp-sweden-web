@@ -1,35 +1,66 @@
 ---
-title: Submission overview
+title: Submit data to BigPicture
+subtitle: An operator's manual — from a bare machine to a validated upload
 ---
 
-Welcome to the general guide for BigPicture submission. 
+This is a **step-by-step manual** for submitting a dataset to BigPicture. It is
+written for a **technically proficient user who is not a software developer**:
+someone comfortable installing software and running commands in a terminal, but
+who is **not** expected to know Python, Docker internals, or the command line in
+depth.
 
-You can find everything you need for submission and more in the [internal guideline document](https://bigpictureeu.sharepoint.com/:w:/r/sites/wp3/Public%20documents/Data%20Submission%20Guidance%20documents/Data%20Contribution/Guideline%20Data%20Contribution%20of%20anonymous,%20clinical%20data%20for%20implementation%20of%20the%20action%20by%20Bigpicture%20beneficiaries_v1.3.docx?d=w54e831a5940d47328eacb27d8d9793e8&csf=1&web=1&e=2H6ixs).(Bigpicture internal, requires password)
+Follow it **top to bottom**. Every step tells you exactly what to paste and what
+you should see back, and the **« Prev / Next »** buttons at the bottom of each
+page walk you through the ten submission steps (A–J), in order, from a bare
+machine to a validated upload. You never have to guess what to do next.
 
+::: {.callout-important}
+## Before you start: you need access
 
-Alternatively, you can find below the practical guide created by NBIS DevOps.
+This manual assumes you have **already been granted access** to the private
+BigPicture repositories and container images used by the submission pipeline. If
+you have not, the very first steps will fail when you try to download the code.
 
-- The [preparation guide](preparation-guide.qmd), before you create a submission. 
-- The [submission guide](submission-guide.qmd), when you are ready.
-
-## Required tools and versions
-
-The following tools are required for submission. Please make sure you are using **at least the minimal required versions** listed below. Links point to their official release pages.
-
-- **[sda-cli v0.2.1](https://github.com/NBISweden/sda-cli/releases/tag/v0.2.1)**
-- **[s3cmd v2.2.0](https://github.com/s3tools/s3cmd/releases/tag/v2.2.0)**
-- **[bigpicture-metadata-interface v2.0.2](https://github.com/imi-bigpicture/bigpicture-metadata-interface/releases/tag/v2.0.2)**
-  *(available only in a private Git repository)*
-
-## Support
-
-For any questions regarding data submission, please [email us](mailto:{{< var email.helpdesk >}}).
-
-
-## Instructions for clinical uploads
-
-::: {.callout-warning}
-These instructions are preliminary and may be updated as the clinical upload process evolves.
+Request access **before** you begin — see [Prerequisites](prerequisites.qmd) and
+[GitHub access](github-access.qmd).
 :::
 
-Some extra instructions for clinical partners can be found in the [BigPicture clinical upload guide](https://imi-bigpicture.github.io/bigpicture-upload/).
+## The journey at a glance
+
+You will move through ten steps, **A** to **J**. Each builds on the one before,
+so do them in order the first time.
+
+| | Step | What you'll do |
+|---|---|---|
+| | [**Key concepts**](key-concepts.qmd) | The handful of words you need: *model*, *mappers*, *metadata*, *bundle*. |
+| **A** | [Prerequisites](prerequisites.qmd) | Install the tools (Docker, Git, `gh`, `make`, OpenSSL, Python) and verify each. |
+| **B** | [GitHub access](github-access.qmd) | Sign in with `gh` so you can reach the private repos and images. |
+| **C** | [install package](install-package.qmd) | Clone the pipeline (with submodules) and pull the images. |
+| **D** | [Configure](configure.qmd) | Set up `.env`, mount your data, and set the config salt. |
+| **E** | [Reference data](reference-data.qmd) | Provide the `model.json` and `mappers.xlsx` for your site. |
+| **F** | [TLS + credentials](tls-credentials.qmd) | Generate certificates and login credentials. |
+| **G** | [Preflight + boot](boot.qmd) | Run the doctor check, start the stack, open the UI. |
+| **H** | [Run a submission](run-submission.qmd) | Log in, create a project/batch, upload your workbook, curate, export. |
+| **I** | [Validate the bundle](validate.qmd) | Check the export and learn how to read the errors. |
+| **J** | [Upload to BigPicture](upload.qmd) | Push the validated bundle with `bp-submitter`. |
+
+::: {.callout-tip}
+## Prefer the command line? There's a direct alternative
+
+You don't have to run the `bp-submission-pipeline` at all. If you're comfortable
+on the command line, the [**Direct upload (sda-cli)**](direct-upload/prerequisites.qmd)
+section walks you through preparing, validating, and uploading a dataset
+yourself with `sda-cli` — a leaner path that some uploaders use directly (often
+with another tool in between). It assumes a more technical reader than the A–J
+manual below.
+:::
+
+## How to read this manual
+- **Step by step.** A-G are required for setting up your data pipeline, H-J are for submitting a test set.
+- **Verify as you go.** Most steps end with a *Verify* box: paste the command,
+  compare against the expected output, and only move on once it matches.
+
+## Need help?
+
+- **Data submission:** [bp-ops](mailto:{{< var email.helpdesk >}})
+- **Support:** [servicedesk](mailto:{{< var email.servicedesk >}})
