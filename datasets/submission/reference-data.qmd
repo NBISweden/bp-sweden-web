@@ -1,0 +1,9 @@
+---
+title: E. Reference data
+---
+
+Two files that the pipeline reads on startup to understand your site's data model
+and local code vocabulary.
+
+- **[model.json](reference-data-model.qmd)** — defines the attribute and observation model; copy the default to get started.
+- **[mappers.xlsx](reference-data-mappers.qmd)** — translates your site's local short codes into BigPicture-standard coded attributes.
