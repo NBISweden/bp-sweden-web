@@ -1,0 +1,44 @@
+---
+title: Community
+---
+
+Beyond the manual and [Support](support.qmd), there are a few ways to connect
+with other operators and the WP2 team, and to contribute back to the project.
+
+## NBIS Slack
+
+WP2 — the team that operates the servers hosting the BigPicture datasets you
+submit to — offers help on the [`nbisweden.slack.com`](https://nbisweden.slack.com) Slack workspace, in
+addition to the [Support](support.qmd) channels.
+
+::: {.callout-important}
+## Precondition: access must be requested
+
+The workspace is not open sign-up. Request an invite via
+[bp-ops](mailto:{{< var email.bpops >}}) — the same contact used in
+[Support](support.qmd).
+:::
+
+## Reporting issues
+
+Filing an issue is itself a form of community participation — it surfaces a
+problem for other operators before they hit it, and it's how the pipeline and
+this manual improve. The trackers to use, and what belongs on each, are listed
+under [Reporting issues](support.qmd#reporting-issues) in Support.
+
+## mappers.xlsx sharing
+
+Every site currently authors its own [`mappers.xlsx`](bp-submission-pipeline/reference-data-mappers.qmd)
+from scratch, even though many sites map the same local short codes (common
+stains, specimen types, preparation methods) to the same BigPicture coded
+attributes.
+
+::: {.callout-note}
+## Not yet available
+
+Cross-site sharing of `mappers.xlsx` mappings doesn't exist yet. It's tracked
+upstream as bp-submission-pipeline milestone
+[**mappers.xlsx community sharing**](https://github.com/imi-bigpicture/bp-submission-pipeline/milestone/10)
+— this section documents the intent, not a working feature. Once it ships,
+this page will link to the how-to.
+:::

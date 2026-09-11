@@ -1,0 +1,311 @@
+---
+title: Add a landing page after submission
+---
+
+`landing_page.xml` is optional at submission time. If you submitted without
+one and want to add it retroactively, you don't need to resubmit the dataset.
+
+::: {.callout-note}
+## Current process, subject to change
+
+The steps below are the current process, confirmed with WP2. WP2 is also
+integrating a new Metadata submitter (from CSC), with the plan to have the new
+submission process in place during Q3 — that is expected to change how
+submissions, and follow-up fixes like this one, are handled. If this page
+looks stale, check with [Support](support.qmd) before following it.
+:::
+
+::: {.callout-note}
+## Scope
+
+This page covers adding a missing landing page. It does not cover other
+post-submission fixes (for example, replacing a corrupted/bit-lost file) —
+that process hasn't been documented yet. For those, contact
+[Support](support.qmd) directly.
+:::
+
+## Prepare the landing page
+
+Either write `landing_page.xml` by hand, or use the bigpicture_metadata_interface. The metadata interface ships
+   `LandingPagePreparer`, which derives the title, description, all six counts,
+   the dataset size, stainings, image resolutions and the whole policy block
+   from the metadata you already submitted — so the landing page cannot drift
+   from the dataset it describes. Put the thumbnails in
+   `LANDING_PAGE/THUMBNAILS/` under the original bundle, then run:
+
+   ```python
+   from pathlib import Path
+
+   from bigpicture_metadata_interface.dataset_structure import (
+       DatasetFileStructure,
+       DatasetFolderStructure,
+   )
+   from bigpicture_metadata_interface.landing_page import LandingPagePreparer
+   from bigpicture_metadata_interface.model.common.file import File
+   from bigpicture_metadata_interface.xml import (
+       XMLSerialize,
+       XmlDeserialize,
+       XmlValidation,
+   )
+
+   DATASET_ROOT = Path("/path/to/DATASET_<alias>")
+
+   thumbnails = DatasetFolderStructure.LANDING_PAGE_SAMPLE_IMAGES.value
+   sample_images = [
+       File(
+           filename=(thumbnails / path.name).as_posix(),
+           filetype=path.suffix.lstrip("."),
+           checksum="",
+           unencrypted_checksum="",
+       )
+       for path in sorted((DATASET_ROOT / thumbnails).glob("*.jpg"))
+   ]
+
+   # parse_xml_files() returns only the dataset, but prepare() also needs the
+   # biological beings, so go one level down to the method that returns both.
+   referenced = XmlDeserialize._load_referenced_datasets(
+       DATASET_ROOT, None, False, XmlValidation.LAX
+   )
+   dataset, references = XmlDeserialize._parse_xml_files(
+       DATASET_ROOT, referenced, False, XmlValidation.LAX
+   )
+
+   dataset.landing_page = LandingPagePreparer.prepare(
+       DATASET_ROOT,
+       dataset,
+       list(references.biological_beings.values()),
+       sample_images=sample_images,
+       # Not derivable from the bundle — supply your own:
+       header="<short header>",
+       keywords=["<keyword>"],
+       center_name="<your centre's legal name>",
+       year_of_submission=2026,
+   )
+
+   streams = XMLSerialize.to_streams(dataset, DATASET_ROOT, XmlValidation.LAX)
+   target = DatasetFileStructure.LANDING_PAGE.value.create(DATASET_ROOT)
+   target.write_bytes(streams[DatasetFileStructure.LANDING_PAGE].getvalue())
+   ```
+
+Then validate the bundle — `make validate-upload DATASET=<dataset_dir>`
+(if using bp-submission-pipeline, [I. Validate the bundle](bp-submission-pipeline/validate.qmd)) — and check that its
+`landing_page.xml absent (optional; see #69)` warning is gone. For a direct upload, see
+[Validate metadata](direct-upload/validate-metadata.qmd).
+
+::: {.callout-warning}
+## Thumbnails must be `.jpg` or `.png`
+
+Both the XSD's `filetype` enum and the interface's own suffix check accept
+only those two. A `.jpeg` file is **rejected**, even though it is the same
+format — rename it to `.jpg` before you reference it.
+
+At most 5 sample images are allowed.
+:::
+
+::: {.callout-note}
+## Empty checksums in your file are expected
+
+Each `SAMPLE_IMAGE_FILE` carries an encrypted and an unencrypted SHA256, and
+neither exists until the file is crypt4gh-encrypted during the upload. The
+file you author therefore has `checksum=""` — the submitter fills both in
+before it serializes and uploads the XML. This is also why you cannot
+produce a complete `landing_page.xml` offline.
+:::
+
+## Which path to follow
+
+- **`upload.db` is intact** (the dataset was uploaded via `bp-submission-pipeline` and the database file has not been lost) → follow [Upload via bp-submission-pipeline](#upload-via-bp-submission-pipeline).
+- **`upload.db` is absent** (uploaded by other tooling, or the file has been lost) → follow [Upload manually (no upload.db)](#upload-manually-no-uploaddb).
+
+## Upload via bp-submission-pipeline
+
+ Do **not** create a new submission. WP2 asked that this go directly into the same dataset folder
+you originally submitted to, rather than as a fresh bundle — contact
+[Support](support.qmd) first if you're unsure of the exact inbox path for
+an already-submitted dataset.
+
+In practice you re-run the normal upload against the *same* bundle, now with
+`LANDING_PAGE/` populated:
+
+```bash
+make upload DATASET=<project_dir>/DATASET_<alias> TARGET=<staging|production>
+```
+
+The already-submitted files are not re-sent: every image resolves to
+`EXISTING` from `upload.db`, and each metadata XML that is already in the
+inbox is refused because overwriting is disabled. Only the new thumbnails
+and `landing_page.xml` are uploaded.
+
+::: {.callout-important}
+## This requires upload.db to be populated from the original upload
+
+The skip logic that prevents re-sending existing files relies entirely on
+`upload.db`. If the dataset was uploaded by other tooling — or if `upload.db`
+has been lost — the submitter will abort on the first file it finds already
+present in the inbox. In that case, see
+[Upload manually (no upload.db)](#upload-manually-no-uploaddb) below.
+:::
+
+::: {.callout-important}
+## The run ends in an error — that one is expected
+
+The upload finishes with:
+
+```
+ERROR:root:Failed to submit some metadata.
+```
+
+That is the already-submitted XMLs being **correctly refused**, not a
+failure. Confirm with the listing in
+[3. Confirm it finalized](bp-submission-pipeline/upload.qmd#confirm-it-finalized): the existing
+`METADATA/` and `PRIVATE/` objects keep their original byte sizes, and
+`LANDING_PAGE/` is new.
+
+**Do not** add `--allow-overwrite` to silence it. That flag would re-upload
+and replace the metadata of a dataset that has already been submitted, which
+is exactly what this whole procedure exists to avoid.
+:::
+
+## Upload manually (no upload.db)
+
+If the dataset was uploaded by other tooling, or `upload.db` has been lost,
+`make upload` will abort on the first file it finds already present in the
+inbox. In that case, encrypt and upload the landing-page files manually.
+
+You need:
+
+- `data/certs/<target>/crypt4gh_bp_key.pub` — the BigPicture public key
+- `data/certs/<target>/s3cmd-inbox.conf` — real credentials from the
+  BigPicture self-service portal
+- `crypt4gh` — installed at `/home/cpg-datateam/.local/bin/crypt4gh`
+- Python with `s3fs` — already a dependency of `bigpicture-metadata-interface`
+
+**1. Prepare and stage the files locally.**
+
+Copy `landing_page.xml` and your chosen thumbnails to a local staging
+directory. Do not work directly on the NAS mount.
+
+::: {.callout-warning}
+## Thumbnail constraints apply here too
+
+The same rules as [step 1 above](#prepare-the-landing-page) apply: `.jpg` or `.png` only
+(`.jpeg` is rejected), at most 5 images. Rename any `.jpeg` files to `.jpg`
+before staging.
+:::
+
+**2. Check that `landing_page.xml` references the thumbnails.**
+
+If the XML was prepared without passing sample images to `LandingPagePreparer`,
+it will have no `SAMPLE_IMAGE_FILES` element. The thumbnails will not be linked
+to the landing page even if they arrive in the inbox. Add the block manually
+just before `</LANDING_PAGE>`:
+
+```xml
+<SAMPLE_IMAGE_FILES>
+    <SAMPLE_IMAGE_FILE filename="LANDING_PAGE/THUMBNAILS/image_1.jpg"
+        filetype="jpg" checksum_method="SHA256" checksum=""
+        unencrypted_checksum=""/>
+    <!-- one entry per thumbnail -->
+</SAMPLE_IMAGE_FILES>
+```
+
+Empty checksums are correct here — see the note in step 1.
+
+**3. Encrypt all files.**
+
+```bash
+PUBKEY=data/certs/<target>/crypt4gh_bp_key.pub
+for f in /path/to/staged/LANDING_PAGE/landing_page.xml \
+          /path/to/staged/LANDING_PAGE/THUMBNAILS/*.jpg; do
+  crypt4gh encrypt --recipient_pk "$PUBKEY" < "$f" > "${f}.c4gh"
+done
+```
+
+**4. Upload via Python (`s3fs`).**
+
+Use `s3fs` directly — it is already a dependency of
+`bigpicture-metadata-interface`, so there is nothing extra to install:
+
+```python
+import configparser, s3fs
+
+cfg = configparser.ConfigParser()
+cfg.read("data/certs/<target>/s3cmd-inbox.conf")
+s = cfg["default"]
+
+fs = s3fs.S3FileSystem(
+    key=s["access_key"],
+    secret=s["secret_key"],
+    token=s["access_token"],
+    client_kwargs={"endpoint_url": f"https://{s['host_base']}"},
+    use_ssl=True,
+)
+
+bucket = s["access_key"]  # access_key doubles as the bucket name
+base = f"{bucket}/DATASET_<alias>/LANDING_PAGE"
+
+files = [
+    ("/path/to/staged/LANDING_PAGE/landing_page.xml.c4gh",
+     f"{base}/landing_page.xml.c4gh"),
+    ("/path/to/staged/LANDING_PAGE/THUMBNAILS/image_1.jpg.c4gh",
+     f"{base}/THUMBNAILS/image_1.jpg.c4gh"),
+    # one entry per thumbnail
+]
+for local, remote in files:
+    with open(local, "rb") as src, fs.open(remote, "wb") as dst:
+        dst.write(src.read())
+```
+
+The inbox path follows the same pattern as a normal upload:
+`DATASET_<alias>/LANDING_PAGE/…`. If you are unsure of the exact prefix,
+ask [Support](support.qmd) — the inbox does not support listing, so you
+cannot look it up yourself.
+
+::: {.callout-note}
+## No local confirmation is possible
+
+The inbox does not support listing or stat operations. A write that completes
+without error is the only signal available. Ask WP2 to confirm receipt if
+you need certainty before closing the task.
+:::
+
+## After uploading
+
+Send an email to the
+[bp-ops](mailto:{{< var email.bpops >}}) so they know a landing page
+was added to an existing dataset. WP2 asked for this step specifically —
+there's no separate submission for the file to ride along with, so the
+email is what gets it picked up. Include:
+- the dataset's identifier (`DATASET_<alias>`),
+- that this is a **landing-page addition to an already-submitted dataset**,
+    not a new submission,
+- the uploader's name.
+
+::: {.callout-tip}
+## Verify
+
+Two separate things, only one of which you can check yourself.
+
+**Did the files arrive?** You can attempt this if the dataset was uploaded via
+`bp-submission-pipeline`. List the dataset's inbox prefix with the command in
+[3. Confirm it finalized](bp-submission-pipeline/upload.qmd#confirm-it-finalized) and look for
+`LANDING_PAGE/landing_page.xml.c4gh` plus one `LANDING_PAGE/THUMBNAILS/*.c4gh`
+per sample image. While you're there, check the existing `METADATA/` objects
+still have the sizes they had before — that proves nothing was overwritten.
+
+If the dataset was uploaded by other tooling, the inbox does not support listing
+and local confirmation is not possible — ask WP2 to confirm receipt.
+
+**Was it processed?** You cannot check this; the file lives on NBIS's side once
+uploaded. Once WP2 confirms it's been processed, the dataset's entry in the
+[BigPicture browser](https://datasets.bp.nbis.se/index.html) should show the
+landing page.
+:::
+
+## If something goes wrong
+
+- **Not sure the file went to the right place** — email
+  [support](support.qmd) with the dataset identifier before assuming it
+  failed silently; WP2 can check what arrived.
+- **Landing page still isn't showing after some time** — same as above:
+  contact [support](support.qmd) rather than re-uploading repeatedly.
