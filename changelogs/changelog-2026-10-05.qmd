@@ -17,15 +17,17 @@ Upgrade from [v3.1.66](https://github.com/neicnordic/sensitive-data-archive/rele
 to [v4.0.1](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1)
 
 See
-v3.1.67 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.67
-v3.1.68 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.68
-v3.1.69 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.69
-v3.1.70 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.70
-v3.1.71 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.71
-v3.1.72 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.72
-v3.1.73 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.73
-v4.0.0 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.0
-v4.0.1 changelog at https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1
+
+- v3.1.67 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.67](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.67)
+- v3.1.68 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.68](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.68)
+- v3.1.69 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.69](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.69)
+- v3.1.70 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.70](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.70)
+- v3.1.71 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.71](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.71)
+- v3.1.72 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.72](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.72)
+- v3.1.73 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.73](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.73)
+- v4.0.0 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.0](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.0)
+- v4.0.1 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1)
+
 for full detailed list of changes.
 
 ## sda helm chart:
@@ -33,10 +35,12 @@ Upgrade from [3.4.1](https://github.com/neicnordic/sensitive-data-archive/releas
 to [5.0.1](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.1)
 
 See
-3.4.2 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.2
-3.4.3 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.3
-3.4.4 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.4
-4.0.0 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-4.0.0
-5.0.1 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.1
-5.0.0 changelog at https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.0
+
+- 3.4.2 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.2](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.2)
+- 3.4.3 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.3](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.3)
+- 3.4.4 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.4](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-3.4.4)
+- 4.0.0 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-4.0.0](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-4.0.0)
+- 5.0.0 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.0](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.0)
+- 5.0.1 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.1](https://github.com/neicnordic/sensitive-data-archive/releases#release-sda-svc-5.0.1)
+
 for full detailed list of changes.
