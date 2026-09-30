@@ -14,7 +14,7 @@ toc: false
 
 ## sda
 Upgrade from [v3.1.66](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.66)
-to [v4.0.1](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1)
+to [v4.0.2](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.2)
 
 See
 
@@ -27,6 +27,7 @@ See
 - v3.1.73 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.73](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v3.1.73)
 - v4.0.0 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.0](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.0)
 - v4.0.1 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.1)
+- v4.0.2 changelog at [https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.2](https://github.com/neicnordic/sensitive-data-archive/releases/tag/v4.0.2)
 
 for full detailed list of changes.
 
