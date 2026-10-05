@@ -12,6 +12,14 @@ include-in-header:
 # Maintenance Window
 
 
+## 2026-10-05
+
+On Monday 5th of October, we will begin maintenance work on the BigPicuture infrastructure. During this time, disruptions to the availability of SDA services may be observed. We will do our best to keep the downtime to a minimum. A notification will be sent out when work is finished.
+
+Main user facing change is that MFA is required when logging in to acquire download or upload token.
+
+[Detailed Changelog](changelogs/changelog-2026-10-05.html)
+
 ## 2026-06-01
 
 This update focuses on backend scalability (enabling multiple storage backends) and enhanced security (key rotation and expiry). There
