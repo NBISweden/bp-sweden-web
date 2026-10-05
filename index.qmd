@@ -19,6 +19,29 @@ include-in-header:
 :::
 
 
+::: {.alert .alert-warning}
+::: { .grid .align-items-center }
+::: g-col-1
+![](/images/underconstruction.gif)
+:::
+::: g-col-10
+::: text-center
+### Maintenence Window
+:::
+Ongoing maintenance
+
+For information about the updates, please see [here](maintenence_window.html).
+
+Note that we are temporarily pausing ingestion and dataset creation on the platform until after the maintenence window.
+
+Uploads and downloads will temporarily be halted during the maintenence stop (you will get a connection error), it will be possible to resume once we are done.
+:::
+::: g-col-1
+![](/images/underconstruction.gif)
+:::
+:::
+:::
+
 This webpage links relevant entry points of interest for different usage.
 
 ### Datasets
