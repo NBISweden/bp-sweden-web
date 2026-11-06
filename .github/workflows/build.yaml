@@ -21,12 +21,17 @@ jobs:
     - name: Copy redirect page to 404.html
       run: cp site/index.html site/404.html
 
-    # Replaces the whole gh-pages branch (keep_files defaults to false), so
-    # none of the old rendered Quarto pages survive.
+    # Replaces all files on gh-pages with the contents of site/ (as a normal
+    # commit, no force push), so none of the old rendered Quarto pages survive.
     - name: Publish to Github Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: ./site
-        force_orphan: true
+      run: |
+        git fetch origin gh-pages
+        git worktree add pages origin/gh-pages
+        cd pages
+        git rm -rq --ignore-unmatch .
+        cp -a ../site/. .
+        git add -A
+        git -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Publish redirect to portal.bigpicture.eu" || exit 0
+        git push origin HEAD:gh-pages
