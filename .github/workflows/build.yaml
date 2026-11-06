@@ -9,30 +9,24 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: github-pages
+    permissions:
+      contents: write
 
     steps:
-    - name: Install Quarto
-      uses: quarto-dev/quarto-actions/setup@v2
-      with:
-        version: 1.4.550
-
     - name: Checkout files
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Render
-      uses: quarto-dev/quarto-actions/render@v2
-      env:
-        CAPTCHAKEY: ${{ vars.CAPTCHAKEY }}
-        SKULD: ${{ vars.SKULD }}
-      with:
-        path: .
-        to: html
+    # The same page is served for every path (via 404.html) so old deep links
+    # also end up on the new portal.
+    - name: Copy redirect page to 404.html
+      run: cp site/index.html site/404.html
 
+    # Replaces the whole gh-pages branch (keep_files defaults to false), so
+    # none of the old rendered Quarto pages survive.
     - name: Publish to Github Pages
-      uses: quarto-dev/quarto-actions/publish@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        target: gh-pages
-        render: false
-
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./site
+        force_orphan: true
