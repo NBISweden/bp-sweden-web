@@ -9,7 +9,19 @@
   <meta name="robots" content="noindex">
   <link rel="icon" href="/favicon.ico">
   <script>
-    setTimeout(function () { window.location.replace("https://portal.bigpicture.eu/"); }, 10000);
+    var target = "https://portal.bigpicture.eu/";
+    var remaining = 10;
+    var timer = setInterval(function () {
+      remaining -= 1;
+      var el = document.getElementById("countdown");
+      if (el) {
+        el.textContent = remaining + (remaining === 1 ? " second" : " seconds");
+      }
+      if (remaining <= 0) {
+        clearInterval(timer);
+        window.location.replace(target);
+      }
+    }, 1000);
   </script>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.5; color: #222; background: #fff; }
@@ -20,6 +32,6 @@
   <h1>Bigpicture has moved</h1>
   <p>This site is no longer maintained. Bigpicture is now available at
     <a href="https://portal.bigpicture.eu/">portal.bigpicture.eu</a>.</p>
-  <p>You will be redirected automatically in 10 seconds. If not, please follow the link above.</p>
+  <p>You will be redirected automatically in <span id="countdown">10 seconds</span>. If not, please follow the link above.</p>
 </body>
 </html>
